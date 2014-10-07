@@ -1,0 +1,20 @@
+[
+{
+"modid": "haditecoal",
+"name": "Hadite Coal",
+"description": "Hadite Coal, a utility ore from the Nether, plus two alloys",
+"version": "1.2.0",
+"credits": "Created by akkamaddi, reliant on AleXndrTheGr8st",
+"logoFile": "",
+"mcversion": "",
+"url": "",
+"updateUrl": "",
+"authors": [ "akkamaddi" ],
+"parent":"",
+"screenshots": [],
+"dependencies": [
+"MinecraftForge"
+"simpleores"
+]
+}
+]
