@@ -1,8 +1,6 @@
 package akkamaddi.hadite.code;
 
-import net.minecraftforge.client.MinecraftForgeClient;
-
-public class ClientProxy extends CommonProxy
+public class ClientProxy extends akkamaddi.akkamaddiCore.api.ClientProxy
 {
     @Override
     public void registerRenderers()

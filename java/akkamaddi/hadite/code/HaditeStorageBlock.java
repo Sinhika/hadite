@@ -2,37 +2,24 @@ package akkamaddi.hadite.code;
 
 import java.util.Random;
 
+import net.minecraft.block.material.Material;
+import net.minecraft.world.World;
+import alexndr.SimpleOres.api.content.SimpleBlock;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraft.util.MathHelper;
-import net.minecraft.world.World;
 
-public class HaditeStorageBlock extends Block
+public class HaditeStorageBlock extends SimpleBlock
 {
-    private String modName;
     /**
      * The main constructor for the blocks.
      *
      * @param par1 = ID of the block.
      * @param material = The material of the block. This sets what tools are effective against it, the sounds it makes, etc.
      */
-    public HaditeStorageBlock(int par1, Material material, String mod)
+    public HaditeStorageBlock(Material material, String mod)
     {
-        super(par1, material);
-        this.modName = mod;
-    }
-
-    /**
-     * Sets the texture for the block.
-     */
-    @Override
-    @SideOnly(Side.CLIENT)
-    public void registerIcons(IconRegister iconRegister)
-    {
-        this.blockIcon = iconRegister.registerIcon(modName + ":" + (this.getUnlocalizedName().substring(5)));
+        super(material);
+        modId(mod);
     }
 
     @SideOnly(Side.CLIENT)
