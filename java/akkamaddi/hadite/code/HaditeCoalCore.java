@@ -1,5 +1,7 @@
 package akkamaddi.hadite.code;
 
+import java.io.File;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
@@ -101,17 +103,19 @@ public class HaditeCoalCore
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
-        // Stub Method
-        Configuration config = new Configuration(event.getSuggestedConfigurationFile());
+		File installDir = event.getModConfigurationDirectory();
+		File configDir = new File(installDir, "akkamaddi");
+	    File configFile = new File(configDir, "hadite.cfg");
+	    Configuration config = new Configuration(configFile);
         config.load();
         MakeOreFlame = config.get(Configuration.CATEGORY_GENERAL, "Hadite Ore spits fire", true).getBoolean(true);
         MakeBlockFlame = config.get(Configuration.CATEGORY_GENERAL, "Hadite Block emits flames", true).getBoolean(true);
         //Adjustable Ore Spawn Rates
-        haditeSpawnRate = config.get("4 Spawning parameters", "Hadite Coal Spawn Rate", 5).getInt();
+        haditeSpawnRate = config.get("Spawning parameters", "Hadite Coal Spawn Rate", 5).getInt();
         //Adjustable Ore Vein Sizes
-        haditeVeinSize = config.get("4 Spawning parameters", "Hadite Coal Vein Size", 17).getInt();
+        haditeVeinSize = config.get("Spawning parameters", "Hadite Coal Vein Size", 17).getInt();
         //Adjustable Ore Spawn Heights
-        haditeSpawnHeight = config.get("4 Spawning parameters", "Hadite Coal Spawn Height", 256).getInt();
+        haditeSpawnHeight = config.get("Spawning parameters", "Hadite Coal Spawn Height", 256).getInt();
         //Recycling
         enableRecycling = config.get(Configuration.CATEGORY_GENERAL, "Enable Hadite Steel & Gestankenzinn item recycling recipes: false or true?", false).getBoolean(false);
         //
