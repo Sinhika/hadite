@@ -14,7 +14,7 @@ public class HaditeRecipes {
 	@SuppressWarnings("unchecked")
 	public static void doHaditeRecipes() {
 		// Ore Dictionary registry
-		OreDictionary.registerOre("ingotHaditeCoal", new ItemStack(
+		OreDictionary.registerOre("haditeCoal", new ItemStack(
 				HaditeCoalCore.haditeCoalIngot));
 		OreDictionary.registerOre("oreHaditeCoal", new ItemStack(
 				HaditeCoalCore.blockHaditeCoalOre));
@@ -104,7 +104,7 @@ public class HaditeRecipes {
 				.getRecipeList()
 				.add(new ShapedOreRecipe(new ItemStack(Blocks.torch, 64),
 						true, new Object[] { "YYY", "YXY", "YYY", 'X',
-								"ingotHaditeCoal", 'Y', "stickWood" }));
+								"haditeCoal", 'Y', "stickWood" }));
 		// recipes: Smelting
 		GameRegistry.addSmelting(
 				HaditeCoalCore.largeHaditeSteelChunkItem, new ItemStack(

@@ -88,8 +88,10 @@ public class HaditeCoalCore
 
     // set tool properties
     // EnumToolMaterial. In form ("NAME", mining level, max uses, speed, damage to entity, enchantability)
-    public static ToolMaterial toolHaditeSteel = EnumHelper.addToolMaterial("HADITESTEEL", 3, 520, 6.5F, 2, 13);
-    public static ToolMaterial toolGestankenzinn = EnumHelper.addToolMaterial("GESTANKENZINN", 2, 400, 4.0F, 1, 13);
+	public static ToolMaterial toolHaditeSteel = EnumHelper.addToolMaterial(
+			"HADITESTEEL", 3, 520, 6.5F, 2, 13);
+	public static ToolMaterial toolGestankenzinn = EnumHelper.addToolMaterial(
+			"GESTANKENZINN", 2, 400, 4.0F, 1, 13);
 
     // Tab
     public void setTabIcons()
