@@ -22,6 +22,12 @@ public class HaditeRecipes {
 				HaditeCoalCore.haditeSteelIngot));
 		OreDictionary.registerOre("ingotGestankenzinn", new ItemStack(
 				HaditeCoalCore.gestankenzinnIngot));
+		// for AOBD2
+		OreDictionary.registerOre("oreHaditeSteel", new ItemStack(
+				HaditeCoalCore.largeHaditeSteelChunkItem));
+		OreDictionary.registerOre("oreGestankenzinn", new ItemStack(
+				HaditeCoalCore.largeGestankenzinnChunkItem));
+		
 		// wildcard
 		final int WILDCARD_VALUE = OreDictionary.WILDCARD_VALUE;
 		// Crafting recipes

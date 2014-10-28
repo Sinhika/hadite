@@ -29,7 +29,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 @Mod(modid = "haditecoal", name = "Hadite Coal, nether utility ore", 
-	version = "1.2.0", 
+	version = "1.7.10-1.2.1", 
 	dependencies = "required-after:simpleores ; required-after:fusionplugin ; required-after:akkamaddicore")
 
 public class HaditeCoalCore
