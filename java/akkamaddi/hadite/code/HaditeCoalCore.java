@@ -29,7 +29,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 @Mod(modid = "haditecoal", name = "Hadite Coal, nether utility ore", 
-	version = "1.7.10-1.2.1", 
+	version = "1.7.10-1.2.2", 
 	dependencies = "required-after:simpleores ; required-after:fusionplugin ; required-after:akkamaddicore")
 
 public class HaditeCoalCore
@@ -82,6 +82,7 @@ public class HaditeCoalCore
     public static boolean MakeBlockFlame;
 
     public static boolean enableRecycling;
+    public static boolean itemizeMobs;
 
     // tab
     public static SimpleTab tabAkkamaddiHadite = new SimpleTab("tabAkkamaddiHadite");
@@ -110,16 +111,26 @@ public class HaditeCoalCore
 	    File configFile = new File(configDir, "hadite.cfg");
 	    Configuration config = new Configuration(configFile);
         config.load();
-        MakeOreFlame = config.get(Configuration.CATEGORY_GENERAL, "Hadite Ore spits fire", true).getBoolean(true);
-        MakeBlockFlame = config.get(Configuration.CATEGORY_GENERAL, "Hadite Block emits flames", true).getBoolean(true);
-        //Adjustable Ore Spawn Rates
-        haditeSpawnRate = config.get("Spawning parameters", "Hadite Coal Spawn Rate", 5).getInt();
-        //Adjustable Ore Vein Sizes
-        haditeVeinSize = config.get("Spawning parameters", "Hadite Coal Vein Size", 17).getInt();
-        //Adjustable Ore Spawn Heights
-        haditeSpawnHeight = config.get("Spawning parameters", "Hadite Coal Spawn Height", 256).getInt();
-        //Recycling
-        enableRecycling = config.get(Configuration.CATEGORY_GENERAL, "Enable Hadite Steel & Gestankenzinn item recycling recipes: false or true?", false).getBoolean(false);
+		MakeOreFlame = config.get(Configuration.CATEGORY_GENERAL,
+				"Hadite Ore spits fire", true).getBoolean(true);
+		MakeBlockFlame = config.get(Configuration.CATEGORY_GENERAL,
+				"Hadite Block emits flames", true).getBoolean(true);
+		// Adjustable Ore Spawn Rates
+		haditeSpawnRate = config.get("Spawning parameters",
+				"Hadite Coal Spawn Rate", 5).getInt();
+		// Adjustable Ore Vein Sizes
+		haditeVeinSize = config.get("Spawning parameters",
+				"Hadite Coal Vein Size", 17).getInt();
+		// Adjustable Ore Spawn Heights
+		haditeSpawnHeight = config.get("Spawning parameters",
+				"Hadite Coal Spawn Height", 256).getInt();
+		// Recycling
+		itemizeMobs = config.get(Configuration.CATEGORY_GENERAL, 
+				"Equip Mobs with Hadite gear, true or false", false).getBoolean(false);
+		enableRecycling = config
+				.get(Configuration.CATEGORY_GENERAL,
+						"Enable Hadite Steel & Gestankenzinn item recycling recipes: false or true?",
+						false).getBoolean(false);
         //
         // end config
         config.save();
@@ -241,7 +252,9 @@ public class HaditeCoalCore
         setTabIcons();
         
         //mobs hold stuff
-		APIcore.instance.joinWorldModRegistry.add(new JoinWorldHandler());
+        if (itemizeMobs) {
+        	APIcore.instance.joinWorldModRegistry.add(new JoinWorldHandler());
+        }
         // world generation
         GameRegistry.registerWorldGenerator(new HaditeGenerator(), 1);
         // Set fuel burntime
