@@ -4,9 +4,9 @@
 	<classpathentry kind="src" path="resources"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/ForgeSrc"/>
-	<classpathentry kind="lib" path="/home/cyhiggin/Projects/SimpleCore/goldenglitter/libs/[1.7.10] Fusion v1.6.0.jar"/>
-	<classpathentry kind="lib" path="/home/cyhiggin/Projects/SimpleCore/goldenglitter/libs/[1.7.10] SimpleCore API v1.1.0.jar"/>
-	<classpathentry kind="lib" path="/home/cyhiggin/Projects/SimpleCore/goldenglitter/libs/[1.7.10] SimpleOres 2 v1.6.0.jar"/>
-	<classpathentry kind="lib" path="/home/cyhiggin/Projects/SimpleCore/goldenglitter/libs/akkamaddiCore-1.7.10-2.0.0.jar"/>
+	<classpathentry kind="lib" path="/home/cyhiggin/Projects/SimpleCore/hadite/libs/[1.7.10] Fusion v1.6.0.jar"/>
+	<classpathentry kind="lib" path="/home/cyhiggin/Projects/SimpleCore/hadite/libs/[1.7.10] SimpleCore API v1.1.0.jar"/>
+	<classpathentry kind="lib" path="/home/cyhiggin/Projects/SimpleCore/hadite/libs/[1.7.10] SimpleOres 2 v1.6.0.jar"/>
+	<classpathentry kind="lib" path="/home/cyhiggin/Projects/SimpleCore/hadite/libs/akkamaddiCore-1.7.10-2.0.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
