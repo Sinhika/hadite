@@ -73,16 +73,16 @@ public class Settings extends ASettings
     public static void adjustOreSpawnRates() 
     {
         haditeSpawnRate = config.getInt("Hadite Coal Worldgen",
-                "Hadite Coal Spawn Rate", Settings.haditeSpawnRate, 0, 5000,
+                "Hadite Coal Spawn Rate", 5, 0, 5000,
                 "Controls the spawn rate of Hadite Coal.");
         haditeVeinSize = config.getInt("Hadite Coal Worldgen",
-                "Hadite Coal Vein Size", Settings.haditeVeinSize, 0, 5000,
+                "Hadite Coal Vein Size", Settings.haditeVeinSize, 17, 5000,
                 "Controls the max vein size of Hadite Coal.");
         haditeMaxSpawnHeight = config.getInt("Hadite Coal Worldgen",
-                "Hadite Coal Maximum Spawn Height", Settings.haditeMaxSpawnHeight, 0, 255,
+                "Hadite Coal Maximum Spawn Height", 255, 0, 255,
                 "Controls the max spawn height of Hadite Coal.");
         haditeMinSpawnHeight = config.getInt("Hadite Coal Worldgen",
-                "Hadite Coal Minimum Spawn Height", Settings.haditeMinSpawnHeight, 0, 255,
+                "Hadite Coal Minimum Spawn Height", 0, 0, 255,
                 "Controls the min spawn height of Hadite Coal.");
         
     } // end adjustOreSpawnRates()
