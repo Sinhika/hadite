@@ -1,10 +1,11 @@
-package akkamaddi.hadite.code;
+package akkamaddi.plugins.hadite;
 
 import java.util.Random;
 
+import alexndr.api.content.blocks.SimpleBlock;
+
 import net.minecraft.block.material.Material;
 import net.minecraft.world.World;
-import alexndr.SimpleOres.api.content.SimpleBlock;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -25,7 +26,7 @@ public class HaditeStorageBlock extends SimpleBlock
     @SideOnly(Side.CLIENT)
     public void randomDisplayTick(World world, int x, int y, int z, Random random)
     {
-        if (HaditeCoalCore.MakeBlockFlame == true)
+        if (Settings.MakeBlockFlame == true)
         {
             float f1 = (float)x - 0.5F;
             float f2 = (float)y - 0.5F;
