@@ -1,43 +1,63 @@
 package akkamaddi.plugins.hadite;
 
+import alexndr.api.content.inventory.SimpleTab;
+import alexndr.api.core.SimpleCoreAPI;
+import alexndr.api.helpers.game.OreGenerator;
+import alexndr.api.helpers.game.TabHelper;
+import alexndr.api.logger.LogHelper;
+import alexndr.api.registry.ContentRegistry;
+import alexndr.api.registry.Plugin;
+import alexndr.plugins.Fusion.Fusion;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.util.EnumHelper;
-import alexndr.api.content.inventory.SimpleTab;
-import alexndr.api.core.ContentTypes;
-import alexndr.api.core.LogHelper;
-import alexndr.api.helpers.game.OreGenerator;
-import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.Mod.EventHandler;
-import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLPostInitializationEvent;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.SidedProxy;
+import net.minecraftforge.fml.common.Mod.EventHandler;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 @Mod(modid = ModInfo.ID, name = ModInfo.NAME, version = ModInfo.VERSION, 
-	dependencies = "required-after:simplecore; required-after:simpleores ; required-after:fusion ; required-after:akkamaddicore")
+	acceptedMinecraftVersions=ModInfo.ACCEPTED_VERSIONS, dependencies = ModInfo.DEPENDENCIES,
+	 updateJSON=ModInfo.VERSIONURL)
 
 public class HaditeCoal
 {
+	@Mod.Instance
+	public static HaditeCoal INSTANCE;
+
+	@SidedProxy(clientSide = "akkamaddi.plugins.hadite.ProxyClient", 
+			serverSide = "akkamaddi.plugins.hadite.ProxyCommon")
+	public static ProxyCommon proxy;
+
+	public static Plugin plugin = new Plugin(ModInfo.ID, ModInfo.NAME);
+	
     // tab
     public static SimpleTab tabAkkamaddiHadite;
-
-	public static ToolMaterial toolHaditeSteel, toolGestankenzinn;
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
-        // Tab
-        LogHelper.info("Loading HaditeCoal...");
-        tabAkkamaddiHadite = new SimpleTab("tabAkkamaddiHadite", ContentTypes.CreativeTab.GENERAL);
+        LogHelper.info(ModInfo.ID, "Loading...");
         
-        //Configuration
+		//Configuration
+		ContentRegistry.registerPlugin(HaditeCoal.plugin);
         Settings.createOrLoadSettings(event);
         
-        //Content
-        setToolAndArmorStats();
+        // Tab
+		if (! TabHelper.wereTabsInitialized()) {
+			SimpleCoreAPI.tabPreInit();
+		}
         Content.preInitialize();
+
+        // TODO		
+       tabAkkamaddiHadite = new SimpleTab("tabAkkamaddiHadite", ContentTypes.CreativeTab.GENERAL);
+        
+        
+        //Content
         Recipes.preInitialize();
         Content.setLoot();
     }
@@ -70,24 +90,6 @@ public class HaditeCoal
         tabAkkamaddiHadite.setIcon(new ItemStack(Content.blockHaditeCoalOre));
     }
 
-    /**
-     * Sets the tool and armor stats from the Settings file.
-     */
-    private static void setToolAndArmorStats() 
-    {
-        // set tool properties
-        // EnumToolMaterial. In form ("NAME", mining level, max uses, speed,
-        // damage to entity, enchantability)
-        toolHaditeSteel = EnumHelper.addToolMaterial("HADITESTEEL",
-                Settings.haditeSteelMiningLevel, Settings.haditeSteelUsesNum,
-                Settings.haditeSteelMiningSpeed, Settings.haditeSteelDamageVsEntity,
-                Settings.haditeSteelEnchantability);
-        toolGestankenzinn = EnumHelper.addToolMaterial("GESTANKENZINN", 
-                Settings.gestankenzinnMiningLevel, Settings.gestankenzinnUsesNum,
-                Settings.gestankenzinnMiningSpeed, Settings.gestankenzinnDamageVsEntity,
-                Settings.gestankenzinnEnchantability);
-    } // end setToolAndArmorStats()
-    
     /**
      * Sets repair materials for the tools/armor of that type. ie. Copper Ingot to repair copper tools and armor.
      */

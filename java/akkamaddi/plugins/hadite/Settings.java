@@ -3,261 +3,187 @@
  */
 package akkamaddi.plugins.hadite;
 
+import alexndr.api.config.ConfigHelper;
+import alexndr.api.config.types.ConfigBlock;
+import alexndr.api.config.types.ConfigItem;
+import alexndr.api.config.types.ConfigOre;
+import alexndr.api.config.types.ConfigTool;
+import alexndr.api.logger.LogHelper;
+import alexndr.plugins.Fusion.ModInfo;
 import net.minecraftforge.common.config.Configuration;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import akkamaddi.api.core.ASettings;
-import alexndr.api.core.LogHelper;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 /**
  * @author cyhiggin
  *
  */
-public class Settings extends ASettings
+public class Settings
 {
+    // Tool Stats
+    private static final int haditeSteelMiningLevel = 3;
+    private static final int haditeSteelUsesNum = 520;
+    private static final float haditeSteelMiningSpeed = 6.5F;
+    private static final float haditeSteelDamageVsEntity = 2.0F;
+    private static final int haditeSteelEnchantability = 13;
+    private static final int gestankenzinnMiningLevel = 2;
+    private static final int gestankenzinnUsesNum = 400;
+    private static final float gestankenzinnMiningSpeed = 4.0F;
+    private static final float gestankenzinnDamageVsEntity = 1.0F;
+    private static final int gestankenzinnEnchantability = 13;
+    
+    // Block stats
+    private static final float haditeCoalHardness = 4.0F;
+    private static final float haditeCoalResistance = 6.0F;
+    private static final int haditeCoalHarvestLevel = 0;
+    private static final float haditeCoalOreHardness = 4.0F;
+    private static final float haditeCoalOreResistance = 6.0F;
+    private static final int haditeCoalOreHarvestLevel = 1;
+    private static final float haditeSteelHardness = 14.0F;
+    private static final float haditeSteelResistance = 22.0F;
+    private static final int haditeSteelHarvestLevel = 0;
+    private static final float gestankenzinnHardness = 12.0F;
+    private static final float gestankenzinnResistance = 20.0F;
+    private static final int gestankenzinnHarvestLevel = 0;
+
+    // spawning
+    private static final int haditeSpawnRate = 5;
+    private static final int haditeVeinSize = 17; 
+    private static final int haditeMinSpawnHeight = 0;
+    private static final int haditeMaxSpawnHeight = 255;
+
+    // big configuration object
+	private static Configuration settings;
+
     /** 
      * umbrella config loading routine. must be instantiated by child classes.
      * @param event
      */
     public static void createOrLoadSettings(FMLPreInitializationEvent event) 
     {
-        config = GetConfig(event, "akkamaddi", "hadite.cfg");
+    	settings = ConfigHelper.GetConfig(event, "akkamaddi", ModInfo.ID + ".cfg");
+    	LogHelper.verbose(ModInfo.ID, "Loading Settings...");
 
-        try {
-            LogHelper.verboseInfo(ModInfo.ID, "Loading Settings...");
-            config.load();
-            genericSettings(ModInfo.ID, ModInfo.NAME);
-            
-            MakeOreFlame = config.get(Configuration.CATEGORY_GENERAL,
-                    "Hadite Ore spits fire", true).getBoolean(true);
-            MakeBlockFlame = config.get(Configuration.CATEGORY_GENERAL,
-                    "Hadite Block emits flames", true).getBoolean(true);
+    	try {
+    		settings.load();
+    		ConfigHelper.createHelpEntry(settings, ModInfo.URL);
 
-            haditeCoalBurnTime = config.getInt("Hadite Coal Burn Time", 
-                    Configuration.CATEGORY_GENERAL, 13000, 0, 999999, 
-                    "How long hadite coal burns as furnace fuel (Coal = 1600)");
-            
-            // Adjustable Ore Spawn Rates
-            adjustOreSpawnRates();
+    		// toggles
+    		configureGeneral();
 
-             // Block Stat Modification
-            blockStatDefaults();
-            if (enableBlockStatModification) {
-                LogHelper.verboseInfo(ModInfo.ID,
-                        "Block Stat Modification enabled!");
-                customizeBlockStats();
-            }
+    		// Block & Ore Stats
+    		configureBlocks();
+    		
+    		configureItems();
+    		configureTools();
+    		
+    	} // end-try
+    	catch (Exception e) {
+    		LogHelper
+    		.severe(ModInfo.ID,
+    				"Settings failed to load correctly. The plugin may not function correctly");
+    	}
+    	finally {
+    		settings.save();
+    		LogHelper.verbose(ModInfo.ID, "Settings loaded successfully");
+    	}
 
-            toolStatDefaults();
-            if (enableToolStatModification) {
-                LogHelper.verboseInfo(ModInfo.ID,
-                        "Tool Stat Modification enabled!");
-                customizeToolStats();
-            }
-        } // end-try
-        catch (Exception e) {
-            LogHelper
-                    .severe(ModInfo.ID,
-                            "Settings failed to load correctly. The plugin may not function correctly");
-        }
-
-        finally {
-            config.save();
-            LogHelper.verboseInfo(ModInfo.ID, "Settings loaded successfully");
-        }
-        
     } // end createOrLoadSettings()
 
-   /** 
-     * loads/sets the ore generation variables.
-     */
-    public static void adjustOreSpawnRates() 
-    {
-        haditeSpawnRate = config.getInt("Hadite Coal Spawn Rate","Hadite Coal Worldgen",
-                 5, 0, 5000,
-                "Controls the spawn rate of Hadite Coal.");
-        haditeVeinSize = config.getInt("Hadite Coal Vein Size", "Hadite Coal Worldgen",
-                17, 0, 5000,
-                "Controls the max vein size of Hadite Coal.");
-        haditeMaxSpawnHeight = config.getInt("Hadite Coal Maximum Spawn Height", "Hadite Coal Worldgen",
-                255, 0, 255,
-                "Controls the max spawn height of Hadite Coal.");
-        haditeMinSpawnHeight = config.getInt("Hadite Coal Minimum Spawn Height", "Hadite Coal Worldgen",
-                0, 0, 255,
-                "Controls the min spawn height of Hadite Coal.");
-        
-    } // end adjustOreSpawnRates()
-
-     /**
-     * Sets the default block stats.
-     */
-    public static void blockStatDefaults() 
-    {
-        haditeCoalHardness = 4.0F;
-        haditeCoalResistance = 6.0F;
-        haditeCoalHarvestLevel = 0;
-        haditeCoalOreHardness = 4.0F;
-        haditeCoalOreResistance = 6.0F;
-        haditeCoalOreHarvestLevel = 1;
-        haditeSteelHardness = 14.0F;
-        haditeSteelResistance = 22.0F;
-        haditeSteelHarvestLevel = 0;
-        gestankenzinnHardness = 12.0F;
-        gestankenzinnResistance = 20.0F;
-        gestankenzinnHarvestLevel = 0;
-    }
-
     /**
-     * sets customized block stats.
+     * General toggles and values.
      */
-    public static void customizeBlockStats() 
+    public static void configureGeneral()
     {
-        haditeCoalHardness = config.getFloat("Hadite Coal Hardness",
-                "Block Stat Modification", haditeCoalHardness, 0.0F, 32000.0F,
-                "How many hits to break a block");
-        haditeCoalResistance = config.getFloat("Hadite Coal Resistance",
-                "Block Stat Modification", haditeCoalResistance, 0.0F, 32000.0F,
-                "Explosion Resistance");
-        haditeCoalHarvestLevel = config.getInt("Hadite Coal Harvest Level",
-                "Block Stat Modification", haditeCoalHarvestLevel, 0, 255,
-                "Tool level required to harvest this block");
+    	MakeOreFlame = settings.getBoolean("MakeOreFlame", Configuration.CATEGORY_GENERAL,
+    			true, "Hadite Ore spits fire");
+    	MakeBlockFlame = settings.getBoolean("MakeBlockFlame", Configuration.CATEGORY_GENERAL,
+    			true, "Hadite Block emits flames");
 
-        haditeCoalOreHardness = config.getFloat("Hadite Coal Ore Hardness",
-                "Block Stat Modification", haditeCoalOreHardness, 0.0F, 32000.0F,
-                "How many hits to break a block");
-        haditeCoalOreResistance = config.getFloat("Hadite Coal Ore Resistance",
-                "Block Stat Modification", haditeCoalOreResistance, 0.0F, 32000.0F,
-                "Explosion Resistance");
-        haditeCoalOreHarvestLevel = config.getInt("Hadite Coal Ore Harvest Level",
-                "Block Stat Modification", haditeCoalOreHarvestLevel, 0, 255,
-                "Tool level required to harvest this block");
-
-        haditeSteelHardness = config.getFloat("Hadite Steel Hardness",
-                "Block Stat Modification", haditeSteelHardness, 0.0F, 32000.0F,
-                "How many hits to break a block");
-        haditeSteelResistance = config.getFloat("Hadite Steel Resistance",
-                "Block Stat Modification", haditeSteelResistance, 0.0F, 32000.0F,
-                "Explosion Resistance");
-        haditeSteelHarvestLevel = config.getInt("Hadite Steel Harvest Level",
-                "Block Stat Modification", haditeSteelHarvestLevel, 0, 255,
-                "Tool level required to harvest this block");
-
-        gestankenzinnHardness = config.getFloat("Gestankenzinn Hardness",
-                "Block Stat Modification", gestankenzinnHardness, 0.0F, 32000.0F,
-                "How many hits to break a block");
-        gestankenzinnResistance = config.getFloat("Gestankenzinn Resistance",
-                "Block Stat Modification", gestankenzinnResistance, 0.0F, 32000.0F,
-                "Explosion Resistance");
-        gestankenzinnHarvestLevel = config.getInt("Gestankenzinn Harvest Level",
-                "Block Stat Modification", gestankenzinnHarvestLevel, 0, 255,
-                "Tool level required to harvest this block");
-
-    } // end customizeBlockStats()
+    	haditeCoalBurnTime = settings.getInt("HaditeCoalBurnTime", 
+    			Configuration.CATEGORY_GENERAL, 13000, 0, 999999, 
+    			"How long hadite coal burns as furnace fuel (Coal = 1600)");
+    } // end configureGeneral()
     
     /**
-     * Sets the default tool stats.
+     * Needed to adapt old methods to new methods of configuring stuff
      */
-    public static void toolStatDefaults() 
+    public static void configureBlocks()
     {
-        haditeSteelMiningLevel = 3;
-        haditeSteelUsesNum = 520;
-        haditeSteelMiningSpeed = 6.5F;
-        haditeSteelDamageVsEntity = 2;
-        haditeSteelEnchantability = 13;
-        gestankenzinnMiningLevel = 2;
-        gestankenzinnUsesNum = 400;
-        gestankenzinnMiningSpeed = 4.0F;
-        gestankenzinnDamageVsEntity = 1;
-        gestankenzinnEnchantability = 13;
-    }
+    	// ConfigBlock haditeSteelBlock, gestankenzinnBlock, haditeCoalBlock, haditeCoalOre
+    	haditeSteelBlock = new ConfigBlock("Hadite Steel Block", ConfigHelper.CATEGORY_BLOCK)
+    			.setHardness(haditeSteelHardness).setResistance(haditeSteelResistance)
+    			.setLightValue(0.0F).setHarvestLevel(haditeSteelHarvestLevel).setHarvestTool("pickaxe")
+    			.setBeaconBase(true);
+    	haditeSteelBlock.GetConfig(settings);
+    	
+    	gestankenzinnBlock = new ConfigBlock("Gestankenzinn Block", ConfigHelper.CATEGORY_BLOCK)
+    			.setHardness(gestankenzinnHardness).setResistance(gestankenzinnResistance)
+    			.setLightValue(0.0F).setHarvestLevel(gestankenzinnHarvestLevel).setHarvestTool("pickaxe")
+    			.setBeaconBase(true);
+    	gestankenzinnBlock.GetConfig(settings);
+    	
+    	// the storage block, not the ore
+    	haditeCoalBlock = new ConfigBlock("Hadite Coal Block", ConfigHelper.CATEGORY_BLOCK)
+    			.setHardness(haditeCoalHardness).setResistance(haditeCoalResistance)
+    			.setLightValue(0.0F).setHarvestLevel(haditeCoalHarvestLevel).setHarvestTool("pickaxe")
+    			.setBeaconBase(true);
+    	haditeCoalBlock.GetConfig(settings);
+    	
+    	// the only ore here.
+    	haditeCoalOre = new ConfigOre("Hadite Coal Ore").setSpawnRate(haditeSpawnRate)
+    			.setVeinSize(haditeVeinSize).setMinHeight(haditeMinSpawnHeight).setMaxHeight(haditeMaxSpawnHeight)
+    		.setHardness(haditeCoalOreHardness).setResistance(haditeCoalOreResistance)
+    		.setHarvestLevel(haditeCoalOreHarvestLevel).setHarvestTool("pickaxe");
+    	haditeCoalOre.GetConfig(settings);
 
+    } // end configureBlocks()
+    
     /**
-     * set customized tool stats.
+     * Need to adapt old methods to new methods of configuring stuff
      */
-    public static void customizeToolStats() 
+    public static void configureTools()
     {
-        haditeSteelMiningLevel = config
-                .getInt("Hadite Steel Mining Level",
-                        "Tool Stat Modification",
-                        haditeSteelMiningLevel,
-                        0,
-                        255,
-                        "Controls the mining level of Hadite Steel Tools. 0 = wood, 1 = stone, 2 = iron, 3 = diamond.");
-        haditeSteelUsesNum = config.getInt("Hadite Steel Tools Durability",
-                "Tool Stat Modification", haditeSteelUsesNum, 0, 32000,
-                "Controls the number of uses Hadite Steel Tools have.");
-        haditeSteelMiningSpeed = config
-                .getFloat(
-                        "Hadite Steel Mining Speed",
-                        "Tool Stat Modification",
-                        haditeSteelMiningSpeed,
-                        0,
-                        32000,
-                        "Controls the speed at which Hadite Steel Tools harvest their appropriate blocks.");
-        haditeSteelDamageVsEntity = config
-                .getFloat("Hadite Steel Damage Vs. Entities",
-                        "Tool Stat Modification", haditeSteelDamageVsEntity, 0,
-                        32000,
-                        "Controls the amount of damage Hadite Steel Tools will do to entities.");
-        haditeSteelEnchantability = config.getInt(
-                "Hadite Steel Tools Enchantability", "Tool Stat Modification",
-                haditeSteelEnchantability, 0, 32000,
-                "Controls the enchantability of Hadite Steel Tools.");
-
-        gestankenzinnMiningLevel = config
-                .getInt("Gestankenzinn Mining Level",
-                        "Tool Stat Modification",
-                        gestankenzinnMiningLevel,
-                        0,
-                        255,
-                        "Controls the mining level of Gestankenzinn Tools. 0 = wood, 1 = stone, 2 = iron, 3 = diamond.");
-        gestankenzinnUsesNum = config.getInt("Gestankenzinn Tools Durability",
-                "Tool Stat Modification", gestankenzinnUsesNum, 0, 32000,
-                "Controls the number of uses Gestankenzinn Tools have.");
-        gestankenzinnMiningSpeed = config
-                .getFloat(
-                        "Gestankenzinn Mining Speed",
-                        "Tool Stat Modification",
-                        gestankenzinnMiningSpeed,
-                        0,
-                        32000,
-                        "Controls the speed at which Gestankenzinn Tools harvest their appropriate blocks.");
-        gestankenzinnDamageVsEntity = config
-                .getFloat("Gestankenzinn Damage Vs. Entities",
-                        "Tool Stat Modification", gestankenzinnDamageVsEntity,
-                        0, 32000,
-                        "Controls the amount of damage Gestankenzinn Tools will do to entities.");
-        gestankenzinnEnchantability = config.getInt(
-                "Gestankenzinn Tools Enchantability", "Tool Stat Modification",
-                gestankenzinnEnchantability, 0, 32000,
-                "Controls the enchantability of Gestankenzinn Tools.");
-
-    } // end customizeToolStats
-
-    // spawning
-    public static int haditeSpawnRate, haditeVeinSize, haditeMinSpawnHeight,
-        haditeMaxSpawnHeight;
-
+    	// ConfigTool gestankenzinnTools, haditeSteelTools
+    	haditeSteelTools = new ConfigTool("Hadite Steel Tools").setUses(haditeSteelUsesNum)
+    			.setHarvestLevel(haditeSteelMiningLevel).setHarvestSpeed(haditeSteelMiningSpeed)
+    			.setDamageVsEntity(haditeSteelDamageVsEntity).setEnchantability(haditeSteelEnchantability);
+    	haditeSteelTools.GetConfig(settings);
+    	
+    	gestankenzinnTools = new ConfigTool("Gestankenzinn Tools").setUses(gestankenzinnUsesNum)
+    			.setHarvestLevel(gestankenzinnMiningLevel).setHarvestSpeed(gestankenzinnMiningSpeed)
+    			.setDamageVsEntity(gestankenzinnDamageVsEntity).setEnchantability(gestankenzinnEnchantability);
+    	gestankenzinnTools.GetConfig(settings);
+    } // end configureTools()
+    
+    /**
+     * Needed to adapt old methods to new methods of configuring stuff
+     */
+    public static void configureItems()
+    {
+    	// ConfigItem haditeCoalIngot, haditeSteelIngot, gestankenzinnIngot
+    	haditeCoalIngot = new ConfigItem("Hadite Coal Chunk", ConfigHelper.CATEGORY_ITEM);
+    	haditeCoalIngot.GetConfig(settings);
+    	
+    	haditeSteelIngot = new ConfigItem("Hadite Steel Ingot", ConfigHelper.CATEGORY_ITEM)
+    			.setSmeltingXP(0.7F);
+    	haditeSteelIngot.GetConfig(settings);
+    	
+    	gestankenzinnIngot = new ConfigItem("Gestankenzinn Ingot", ConfigHelper.CATEGORY_ITEM)
+    			.setSmeltingXP(0.7F);
+    	gestankenzinnIngot.GetConfig(settings);
+   	
+    } // end configure items
+    
     // Booleans
-    public static boolean MakeOreFlame, MakeBlockFlame;
+    public static boolean MakeOreFlame, MakeBlockFlame, enableBlockStatModification, enableToolStatModification;
 
-    // Tool Stats
-    public static int haditeSteelMiningLevel, gestankenzinnMiningLevel;
-    public static int haditeSteelUsesNum, gestankenzinnUsesNum;
-    public static float haditeSteelMiningSpeed, gestankenzinnMiningSpeed;
-    public static float haditeSteelDamageVsEntity, gestankenzinnDamageVsEntity;
-    public static int haditeSteelEnchantability, gestankenzinnEnchantability;
-
-    // Block stats
-    public static float haditeCoalHardness, haditeCoalOreHardness,
-            haditeSteelHardness, gestankenzinnHardness;
-
-    public static float haditeCoalResistance, haditeCoalOreResistance,
-            haditeSteelResistance, gestankenzinnResistance;
-
-    public static int haditeCoalHarvestLevel, haditeCoalOreHarvestLevel,
-            haditeSteelHarvestLevel, gestankenzinnHarvestLevel;
-    
     // fuel stats
     public static int haditeCoalBurnTime;
+    
+    // Config objects
+    public static ConfigBlock haditeSteelBlock, gestankenzinnBlock, haditeCoalBlock;
+    public static ConfigOre haditeCoalOre;
+    public static ConfigItem haditeCoalIngot, haditeSteelIngot, gestankenzinnIngot;
+    public static ConfigTool gestankenzinnTools, haditeSteelTools;
     
 } // end class Settings

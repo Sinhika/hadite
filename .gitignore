@@ -6,11 +6,11 @@ libs/
 *.log
 *.jar
 *.class
-.classpath
 *.launch
 gradlew
 gradlew.bat
 build.number
-.classpath
+./.classpath
+./.project
 bin/
 .gradle/
