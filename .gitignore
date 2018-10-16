@@ -1,6 +1,16 @@
-bin/
 build/
+gradle/
+run/
 libs/
+.settings/
 *.log
 *.jar
 *.class
+.classpath
+*.launch
+gradlew
+gradlew.bat
+build.number
+.classpath
+bin/
+.gradle/

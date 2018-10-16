@@ -1,21 +1,50 @@
-version = "1.7.10-1.5.1"
-sourceSets.main {
-    java {
-	srcDirs project.projectDir.getPath() exclude ("bin/**", "build*",".gradle/**","eclipse/**")
-	}
-    resources {
-	srcDirs 'resources' exclude ("bin/**", "build*",".gradle/**","eclipse/**")
-	}
-} 
+buildscript {
+    repositories {
+        jcenter()
+        maven { url = "http://files.minecraftforge.net/maven" }
+    }
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
+    }
+}
+apply plugin: 'net.minecraftforge.gradle.forge'
+//Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
+apply plugin: 'java'
+
+compileJava {
+    sourceCompatibility = version_java
+    targetCompatibility = version_java
+}
+
+def getVersionAppendage() {
+    if (System.env.BUILD_NUMBER)
+        return System.env.BUILD_NUMBER
+
+    def proc = "git rev-parse --short HEAD".execute()
+    proc.waitFor()
+    return "DEV-" + proc.text.trim()
+}
+version = "${version_minecraft}-${version_mod}." + getVersionAppendage()
+group = "akkamaddi.plugins"
+archivesBaseName = "hadite"
+
+minecraft {
+    version = "${version_forge_long}"
+    runDir = "run"
+    
+    replaceIn "APIInfo.java"
+    replace "@MODVERSION@", "${project.version_mod}." + getVersionAppendage()
+    
+    mappings = version_mappings
+    makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
+}
 
 dependencies {
-    // you may put jars on which you depend on in ./libs
-   }
+}
 
-processResources
-{
+processResources {
     // this will ensure that this task is redone when the versions change.
-    inputs.property "version", project.version
+    inputs.property "version", "${project.version_mod}." + getVersionAppendage()
     inputs.property "mcversion", project.minecraft.version
 
     // replace stuff in mcmod.info, nothing else
@@ -23,13 +52,21 @@ processResources
         include 'mcmod.info'
                 
         // replace version and mcversion
-        expand 'version':project.version, 'mcversion':project.minecraft.version
+        expand 'version':"${project.version_mod}." + getVersionAppendage(), 'mcversion':project.minecraft.version
     }
         
-    // copy everything else, thats not the mcmod.info
+    // copy everything else except the mcmod.info
     from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'
     }
 }
 
+task deobfJar(type: Jar) {
+    from sourceSets.main.output
+    classifier "deobf"
+}
+
+artifacts {
+    archives deobfJar
+}
 
