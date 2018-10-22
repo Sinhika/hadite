@@ -1,5 +1,6 @@
 package akkamaddi.plugins.hadite;
 
+import akkamaddi.plugins.hadite.handler.HaditeFuel;
 import alexndr.api.content.inventory.SimpleTab;
 import alexndr.api.core.SimpleCoreAPI;
 import alexndr.api.helpers.game.OreGenerator;
@@ -60,7 +61,8 @@ public class HaditeCoal
         //Content
         Recipes.preInitialize();
         Content.setLoot();
-    }
+		proxy.PreInit(event);
+    } // end preInit()
 
     @EventHandler
     public void load(FMLInitializationEvent event)
@@ -74,12 +76,14 @@ public class HaditeCoal
         GameRegistry.registerFuelHandler(new HaditeFuel());
         
         setOreGenSettings();
+        proxy.Init(event);
     }
 
     @EventHandler
     public void postInit(FMLPostInitializationEvent event)
     {
         LogHelper.info("HaditeCoal loaded");
+        proxy.PostInit(event);
     }
     
     /**

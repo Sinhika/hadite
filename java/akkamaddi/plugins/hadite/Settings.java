@@ -94,6 +94,8 @@ public class Settings
      */
     public static void configureGeneral()
     {
+    	enableRecycling = settings.getBoolean("Enable Recycling", Configuration.CATEGORY_GENERAL, 
+    			false, "Enable fusion furnace recycling of hadite and onyx items"); 
     	MakeOreFlame = settings.getBoolean("MakeOreFlame", Configuration.CATEGORY_GENERAL,
     			true, "Hadite Ore spits fire");
     	MakeBlockFlame = settings.getBoolean("MakeBlockFlame", Configuration.CATEGORY_GENERAL,
@@ -102,6 +104,9 @@ public class Settings
     	haditeCoalBurnTime = settings.getInt("HaditeCoalBurnTime", 
     			Configuration.CATEGORY_GENERAL, 13000, 0, 999999, 
     			"How long hadite coal burns as furnace fuel (Coal = 1600)");
+    	haditeCoalBlockFireSource = settings.getBoolean("HaditeCoalBlockFireSource", 
+    			Configuration.CATEGORY_GENERAL, true, 
+    			"Can use hadite coal block as a permanent fire source, like netherrack");
     } // end configureGeneral()
     
     /**
@@ -175,7 +180,8 @@ public class Settings
     } // end configure items
     
     // Booleans
-    public static boolean MakeOreFlame, MakeBlockFlame, enableBlockStatModification, enableToolStatModification;
+    public static boolean MakeOreFlame, MakeBlockFlame, enableBlockStatModification, 
+    	enableToolStatModification, enableRecycling, haditeCoalBlockFireSource;
 
     // fuel stats
     public static int haditeCoalBurnTime;

@@ -1,11 +1,51 @@
 package akkamaddi.plugins.hadite;
 
+import akkamaddi.plugins.hadite.blocks.HaditeOreBlock;
+import akkamaddi.plugins.hadite.blocks.HaditeStorageBlock;
+import alexndr.api.content.blocks.SimpleBlock;
+import alexndr.api.registry.ContentCategories;
 import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
+import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.registries.IForgeRegistry;
 
 public class ModBlocks 
 {
+    //blocks
+    public static HaditeOreBlock blockHaditeCoalOre 
+    	= (HaditeOreBlock) new HaditeOreBlock("blockHaditeCoalOre", Material.ROCK).setStepSound(SoundType.STONE);
+    public static HaditeStorageBlock blockHaditeCoalBlock
+    	= (HaditeStorageBlock) new HaditeStorageBlock("blockHaditeCoalBlock", Material.ROCK).setStepSound(SoundType.STONE);
+    public static SimpleBlock blockHaditeSteel 
+    	= new SimpleBlock("blockHaditeSteel", HaditeCoal.plugin, Material.IRON, 
+    			ContentCategories.Block.GENERAL).setStepSound(SoundType.METAL);
+    public static SimpleBlock blockGestankenzinn 
+    	= new SimpleBlock("blockGestankenzinn", HaditeCoal.plugin, Material.IRON, 
+    			ContentCategories.Block.GENERAL).setStepSound(SoundType.METAL);
+    
+    
+    public static void configureBlocks()
+    {
+        // define blocks
+    	if (Settings.haditeCoalOre.isEnabled())
+			blockHaditeCoalOre.setConfigEntry(Settings.haditeCoalOre).setCreativeTab(HaditeCoal.tabAkkamaddiHadite)
+					.setLightLevel(0.6F);
+
+    	if (Settings.haditeCoalBlock.isEnabled())
+			blockHaditeCoalBlock.setConfigEntry(Settings.haditeCoalBlock)
+					.setFireSource(Settings.haditeCoalBlockFireSource).setCreativeTab(HaditeCoal.tabAkkamaddiHadite)
+					.setLightLevel(0.7F);
+
+    	if (Settings.haditeSteelBlock.isEnabled())
+			blockHaditeSteel.setConfigEntry(Settings.haditeSteelBlock).setCreativeTab(HaditeCoal.tabAkkamaddiHadite);
+
+    	if (Settings.gestankenzinnBlock.isEnabled())
+			blockGestankenzinn.setConfigEntry(Settings.gestankenzinnBlock)
+					.setCreativeTab(HaditeCoal.tabAkkamaddiHadite);
+    } // end configureBlocks()
 
 	/**
 	 * Register blocks with Forge.
@@ -14,6 +54,10 @@ public class ModBlocks
 	 */
 	public static void register(IForgeRegistry<Block> registry) 
 	{
+    	if (Settings.haditeCoalOre.isEnabled()) registry.register(blockHaditeCoalOre);
+        if (Settings.haditeCoalBlock.isEnabled()) registry.register(blockHaditeCoalBlock);
+    	if (Settings.haditeSteelBlock.isEnabled()) registry.register(blockHaditeSteel);
+    	if (Settings.gestankenzinnBlock.isEnabled()) registry.register(blockGestankenzinn);
 	} // end register()
 	
 	/**
@@ -23,6 +67,10 @@ public class ModBlocks
 	 */
 	public static void registerItemBlocks(IForgeRegistry<Item> registry) 
 	{
+		if (Settings.haditeCoalOre.isEnabled()) registry.register(blockHaditeCoalOre.createItemBlock());
+		if (Settings.haditeCoalBlock.isEnabled()) registry.register(blockHaditeCoalBlock.createItemBlock());
+		if (Settings.haditeSteelBlock.isEnabled()) registry.register(blockHaditeSteel.createItemBlock());
+		if (Settings.gestankenzinnBlock.isEnabled()) registry.register(blockGestankenzinn.createItemBlock());
 	} // end registerItemBlocks()
 
 	/**
@@ -30,6 +78,14 @@ public class ModBlocks
 	 */
 	public static void registerModels() 
 	{
+    	if (Settings.haditeCoalOre.isEnabled())
+    		blockHaditeCoalOre.registerItemModel(Item.getItemFromBlock(blockHaditeCoalOre));
+        if (Settings.haditeCoalBlock.isEnabled())
+    		blockHaditeCoalBlock.registerItemModel(Item.getItemFromBlock(blockHaditeCoalBlock));
+    	if (Settings.haditeSteelBlock.isEnabled())
+    		blockHaditeSteel.registerItemModel(Item.getItemFromBlock(blockHaditeSteel));
+    	if (Settings.gestankenzinnBlock.isEnabled())
+    		blockGestankenzinn.registerItemModel(Item.getItemFromBlock(blockGestankenzinn));
 	} // end registerModels()
 	
 	/**
@@ -37,6 +93,14 @@ public class ModBlocks
 	 */
 	public static void registerOreDictionary()
 	{
+		if (Settings.haditeCoalOre.isEnabled())
+			OreDictionary.registerOre("oreHaditeCoal", new ItemStack(ModBlocks.blockHaditeCoalOre));
+        if (Settings.haditeCoalBlock.isEnabled())
+			OreDictionary.registerOre("blockHaditeCoal", new ItemStack(ModBlocks.blockHaditeCoalBlock));
+    	if (Settings.haditeSteelBlock.isEnabled())
+			OreDictionary.registerOre("blockHaditeSteel", new ItemStack(ModBlocks.blockHaditeSteel));
+    	if (Settings.gestankenzinnBlock.isEnabled())
+			OreDictionary.registerOre("blockGestankenzinn", new ItemStack(ModBlocks.blockGestankenzinn));
 	} // end registerOreDictionary()
 	
 } // end class

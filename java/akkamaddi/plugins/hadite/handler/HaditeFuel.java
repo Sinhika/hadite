@@ -1,7 +1,9 @@
-package akkamaddi.plugins.hadite;
+package akkamaddi.plugins.hadite.handler;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import akkamaddi.plugins.hadite.Content;
+import akkamaddi.plugins.hadite.Settings;
 import cpw.mods.fml.common.IFuelHandler;
 
 public class HaditeFuel implements IFuelHandler
