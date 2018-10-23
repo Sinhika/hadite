@@ -69,5 +69,7 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/Fusion"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/SimpleCore"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/SimpleOres2"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/Aesthetics"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/Machines"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

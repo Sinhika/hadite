@@ -57,10 +57,7 @@ public class HaditeCoal
         // TODO		
        tabAkkamaddiHadite = new SimpleTab("tabAkkamaddiHadite", ContentTypes.CreativeTab.GENERAL);
         
-        
         //Content
-        Recipes.preInitialize();
-        Content.setLoot();
 		proxy.PreInit(event);
     } // end preInit()
 
@@ -93,15 +90,6 @@ public class HaditeCoal
     {
         tabAkkamaddiHadite.setIcon(new ItemStack(Content.blockHaditeCoalOre));
     }
-
-    /**
-     * Sets repair materials for the tools/armor of that type. ie. Copper Ingot to repair copper tools and armor.
-     */
-    private static void setRepairMaterials()
-    {
-        toolHaditeSteel.setRepairItem(new ItemStack(Content.haditeSteelIngot));
-        toolGestankenzinn.setRepairItem(new ItemStack(Content.gestankenzinnIngot));
-    } // end setRepairMaterials()
 
     /**
      * Registers each ore to be generated.
