@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="java"/>
-	<classpathentry kind="src" path="resources"/>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="src" path="src/main/resources"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8/"/>
 	<classpathentry kind="lib" path="/home/cyhiggin/.gradle/caches/minecraft/net/minecraftforge/forge/1.12.2-14.23.5.2768/snapshot/20171003/forgeSrc-1.12.2-14.23.5.2768.jar" sourcepath="/home/cyhiggin/.gradle/caches/minecraft/net/minecraftforge/forge/1.12.2-14.23.5.2768/snapshot/20171003/forgeSrc-1.12.2-14.23.5.2768-sources.jar"/>
 	<classpathentry kind="lib" path="/home/cyhiggin/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.1/f7be08ec23c21485b9b5a1cf1654c2ec8c58168d/jsr305-3.0.1.jar" sourcepath="/home/cyhiggin/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.1/a2926c057ca3b662b9db194c869bdbe7d3bb8aef/jsr305-3.0.1-sources.jar"/>
@@ -66,10 +66,11 @@
 	<classpathentry kind="lib" path="/home/cyhiggin/.gradle/caches/minecraft/deobfedDeps/compileDummy.jar"/>
 	<classpathentry kind="lib" path="/home/cyhiggin/.gradle/caches/minecraft/deobfedDeps/providedDummy.jar"/>
 	<classpathentry kind="lib" path="/home/cyhiggin/.gradle/caches/minecraft/net/minecraftforge/forge/1.12.2-14.23.5.2768/start"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/Aesthetics"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/Fusion"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/Machines"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/Netherrocks"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/SimpleCore"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/SimpleOres2"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/Aesthetics"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/Machines"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

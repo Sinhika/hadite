@@ -23,7 +23,7 @@ public class ModBlocks
     	= new SimpleBlock("blockHaditeSteel", HaditeCoal.plugin, Material.IRON, 
     			ContentCategories.Block.GENERAL).setStepSound(SoundType.METAL);
     public static SimpleBlock blockGestankenzinn 
-    	= new SimpleBlock("blockGestankenzinn", HaditeCoal.plugin, Material.IRON, 
+    	= new SimpleBlock("block_gestankenzinn", HaditeCoal.plugin, Material.IRON, 
     			ContentCategories.Block.GENERAL).setStepSound(SoundType.METAL);
     
     
