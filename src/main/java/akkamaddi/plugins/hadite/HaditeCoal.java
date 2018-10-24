@@ -8,7 +8,6 @@ import alexndr.api.logger.LogHelper;
 import alexndr.api.registry.ContentCategories;
 import alexndr.api.registry.ContentRegistry;
 import alexndr.api.registry.Plugin;
-import alexndr.plugins.SimpleOres.ModInfo;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.Mod;
@@ -21,7 +20,6 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 @Mod(modid = ModInfo.ID, name = ModInfo.NAME, version = ModInfo.VERSION, 
 	acceptedMinecraftVersions=ModInfo.ACCEPTED_VERSIONS, dependencies = ModInfo.DEPENDENCIES,
 	 updateJSON=ModInfo.VERSIONURL)
-
 public class HaditeCoal
 {
 	@Mod.Instance
