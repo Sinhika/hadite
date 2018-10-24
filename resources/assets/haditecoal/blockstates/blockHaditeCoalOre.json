@@ -1,0 +1,10 @@
+{
+	"forge_marker" : 1,
+	"defaults": {
+		"textures": { "all": "haditecoal:blocks/blockHaditeCoalOre" }
+	},
+	"variants": {
+		"normal": { "model" : "cube_all" },
+		"inventory": { "model" : "cube_all" }
+	}
+}
