@@ -1,38 +1,8 @@
 package akkamaddi.plugins.hadite;
 
-import alexndr.api.logger.LogHelper;
-import alexndr.plugins.Fusion.FusionFurnaceRecipes;
-import alexndr.plugins.Fusion.FusionMaterial;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.fml.common.registry.GameRegistry;
-import net.minecraftforge.oredict.OreDictionary;
-
 public class Recipes 
 {
-    // wildcard
-    private final static int WILDCARD_VALUE = OreDictionary.WILDCARD_VALUE;
 
-    public static void initialize()
-    {
-        try {
-        //    addRecipes();
-            addFurnaceRecipes();
-            addFusionFurnaceRecipes();
-            if (Settings.enableRecycling)
-            {
-                addRecyclingRecipes();
-            } // end if recycling
-            LogHelper.verbose(ModInfo.ID,
-                    "All recipes were added successfully.");
-        } catch (Exception e) {
-            LogHelper.severe(ModInfo.ID,
-                            "Recipes were not added successfully. This is a serious problem!");
-            e.printStackTrace();
-        }
-    } // end initialize()
-    
 //    @SuppressWarnings("unchecked")
 //    private static void addRecipes()
 //    {

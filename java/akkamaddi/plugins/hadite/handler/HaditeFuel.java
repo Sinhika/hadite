@@ -1,26 +1,26 @@
 package akkamaddi.plugins.hadite.handler;
 
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import akkamaddi.plugins.hadite.Content;
+import akkamaddi.plugins.hadite.ModBlocks;
+import akkamaddi.plugins.hadite.ModItems;
 import akkamaddi.plugins.hadite.Settings;
-import cpw.mods.fml.common.IFuelHandler;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.event.furnace.FurnaceFuelBurnTimeEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-public class HaditeFuel implements IFuelHandler
+@Mod.EventBusSubscriber
+public class HaditeFuel
 {
-    @Override
-    public int getBurnTime(ItemStack fuel)
+	@SubscribeEvent
+    public void setBurnTimes(FurnaceFuelBurnTimeEvent event)
     {
-        if (fuel.getItem() == Content.haditeCoalIngot)
+        if (event.getItemStack().isItemEqual(new ItemStack(ModItems.haditeCoalIngot)))
         {
-            return Settings.haditeCoalBurnTime;
+        	event.setBurnTime(Settings.haditeCoalBurnTime);
         }
-
-        if (fuel.getItem() == Item.getItemFromBlock(Content.blockHaditeCoalBlock))
+        else if (event.getItemStack().isItemEqual(new ItemStack(ModBlocks.blockHaditeCoalBlock)))
         {
-            return Settings.haditeCoalBurnTime * 10;
+        	event.setBurnTime(Settings.haditeCoalBurnTime * 10);
         }
-
-        return 0;
     }
 } // end class HaditeFuel

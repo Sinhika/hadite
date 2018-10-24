@@ -1,25 +1,22 @@
 package akkamaddi.plugins.hadite;
 
-import akkamaddi.plugins.hadite.handler.HaditeFuel;
 import alexndr.api.content.inventory.SimpleTab;
 import alexndr.api.core.SimpleCoreAPI;
 import alexndr.api.helpers.game.OreGenerator;
 import alexndr.api.helpers.game.TabHelper;
 import alexndr.api.logger.LogHelper;
+import alexndr.api.registry.ContentCategories;
 import alexndr.api.registry.ContentRegistry;
 import alexndr.api.registry.Plugin;
-import alexndr.plugins.Fusion.Fusion;
+import alexndr.plugins.SimpleOres.ModInfo;
 import net.minecraft.init.Blocks;
-import net.minecraft.item.Item.ToolMaterial;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.common.util.EnumHelper;
+import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.Mod.EventHandler;
+import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 
 @Mod(modid = ModInfo.ID, name = ModInfo.NAME, version = ModInfo.VERSION, 
 	acceptedMinecraftVersions=ModInfo.ACCEPTED_VERSIONS, dependencies = ModInfo.DEPENDENCIES,
@@ -31,7 +28,7 @@ public class HaditeCoal
 	public static HaditeCoal INSTANCE;
 
 	@SidedProxy(clientSide = "akkamaddi.plugins.hadite.ProxyClient", 
-			serverSide = "akkamaddi.plugins.hadite.ProxyCommon")
+				serverSide = "akkamaddi.plugins.hadite.ProxyCommon")
 	public static ProxyCommon proxy;
 
 	public static Plugin plugin = new Plugin(ModInfo.ID, ModInfo.NAME);
@@ -52,11 +49,10 @@ public class HaditeCoal
 		if (! TabHelper.wereTabsInitialized()) {
 			SimpleCoreAPI.tabPreInit();
 		}
+		tabAkkamaddiHadite = new SimpleTab(HaditeCoal.plugin, "tabAkkamaddiHadite", 
+											ContentCategories.CreativeTab.GENERAL);
         Content.preInitialize();
 
-        // TODO		
-       tabAkkamaddiHadite = new SimpleTab("tabAkkamaddiHadite", ContentTypes.CreativeTab.GENERAL);
-        
         //Content
 		proxy.PreInit(event);
     } // end preInit()
@@ -66,13 +62,13 @@ public class HaditeCoal
     {
         // run tab icon call
         setTabIcons();
-        setRepairMaterials();
-        Recipes.initialize();
-        
-        // Set fuel burntime
-        GameRegistry.registerFuelHandler(new HaditeFuel());
-        
+        Content.setRepairMaterials();
         setOreGenSettings();
+        Content.addSmeltingRecipes();
+        Content.addFusionRecipes();
+        if (Settings.enableRecycling) {
+        	Content.addRecyclingRecipes();
+        } // end if recycling
         proxy.Init(event);
     }
 
@@ -88,7 +84,7 @@ public class HaditeCoal
      */
     private void setTabIcons()
     {
-        tabAkkamaddiHadite.setIcon(new ItemStack(Content.blockHaditeCoalOre));
+        tabAkkamaddiHadite.setIcon(Item.getItemFromBlock(ModBlocks.blockHaditeCoalOre));
     }
 
     /**
@@ -96,10 +92,15 @@ public class HaditeCoal
      */
     private static void setOreGenSettings()
     {
-        OreGenerator.INSTANCE.registerOreForGeneration(-1, Content.blockHaditeCoalOre,
-                Blocks.netherrack, Settings.haditeVeinSize,
-                Settings.haditeSpawnRate, Settings.haditeMaxSpawnHeight,
-                Settings.haditeMinSpawnHeight);
+		LogHelper.verbose(ModInfo.ID, "Setting ore gen parameters");
+		if (Settings.haditeCoalOre.isEnableOreGen())
+		{
+			OreGenerator.registerOreForGen(-1, ModBlocks.blockHaditeCoalOre, Blocks.NETHERRACK, 
+											true, Settings.haditeCoalOre.getSpawnRate(), 
+											Settings.haditeCoalOre.getVeinSize(), 
+											Settings.haditeCoalOre.getMinHeight(), 
+											Settings.haditeCoalOre.getMaxHeight());
+		}
     } // end setOreGenSettings()
     
 
