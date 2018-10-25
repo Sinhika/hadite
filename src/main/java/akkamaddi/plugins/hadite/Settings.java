@@ -9,7 +9,6 @@ import alexndr.api.config.types.ConfigItem;
 import alexndr.api.config.types.ConfigOre;
 import alexndr.api.config.types.ConfigTool;
 import alexndr.api.logger.LogHelper;
-import alexndr.plugins.Fusion.ModInfo;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
