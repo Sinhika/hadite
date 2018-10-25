@@ -1,0 +1,6 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "haditecoal:items/hadite_steel_ingot"
+    }
+}

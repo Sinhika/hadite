@@ -31,8 +31,9 @@ archivesBaseName = "hadite"
 minecraft {
     version = "${version_forge_long}"
     runDir = "run"
+    runDir = "run"
     
-    replaceIn "APIInfo.java"
+    replaceIn "ModInfo.java"
     replace "@MODVERSION@", "${project.version_mod}." + getVersionAppendage()
     
     mappings = version_mappings
