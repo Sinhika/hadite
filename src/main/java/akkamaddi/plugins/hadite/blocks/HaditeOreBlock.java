@@ -11,6 +11,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
 import net.minecraft.util.EnumParticleTypes;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -48,22 +49,24 @@ public class HaditeOreBlock extends SimpleBlock
         return true;
     }
 
+    @Override
     @SideOnly(Side.CLIENT)
-    public void randomDisplayTick(World world, int x, int y, int z, Random random)
+    public void randomDisplayTick(IBlockState stateIn, World world, BlockPos pos, Random random)
     {
-        if (Settings.MakeOreFlame == true)
+        super.randomDisplayTick(stateIn, world, pos, random);
+
+        if (random.nextInt(10) == 0)
         {
-            float f1 = (float)x - 0.5F;
-            float f2 = (float)y - 0.5F;
-            float f3 = (float)z - 0.5F;
-            float f4 = random.nextFloat() * 2.0f;
-            float f5 = random.nextFloat() * 2.0f;
-            float f6 = random.nextFloat() * 2.0f;
-            world.spawnParticle(EnumParticleTypes.LAVA, (double)(f1 + f4), (double)(f2 + f5) , (double)(f3 + f6), 0.0D, 0.0D, 0.0D);
+        	if (Settings.MakeOreFlame == true)
+        	{
+        		double f1 = (double) pos.getX() - 0.5F;
+        		double f2 = (double) pos.getY() - 0.5F;
+        		double f3 = (double) pos.getZ() - 0.5F;
+        		double f4 = random.nextDouble() * 2.0f;
+        		double f5 = random.nextDouble() * 2.0f;
+        		double f6 = random.nextDouble() * 2.0f;
+        		world.spawnParticle(EnumParticleTypes.LAVA, (double)(f1 + f4), (double)(f2 + f5) , (double)(f3 + f6), 0.0D, 0.0D, 0.0D);
+        	}
         }
-        else
-        {
-            return;
-        }
-    }
-}
+    } // end randomDisplayTick()
+} // end class
