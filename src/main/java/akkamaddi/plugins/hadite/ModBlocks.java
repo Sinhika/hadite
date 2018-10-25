@@ -16,11 +16,11 @@ public class ModBlocks
 {
     //blocks
     public static HaditeOreBlock blockHaditeCoalOre 
-    	= (HaditeOreBlock) new HaditeOreBlock("blockHaditeCoalOre", Material.ROCK).setStepSound(SoundType.STONE);
+    	= (HaditeOreBlock) new HaditeOreBlock("block_hadite_coal_ore", Material.ROCK).setStepSound(SoundType.STONE);
     public static HaditeStorageBlock blockHaditeCoalBlock
-    	= (HaditeStorageBlock) new HaditeStorageBlock("blockHaditeCoalBlock", Material.ROCK).setStepSound(SoundType.STONE);
+    	= (HaditeStorageBlock) new HaditeStorageBlock("block_hadite_coal_block", Material.ROCK).setStepSound(SoundType.STONE);
     public static SimpleBlock blockHaditeSteel 
-    	= new SimpleBlock("blockHaditeSteel", HaditeCoal.plugin, Material.IRON, 
+    	= new SimpleBlock("block_hadite_steel", HaditeCoal.plugin, Material.IRON, 
     			ContentCategories.Block.GENERAL).setStepSound(SoundType.METAL);
     public static SimpleBlock blockGestankenzinn 
     	= new SimpleBlock("block_gestankenzinn", HaditeCoal.plugin, Material.IRON, 

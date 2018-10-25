@@ -13,36 +13,36 @@ import net.minecraftforge.registries.IForgeRegistry;
 public class ModItems 
 {
     // Hadite
-    public static SimpleItem haditeCoalIngot = new SimpleItem("haditeCoalIngot", HaditeCoal.plugin);
+    public static SimpleItem haditeCoalIngot = new SimpleItem("hadite_coal_ingot", HaditeCoal.plugin);
 
     //Hadite Steel
-    public static SimpleItem haditeSteelIngot = new SimpleItem("haditeSteelIngot", HaditeCoal.plugin);
+    public static SimpleItem haditeSteelIngot = new SimpleItem("hadite_steel_ingot", HaditeCoal.plugin);
     public static SimpleItem largeHaditeSteelChunkItem 
-    	= new SimpleItem("largeHaditeSteelChunkItem", HaditeCoal.plugin);
+    	= new SimpleItem("large_hadite_steel_chunk_item", HaditeCoal.plugin);
 
     public static SimpleSword haditeSteelSword 
-    	= new SimpleSword("haditeSteelSword", HaditeCoal.plugin, Content.toolHaditeSteel);
+    	= new SimpleSword("hadite_steel_sword", HaditeCoal.plugin, Content.toolHaditeSteel);
     public static SimpleShovel haditeSteelShovel 
-    	= new SimpleShovel("haditeSteelShovel", HaditeCoal.plugin, Content.toolHaditeSteel);
+    	= new SimpleShovel("hadite_steel_shovel", HaditeCoal.plugin, Content.toolHaditeSteel);
     public static SimpleAxe haditeSteelAxe 
-    	= new SimpleAxe("haditeSteelAxe", HaditeCoal.plugin, Content.toolHaditeSteel);
+    	= new SimpleAxe("hadite_steel_axe", HaditeCoal.plugin, Content.toolHaditeSteel);
     public static SimplePickaxe haditeSteelPickaxe 
-    	= new SimplePickaxe("haditeSteelPickaxe", HaditeCoal.plugin, Content.toolHaditeSteel);
+    	= new SimplePickaxe("hadite_steel_pickaxe", HaditeCoal.plugin, Content.toolHaditeSteel);
 
     //Gestankenzinn
     public static SimpleItem gestankenzinnIngot 
-    	= new SimpleItem("gestankenzinnIngot", HaditeCoal.plugin);
+    	= new SimpleItem("gestankenzinn_ingot", HaditeCoal.plugin);
     public static SimpleItem largeGestankenzinnChunkItem 
-    	= new SimpleItem("largeGestankenzinnChunkItem", HaditeCoal.plugin);
+    	= new SimpleItem("large_gestankenzinn_chunk_item", HaditeCoal.plugin);
 
     public static SimpleSword gestankenzinnSword
-    	= new SimpleSword("gestankenzinnSword", HaditeCoal.plugin, Content.toolGestankenzinn);
+    	= new SimpleSword("gestankenzinn_sword", HaditeCoal.plugin, Content.toolGestankenzinn);
     public static SimpleShovel gestankenzinnShovel
-    	= new SimpleShovel("gestankenzinnShovel", HaditeCoal.plugin, Content.toolGestankenzinn);
+    	= new SimpleShovel("gestankenzinn_shovel", HaditeCoal.plugin, Content.toolGestankenzinn);
     public static SimpleAxe gestankenzinnAxe
-    	= new SimpleAxe("gestankenzinnAxe", HaditeCoal.plugin, Content.toolGestankenzinn);
+    	= new SimpleAxe("gestankenzinn_axe", HaditeCoal.plugin, Content.toolGestankenzinn);
     public static SimplePickaxe gestankenzinnPickaxe
-    	= new SimplePickaxe("gestankenzinnPickaxe", HaditeCoal.plugin, Content.toolGestankenzinn);
+    	= new SimplePickaxe("gestankenzinn_pickaxe", HaditeCoal.plugin, Content.toolGestankenzinn);
 
     
     public static void configureItems()
