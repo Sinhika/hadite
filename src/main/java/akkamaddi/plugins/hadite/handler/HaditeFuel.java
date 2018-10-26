@@ -12,7 +12,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 public class HaditeFuel
 {
 	@SubscribeEvent
-    public void setBurnTimes(FurnaceFuelBurnTimeEvent event)
+    public static void setBurnTimes(FurnaceFuelBurnTimeEvent event)
     {
         if (event.getItemStack().isItemEqual(new ItemStack(ModItems.haditeCoalIngot)))
         {

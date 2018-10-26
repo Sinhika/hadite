@@ -45,10 +45,10 @@ public class Settings
     private static final int gestankenzinnHarvestLevel = 0;
 
     // spawning
-    private static final int haditeSpawnRate = 5;
+    private static final int haditeSpawnRate = 9;
     private static final int haditeVeinSize = 17; 
-    private static final int haditeMinSpawnHeight = 0;
-    private static final int haditeMaxSpawnHeight = 255;
+    private static final int haditeMinSpawnHeight = 1;
+    private static final int haditeMaxSpawnHeight = 127;
 
     // big configuration object
 	private static Configuration settings;

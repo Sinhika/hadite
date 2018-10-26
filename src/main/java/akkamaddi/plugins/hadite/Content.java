@@ -22,7 +22,9 @@ import net.minecraftforge.oredict.OreDictionary;
 public class Content
 {
 	public static ToolMaterial toolHaditeSteel, toolGestankenzinn;
-
+	public static boolean use_simple_ores = false;
+	public static boolean use_fusion = false;
+	
     /**
      * Loads all the mod content, by calling the methods below.
      */
@@ -60,6 +62,15 @@ public class Content
         }
     } // end preInitialize()
 
+    /**
+     * initialize various mod support values.
+     */
+    public static void configureModSupport()
+    {
+    	Content.use_simple_ores = Loader.isModLoaded("simpleores");
+    	Content.use_fusion = Loader.isModLoaded("fusion");
+    } // end configureModSupport()
+    
     /**
      * Sets repair materials for the tools/armor of that type. ie. Copper Ingot to repair copper tools and armor.
      */

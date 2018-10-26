@@ -58,8 +58,8 @@ public class HaditeCoal
     @EventHandler
     public void load(FMLInitializationEvent event)
     {
-        // run tab icon call
         setTabIcons();
+        Content.configureModSupport();
         Content.setRepairMaterials();
         setOreGenSettings();
         Content.addSmeltingRecipes();

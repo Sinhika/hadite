@@ -19,7 +19,7 @@ public class ModInfo
 	public static final String DESCRIPTION = "A nether coal with two alloys";
 	public static final String ACCEPTED_VERSIONS = "[1.12.2,)";
 	public static final String DEPENDENCIES = 
-		"required-after:simplecore@[1.7.2.0,);required-after:simpleores;required-after:fusion;after:aesthetics;after:machines";
+		"required-after:simplecore@[1.7.3.0,);after:simpleores;after:fusion;after:aesthetics;after:machines";
 	public static final String URL = "http://minecraft.curseforge.com/projects/hadite";
 	public static final List<String> AUTHORS = Lists.newArrayList("akkamaddi", "Sinhika");
 	public static final String CREDITS = "Created by akkamaddi. Maintained by Sinhika";
