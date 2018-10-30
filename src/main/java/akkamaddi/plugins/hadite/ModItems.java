@@ -156,9 +156,15 @@ public class ModItems
 		if (Settings.haditeCoalIngot.isEnabled())
 			OreDictionary.registerOre("haditeCoal", new ItemStack(ModItems.haditeCoalIngot));
 		if (Settings.haditeSteelIngot.isEnabled())
+		{
 			OreDictionary.registerOre("ingotHaditeSteel", new ItemStack(ModItems.haditeSteelIngot));
+			OreDictionary.registerOre("ingotSteelAlloy", new ItemStack(ModItems.haditeSteelIngot));
+		}
 		if (Settings.gestankenzinnIngot.isEnabled())
+		{
 			OreDictionary.registerOre("ingotGestankenzinn", new ItemStack(ModItems.gestankenzinnIngot));
+			OreDictionary.registerOre("ingotTinAlloy", new ItemStack(ModItems.gestankenzinnIngot));
+		}
 	} // end registerOreDictionary()
 
 } // end class

@@ -1,0 +1,13 @@
+{
+	"parent" : "haditecoal:recipes/root",
+   	"rewards": {
+    	"recipes": [
+    	]
+  	},
+    "criteria" : {
+    },
+  "requirements": [
+    [
+   	]
+  ]
+}

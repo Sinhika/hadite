@@ -1,0 +1,19 @@
+{
+	"conditions" : [
+		{
+			"type" : "haditecoal:hadite_coal_enabled",
+			"value" : true
+		} ],
+	"type" : "minecraft:crafting_shaped",
+	"result" : {
+		"item" : "haditecoal:block_hadite_coal_block"
+	},
+	"pattern" : [
+		"SSS",
+		"SSS",
+		"SSS"
+	],
+	"key" : {
+		"S" : { "item" : "#HADITECOAL"}
+	}
+}
