@@ -6,30 +6,7 @@ public class Recipes
 //    @SuppressWarnings("unchecked")
 //    private static void addRecipes()
 //    {
-//        // Storage Block
-//        GameRegistry.addRecipe(new ItemStack(
-//                Content.blockHaditeCoalBlock, 1), new Object[] { "AAA",
-//                "AAA", "AAA", 'A', Content.haditeCoalIngot });
-//        GameRegistry.addRecipe(
-//                new ItemStack(Content.blockHaditeSteel, 1),
-//                new Object[] { "AAA", "AAA", "AAA", 'A',
-//                        Content.haditeSteelIngot });
-//        GameRegistry.addRecipe(new ItemStack(Content.blockGestankenzinn,
-//                1), new Object[] { "AAA", "AAA", "AAA", 'A',
-//                Content.gestankenzinnIngot });
-//        
 //        // Item Recipe
-//        // Ingot Recipe
-//        GameRegistry.addShapelessRecipe(new ItemStack(
-//                Content.haditeCoalIngot, 9),
-//                new Object[] { Content.blockHaditeCoalBlock });
-//        GameRegistry.addShapelessRecipe(new ItemStack(
-//                Content.haditeSteelIngot, 9),
-//                new Object[] { Content.blockHaditeSteel });
-//        GameRegistry.addShapelessRecipe(new ItemStack(
-//                Content.gestankenzinnIngot, 9),
-//                new Object[] { Content.blockGestankenzinn });
-//        
 //        // Hadite Steel Tools
 //        CraftingManager
 //                .getInstance()
