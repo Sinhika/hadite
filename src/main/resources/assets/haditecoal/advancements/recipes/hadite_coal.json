@@ -1,0 +1,25 @@
+{
+	"parent" : "haditecoal:recipes/root",
+   	"rewards": {
+    	"recipes": [
+    		"haditecoal:hadite_coal_block", "haditecoal:hadite_coal_ingot", "haditecoal:torch"
+    	]
+  	},
+    "criteria" : {
+    	"has_hadite_coal" : {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"item": "haditecoal:hadite_coal_ingot"
+					}
+				]
+			}
+		}
+    },
+  "requirements": [
+    [
+    	"has_hadite_coal"
+   	]
+  ]
+}
