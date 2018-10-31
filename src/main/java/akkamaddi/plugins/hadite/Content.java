@@ -122,13 +122,16 @@ public class Content
                 FusionMaterial.of(new ItemStack(ModItems.haditeCoalIngot)),
                 FusionMaterial.of(new ItemStack(Items.GUNPOWDER)),
                 new ItemStack(ModItems.largeHaditeSteelChunkItem), 6.0F);
-        FusionFurnaceRecipes
-                .addSmelting(
-                        FusionMaterial.of("ingotTin"),
-                        FusionMaterial.of(new ItemStack(ModItems.haditeCoalIngot)),
-                        FusionMaterial.of(new ItemStack(Items.COAL, 1, OreDictionary.WILDCARD_VALUE)),
-                        new ItemStack(ModItems.largeGestankenzinnChunkItem), 5.0F);
-
+        
+        if (OreDictionary.doesOreNameExist("ingotTin"))
+        {
+        	FusionFurnaceRecipes
+        	.addSmelting(
+        			FusionMaterial.of("ingotTin"),
+        			FusionMaterial.of(new ItemStack(ModItems.haditeCoalIngot)),
+        			FusionMaterial.of(new ItemStack(Items.COAL, 1, OreDictionary.WILDCARD_VALUE)),
+        			new ItemStack(ModItems.largeGestankenzinnChunkItem), 5.0F);
+        }
     } // end addFusionFurnaceRecipes
     
     public static void addRecyclingRecipes()
@@ -186,69 +189,72 @@ public class Content
                 20.0F);
         
         // recycle your Onyx
-        FusionFurnaceRecipes.addSmelting(
-                new ItemStack(alexndr.plugins.SimpleOres.ModItems.onyx_helmet, 1,
-                		OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.NETHERRACK),
-                new ItemStack(ModItems.haditeCoalIngot),
-                new ItemStack(alexndr.plugins.SimpleOres.ModBlocks.onyx_ore), 20.0F);
-        FusionFurnaceRecipes.addSmelting(
-                new ItemStack(alexndr.plugins.SimpleOres.ModItems.onyx_chestplate, 1,
-                		OreDictionary.WILDCARD_VALUE),
-                new ItemStack(Blocks.NETHERRACK, 2, 0),
-                new ItemStack(ModItems.haditeCoalIngot, 2, 0),
-                new ItemStack(alexndr.plugins.SimpleOres.ModBlocks.onyx_ore, 2, 0), 40.0F);
-        FusionFurnaceRecipes.addSmelting(
-                new ItemStack(alexndr.plugins.SimpleOres.ModItems.onyx_leggings, 1,
-                		OreDictionary.WILDCARD_VALUE),
-                new ItemStack(Blocks.NETHERRACK, 2, 0),
-                new ItemStack(ModItems.haditeCoalIngot, 2, 0),
-                new ItemStack(alexndr.plugins.SimpleOres.ModBlocks.onyx_ore, 2, 0), 40.0F);
-        FusionFurnaceRecipes.addSmelting(
-                new ItemStack(alexndr.plugins.SimpleOres.ModItems.onyx_boots, 1,
-                		OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.NETHERRACK),
-                new ItemStack(ModItems.haditeCoalIngot),
-                new ItemStack(alexndr.plugins.SimpleOres.ModBlocks.onyx_ore), 20.0F);
-        FusionFurnaceRecipes.addSmelting(
-                new ItemStack(alexndr.plugins.SimpleOres.ModItems.onyx_sword, 1,
-                		OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.NETHERRACK),
-                new ItemStack(ModItems.haditeCoalIngot),
-                new ItemStack(alexndr.plugins.SimpleOres.ModBlocks.onyx_ore), 20.0F);
-        FusionFurnaceRecipes.addSmelting(
-                new ItemStack(alexndr.plugins.SimpleOres.ModItems.onyx_shovel, 1,
-                		OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.NETHERRACK),
-                new ItemStack(ModItems.haditeCoalIngot),
-                new ItemStack(alexndr.plugins.SimpleOres.ModBlocks.onyx_ore), 20.0F);
-        FusionFurnaceRecipes.addSmelting(
-                new ItemStack(alexndr.plugins.SimpleOres.ModItems.onyx_pickaxe, 1,
-                		OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.NETHERRACK),
-                new ItemStack(ModItems.haditeCoalIngot),
-                new ItemStack(alexndr.plugins.SimpleOres.ModBlocks.onyx_ore), 20.0F);
-        FusionFurnaceRecipes.addSmelting(
-                new ItemStack(alexndr.plugins.SimpleOres.ModItems.onyx_axe, 1,
-                		OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.NETHERRACK),
-                new ItemStack(ModItems.haditeCoalIngot),
-                new ItemStack(alexndr.plugins.SimpleOres.ModBlocks.onyx_ore), 20.0F);
-        FusionFurnaceRecipes.addSmelting(
-                new ItemStack(alexndr.plugins.SimpleOres.ModItems.onyx_hoe, 1,
-                		OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.NETHERRACK),
-                new ItemStack(ModItems.haditeCoalIngot),
-                new ItemStack(alexndr.plugins.SimpleOres.ModBlocks.onyx_ore), 20.0F);
-        FusionFurnaceRecipes.addSmelting(
-                new ItemStack(alexndr.plugins.SimpleOres.ModItems.onyx_bow, 1,
-                		OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.NETHERRACK),
-                new ItemStack(ModItems.haditeCoalIngot),
-                new ItemStack(alexndr.plugins.SimpleOres.ModBlocks.onyx_ore), 20.0F);
-        // extra Onyx recycling
-        FusionFurnaceRecipes.addSmelting(
-                new ItemStack(alexndr.plugins.SimpleOres.ModItems.onyx_rod, 1,
-                		OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.NETHERRACK),
-                new ItemStack(ModItems.haditeCoalIngot),
-                new ItemStack(alexndr.plugins.SimpleOres.ModBlocks.onyx_ore), 20.0F);
-        FusionFurnaceRecipes.addSmelting(
-                new ItemStack(alexndr.plugins.SimpleOres.ModItems.onyx_shears, 1,
-                		OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.NETHERRACK),
-                new ItemStack(ModItems.haditeCoalIngot),
-                new ItemStack(alexndr.plugins.SimpleOres.ModBlocks.onyx_ore), 20.0F);
+        if (Content.use_simple_ores)
+        {
+        	FusionFurnaceRecipes.addSmelting(
+        			new ItemStack(alexndr.plugins.SimpleOres.ModItems.onyx_helmet, 1,
+        					OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.NETHERRACK),
+        			new ItemStack(ModItems.haditeCoalIngot),
+        			new ItemStack(alexndr.plugins.SimpleOres.ModBlocks.onyx_ore), 20.0F);
+        	FusionFurnaceRecipes.addSmelting(
+        			new ItemStack(alexndr.plugins.SimpleOres.ModItems.onyx_chestplate, 1,
+        					OreDictionary.WILDCARD_VALUE),
+        			new ItemStack(Blocks.NETHERRACK, 2, 0),
+        			new ItemStack(ModItems.haditeCoalIngot, 2, 0),
+        			new ItemStack(alexndr.plugins.SimpleOres.ModBlocks.onyx_ore, 2, 0), 40.0F);
+        	FusionFurnaceRecipes.addSmelting(
+        			new ItemStack(alexndr.plugins.SimpleOres.ModItems.onyx_leggings, 1,
+        					OreDictionary.WILDCARD_VALUE),
+        			new ItemStack(Blocks.NETHERRACK, 2, 0),
+        			new ItemStack(ModItems.haditeCoalIngot, 2, 0),
+        			new ItemStack(alexndr.plugins.SimpleOres.ModBlocks.onyx_ore, 2, 0), 40.0F);
+        	FusionFurnaceRecipes.addSmelting(
+        			new ItemStack(alexndr.plugins.SimpleOres.ModItems.onyx_boots, 1,
+        					OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.NETHERRACK),
+        			new ItemStack(ModItems.haditeCoalIngot),
+        			new ItemStack(alexndr.plugins.SimpleOres.ModBlocks.onyx_ore), 20.0F);
+        	FusionFurnaceRecipes.addSmelting(
+        			new ItemStack(alexndr.plugins.SimpleOres.ModItems.onyx_sword, 1,
+        					OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.NETHERRACK),
+        			new ItemStack(ModItems.haditeCoalIngot),
+        			new ItemStack(alexndr.plugins.SimpleOres.ModBlocks.onyx_ore), 20.0F);
+        	FusionFurnaceRecipes.addSmelting(
+        			new ItemStack(alexndr.plugins.SimpleOres.ModItems.onyx_shovel, 1,
+        					OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.NETHERRACK),
+        			new ItemStack(ModItems.haditeCoalIngot),
+        			new ItemStack(alexndr.plugins.SimpleOres.ModBlocks.onyx_ore), 20.0F);
+        	FusionFurnaceRecipes.addSmelting(
+        			new ItemStack(alexndr.plugins.SimpleOres.ModItems.onyx_pickaxe, 1,
+        					OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.NETHERRACK),
+        			new ItemStack(ModItems.haditeCoalIngot),
+        			new ItemStack(alexndr.plugins.SimpleOres.ModBlocks.onyx_ore), 20.0F);
+        	FusionFurnaceRecipes.addSmelting(
+        			new ItemStack(alexndr.plugins.SimpleOres.ModItems.onyx_axe, 1,
+        					OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.NETHERRACK),
+        			new ItemStack(ModItems.haditeCoalIngot),
+        			new ItemStack(alexndr.plugins.SimpleOres.ModBlocks.onyx_ore), 20.0F);
+        	FusionFurnaceRecipes.addSmelting(
+        			new ItemStack(alexndr.plugins.SimpleOres.ModItems.onyx_hoe, 1,
+        					OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.NETHERRACK),
+        			new ItemStack(ModItems.haditeCoalIngot),
+        			new ItemStack(alexndr.plugins.SimpleOres.ModBlocks.onyx_ore), 20.0F);
+        	FusionFurnaceRecipes.addSmelting(
+        			new ItemStack(alexndr.plugins.SimpleOres.ModItems.onyx_bow, 1,
+        					OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.NETHERRACK),
+        			new ItemStack(ModItems.haditeCoalIngot),
+        			new ItemStack(alexndr.plugins.SimpleOres.ModBlocks.onyx_ore), 20.0F);
+        	// extra Onyx recycling
+        	FusionFurnaceRecipes.addSmelting(
+        			new ItemStack(alexndr.plugins.SimpleOres.ModItems.onyx_rod, 1,
+        					OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.NETHERRACK),
+        			new ItemStack(ModItems.haditeCoalIngot),
+        			new ItemStack(alexndr.plugins.SimpleOres.ModBlocks.onyx_ore), 20.0F);
+        	FusionFurnaceRecipes.addSmelting(
+        			new ItemStack(alexndr.plugins.SimpleOres.ModItems.onyx_shears, 1,
+        					OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.NETHERRACK),
+        			new ItemStack(ModItems.haditeCoalIngot),
+        			new ItemStack(alexndr.plugins.SimpleOres.ModBlocks.onyx_ore), 20.0F);
+        } // end onyx recycling
         
         if (Loader.isModLoaded("aesthetics"))
         {

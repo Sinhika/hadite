@@ -3,8 +3,8 @@
   		"hadite_steel_enabled" : "akkamaddi.plugins.hadite.conditions.HaditeSteelConditionFactory",
   		"hadite_steel_tools_enabled" : "akkamaddi.plugins.hadite.conditions.HaditeSteelConditionFactory",
   		"hadite_coal_enabled" : "akkamaddi.plugins.hadite.conditions.HaditeCoalConditionFactory",
+  		"hadite_coal_exists" : "akkamaddi.plugins.hadite.conditions.HaditeCoalConditionFactory",
   		"gestankenzinn_enabled" : "akkamaddi.plugins.hadite.conditions.GestankenzinnConditionFactory",
-  		"gestankenzinn_tools_enabled" : "akkamaddi.plugins.hadite.conditions.GestankenzinnConditionFactory",
-  		"recycling_enabled" : "akkamaddi.plugins.hadite.conditions.RecyclingConditionFactory"
+  		"gestankenzinn_tools_enabled" : "akkamaddi.plugins.hadite.conditions.GestankenzinnConditionFactory"
  	}
 }

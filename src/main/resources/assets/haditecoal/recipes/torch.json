@@ -1,0 +1,26 @@
+{
+	"conditions": [
+		{
+			"type": "haditecoal:hadite_coal_exists",
+			"value": true
+		}
+	],
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"YYY",
+		"Y#Y",
+		"YYY"
+	],
+	"key": {
+		"#" : {
+			"item": "haditecoal:hadite_coal_ingot"
+		},
+		"Y": {
+			"item": "#STICKWOOD"
+		}
+	},
+	"result": {
+		"item": "minecraft:torch",
+		"count": 64
+	}
+}

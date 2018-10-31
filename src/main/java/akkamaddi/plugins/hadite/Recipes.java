@@ -57,13 +57,6 @@ public class Recipes
 //                .add(new ShapedOreRecipe(Content.gestankenzinnSword,
 //                        true, new Object[] { "X", "X", "Y", 'X',
 //                                "ingotGestankenzinn", 'Y', "stickWood" }));
-//        // torches
-//        CraftingManager
-//                .getInstance()
-//                .getRecipeList()
-//                .add(new ShapedOreRecipe(new ItemStack(Blocks.torch, 64),
-//                        true, new Object[] { "YYY", "YXY", "YYY", 'X',
-//                                "haditeCoal", 'Y', "stickWood" }));
 //    } // end addRecipes
     
    
