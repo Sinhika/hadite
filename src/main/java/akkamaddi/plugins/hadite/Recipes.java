@@ -17,12 +17,6 @@ public class Recipes
 //        CraftingManager
 //                .getInstance()
 //                .getRecipeList()
-//                .add(new ShapedOreRecipe(Content.haditeSteelAxe, true,
-//                        new Object[] { "XX ", "XY ", " Y ", 'X',
-//                                "ingotHaditeSteel", 'Y', "stickWood" }));
-//        CraftingManager
-//                .getInstance()
-//                .getRecipeList()
 //                .add(new ShapedOreRecipe(Content.haditeSteelShovel,
 //                        true, new Object[] { "X", "Y", "Y", 'X',
 //                                "ingotHaditeSteel", 'Y', "stickWood" }));
