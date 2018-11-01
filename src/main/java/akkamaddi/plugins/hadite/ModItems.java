@@ -1,8 +1,10 @@
 package akkamaddi.plugins.hadite;
 
 import alexndr.api.content.items.SimpleAxe;
+import alexndr.api.content.items.SimpleHoe;
 import alexndr.api.content.items.SimpleItem;
 import alexndr.api.content.items.SimplePickaxe;
+import alexndr.api.content.items.SimpleShears;
 import alexndr.api.content.items.SimpleShovel;
 import alexndr.api.content.items.SimpleSword;
 import net.minecraft.item.Item;
@@ -28,7 +30,11 @@ public class ModItems
     	= new SimpleAxe("hadite_steel_axe", HaditeCoal.plugin, Content.toolHaditeSteel);
     public static SimplePickaxe haditeSteelPickaxe 
     	= new SimplePickaxe("hadite_steel_pickaxe", HaditeCoal.plugin, Content.toolHaditeSteel);
-
+    public static SimpleHoe hadite_steel_hoe
+    	= new SimpleHoe("hadite_steel_hoe", HaditeCoal.plugin, Content.toolHaditeSteel);
+    public static SimpleShears hadite_steel_shears
+    	= new SimpleShears("hadite_steel_shears", HaditeCoal.plugin, Content.toolHaditeSteel);
+    
     //Gestankenzinn
     public static SimpleItem gestankenzinnIngot 
     	= new SimpleItem("gestankenzinn_ingot", HaditeCoal.plugin);
@@ -79,6 +85,8 @@ public class ModItems
     		haditeSteelShovel.setConfigEntry(Settings.haditeSteelTools).setCreativeTab(HaditeCoal.tabAkkamaddiHadite);
     		haditeSteelAxe.setConfigEntry(Settings.haditeSteelTools).setCreativeTab(HaditeCoal.tabAkkamaddiHadite);
     		haditeSteelPickaxe.setConfigEntry(Settings.haditeSteelTools).setCreativeTab(HaditeCoal.tabAkkamaddiHadite);
+    		hadite_steel_hoe.setConfigEntry(Settings.haditeSteelTools).setCreativeTab(HaditeCoal.tabAkkamaddiHadite);
+    		hadite_steel_shears.setConfigEntry(Settings.haditeSteelTools).setCreativeTab(HaditeCoal.tabAkkamaddiHadite);
     	}
     	if (Settings.gestankenzinnTools.isEnabled())
     	{
@@ -108,7 +116,8 @@ public class ModItems
     	}
     	if (Settings.haditeSteelTools.isEnabled())
     	{
-    		registry.registerAll(haditeSteelSword, haditeSteelShovel, haditeSteelAxe, haditeSteelPickaxe);
+    		registry.registerAll(haditeSteelSword, haditeSteelShovel, haditeSteelAxe, haditeSteelPickaxe,
+    				hadite_steel_hoe, hadite_steel_shears);
     	}
     	if (Settings.gestankenzinnTools.isEnabled())
     	{
@@ -137,7 +146,9 @@ public class ModItems
     		haditeSteelSword.registerItemModel();
     		haditeSteelShovel.registerItemModel();
     		haditeSteelAxe.registerItemModel();
-    		haditeSteelPickaxe.registerItemModel();    		
+    		haditeSteelPickaxe.registerItemModel(); 
+    		hadite_steel_hoe.registerItemModel();
+    		hadite_steel_shears.registerItemModel();
     	}
     	if (Settings.gestankenzinnTools.isEnabled())
     	{
