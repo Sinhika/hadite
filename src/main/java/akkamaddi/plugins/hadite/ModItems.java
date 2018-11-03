@@ -49,8 +49,11 @@ public class ModItems
     	= new SimpleAxe("gestankenzinn_axe", HaditeCoal.plugin, Content.toolGestankenzinn);
     public static SimplePickaxe gestankenzinnPickaxe
     	= new SimplePickaxe("gestankenzinn_pickaxe", HaditeCoal.plugin, Content.toolGestankenzinn);
-
-    
+    public static SimpleHoe gestankenzinn_hoe = 
+    		new SimpleHoe("gestankenzinn_hoe", HaditeCoal.plugin, Content.toolGestankenzinn);
+    public static SimpleShears gestankenzinn_shears =
+    		new SimpleShears("gestankenzinn_shears", HaditeCoal.plugin, Content.toolGestankenzinn);
+    		
     public static void configureItems()
     {
         // Hadite Coal
@@ -94,6 +97,8 @@ public class ModItems
     		gestankenzinnShovel.setConfigEntry(Settings.gestankenzinnTools).setCreativeTab(HaditeCoal.tabAkkamaddiHadite);
     		gestankenzinnAxe.setConfigEntry(Settings.gestankenzinnTools).setCreativeTab(HaditeCoal.tabAkkamaddiHadite);
     		gestankenzinnPickaxe.setConfigEntry(Settings.gestankenzinnTools).setCreativeTab(HaditeCoal.tabAkkamaddiHadite);
+    		gestankenzinn_hoe.setConfigEntry(Settings.gestankenzinnTools).setCreativeTab(HaditeCoal.tabAkkamaddiHadite);
+    		gestankenzinn_shears.setConfigEntry(Settings.gestankenzinnTools).setCreativeTab(HaditeCoal.tabAkkamaddiHadite);
     	}
     } // end configureTools()
 
@@ -121,7 +126,8 @@ public class ModItems
     	}
     	if (Settings.gestankenzinnTools.isEnabled())
     	{
-    		registry.registerAll(gestankenzinnSword, gestankenzinnShovel, gestankenzinnAxe, gestankenzinnPickaxe);
+    		registry.registerAll(gestankenzinnSword, gestankenzinnShovel, gestankenzinnAxe, gestankenzinnPickaxe,
+    				gestankenzinn_hoe, gestankenzinn_shears);
     	}    	
 	} // end register()
 
@@ -156,6 +162,8 @@ public class ModItems
     		gestankenzinnShovel.registerItemModel(); 
     		gestankenzinnAxe.registerItemModel();
     		gestankenzinnPickaxe.registerItemModel();
+    		gestankenzinn_hoe.registerItemModel();
+    		gestankenzinn_shears.registerItemModel();
     	}    	
 	} // end registerModels()
 

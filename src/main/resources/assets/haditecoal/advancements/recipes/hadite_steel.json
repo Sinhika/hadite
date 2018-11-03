@@ -1,0 +1,25 @@
+{
+	"parent" : "haditecoal:recipes/root",
+   	"rewards": {
+    	"recipes": [
+    		"haditecoal:hadite_steel_axe", "haditecoal:hadite_steel_hoe", "haditecoal:hadite_steel_pickaxe",
+    		"haditecoal:hadite_steel_shears", "haditecoal:hadite_steel_shovel", "haditecoal:hadite_steel_sword",
+    		"haditecoal:hadite_steel_block", "haditecoal:hadite_steel_ingot"
+    	]
+  	},
+    "criteria" : {
+    	"has_hadite_steel" : {
+			"trigger": "minecraft:inventory_changed",
+			"conditions" : {
+				"items" : [
+					{ "item" : "haditecoal:hadite_steel_ingot"}
+				]
+			}
+    	}
+    },
+  "requirements": [
+    [
+    	"has_hadite_steel"
+   	]
+  ]
+}

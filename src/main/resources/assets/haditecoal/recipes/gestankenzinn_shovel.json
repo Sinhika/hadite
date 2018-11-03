@@ -1,0 +1,20 @@
+{
+	"conditions" : [
+		{
+			"type" : "haditecoal:gestankenzinn_tools_enabled",
+			"value" : true
+		} ],
+	"result" : {
+		"item" : "haditecoal:gestankenzinn_shovel"
+	},
+	"pattern" : [
+		" S ",
+		" T ",
+		" T "
+	],
+	"type" : "forge:ore_shaped",
+	"key" : {
+		"S" : { "item" : "#INGOTGESTANKENZINN"},
+		"T" : { "item" : "#STICKWOOD"}
+	}
+}
