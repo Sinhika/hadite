@@ -1,5 +1,9 @@
 package akkamaddi.plugins.hadite;
 
+import akkamaddi.plugins.hadite.modsupport.AestheticsContent;
+import akkamaddi.plugins.hadite.modsupport.FusionContent;
+import akkamaddi.plugins.hadite.modsupport.MachinesContent;
+import akkamaddi.plugins.hadite.modsupport.SimpleOresContent;
 import alexndr.api.content.inventory.SimpleTab;
 import alexndr.api.core.SimpleCoreAPI;
 import alexndr.api.helpers.game.OreGenerator;
@@ -59,14 +63,9 @@ public class HaditeCoal
     public void load(FMLInitializationEvent event)
     {
         setTabIcons();
-        Content.configureModSupport();
         Content.setRepairMaterials();
         setOreGenSettings();
         Content.addSmeltingRecipes();
-        Content.addFusionRecipes();
-        if (Settings.enableRecycling) {
-        	Content.addRecyclingRecipes();
-        } // end if recycling
         proxy.Init(event);
     }
 
@@ -74,6 +73,25 @@ public class HaditeCoal
     public void postInit(FMLPostInitializationEvent event)
     {
         LogHelper.info("HaditeCoal loaded");
+        Content.configureModSupport();
+        
+        if (Content.use_fusion) 
+        {
+            FusionContent.addFusionRecipes();
+            if (Settings.enableRecycling) {
+            	FusionContent.addRecyclingRecipes();
+                if (Content.use_simple_ores) {
+                	SimpleOresContent.addRecyclingRecipes();
+                }
+                if (Content.use_aesthetics && Content.use_simple_ores) {
+                	AestheticsContent.addRecyclingRecipes();
+                }
+                if (Content.use_machines && Content.use_simple_ores) 
+                {
+                	MachinesContent.addRecyclingRecipes();
+                }
+            } // end if recycling
+        }
         proxy.PostInit(event);
     }
     
