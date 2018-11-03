@@ -1,7 +1,6 @@
-# hadite
-akkamaddi's Hadite Coal
+# akkamaddi's Hadite Coal
 
-Source code for the Minecraft Forge mod Hadite Coal, originally by akkamaddi, ported and maintained by Sinhika
+Source code for the Minecraft Forge mod "Hadite Coal", originally by akkamaddi, ported and maintained by Sinhika
 
 Binary and documentation hosted on CurseForge at https://minecraft.curseforge.com/projects/akkamaddis-hadite-coal
 
