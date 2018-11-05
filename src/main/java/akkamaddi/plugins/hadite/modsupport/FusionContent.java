@@ -16,7 +16,7 @@ public class FusionContent
         FusionFurnaceRecipes.addSmelting(
                 FusionMaterial.of(new ItemStack(Items.FLINT)),
                 FusionMaterial.of(new ItemStack(ModItems.haditeCoalIngot)),
-                FusionMaterial.of(new ItemStack(Items.COAL, 1, OreDictionary.WILDCARD_VALUE)),
+                FusionMaterial.of(new ItemStack(Items.COAL)),
                 new ItemStack(Items.GUNPOWDER), 6.0F);
         
         // alloys
@@ -32,7 +32,7 @@ public class FusionContent
         	.addSmelting(
         			FusionMaterial.of("ingotTin"),
         			FusionMaterial.of(new ItemStack(ModItems.haditeCoalIngot)),
-        			FusionMaterial.of(new ItemStack(Items.COAL, 1, OreDictionary.WILDCARD_VALUE)),
+        			FusionMaterial.of(new ItemStack(Items.COAL)),
         			new ItemStack(ModItems.largeGestankenzinnChunkItem), 5.0F);
         }
     } // end addFusionFurnaceRecipes
@@ -43,25 +43,25 @@ public class FusionContent
         FusionFurnaceRecipes.addSmelting(
                 new ItemStack(ModItems.haditeSteelSword, 1,
                         OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.GRAVEL),
-                new ItemStack(Items.COAL, 1, OreDictionary.WILDCARD_VALUE),
+                new ItemStack(Items.COAL),
                 new ItemStack(ModItems.largeHaditeSteelChunkItem),
                 15.0F);
         FusionFurnaceRecipes.addSmelting(
                 new ItemStack(ModItems.haditeSteelShovel, 1,
                 		OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.GRAVEL),
-                new ItemStack(Items.COAL, 1, OreDictionary.WILDCARD_VALUE),
+                new ItemStack(Items.COAL),
                 new ItemStack(ModItems.largeHaditeSteelChunkItem),
                 15.0F);
         FusionFurnaceRecipes.addSmelting(
                 new ItemStack(ModItems.haditeSteelAxe, 1,
                 		OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.GRAVEL),
-                new ItemStack(Items.COAL, 1, OreDictionary.WILDCARD_VALUE),
+                new ItemStack(Items.COAL),
                 new ItemStack(ModItems.largeHaditeSteelChunkItem),
                 15.0F);
         FusionFurnaceRecipes.addSmelting(
                 new ItemStack(ModItems.haditeSteelPickaxe, 1,
                 		OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.GRAVEL),
-                new ItemStack(Items.COAL, 1, OreDictionary.WILDCARD_VALUE),
+                new ItemStack(Items.COAL),
                 new ItemStack(ModItems.largeHaditeSteelChunkItem),
                 15.0F);
         
@@ -69,25 +69,25 @@ public class FusionContent
         FusionFurnaceRecipes.addSmelting(
                 new ItemStack(ModItems.gestankenzinnSword, 1,
                 		OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.GRAVEL),
-                new ItemStack(Items.COAL, 1, OreDictionary.WILDCARD_VALUE),
+                new ItemStack(Items.COAL),
                 new ItemStack(ModItems.largeGestankenzinnChunkItem),
                 20.0F);
         FusionFurnaceRecipes.addSmelting(
                 new ItemStack(ModItems.gestankenzinnShovel, 1,
                 		OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.GRAVEL),
-                new ItemStack(Items.COAL, 1, OreDictionary.WILDCARD_VALUE),
+                new ItemStack(Items.COAL),
                 new ItemStack(ModItems.largeGestankenzinnChunkItem),
                 20.0F);
         FusionFurnaceRecipes.addSmelting(
                 new ItemStack(ModItems.gestankenzinnAxe, 1,
                 		OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.GRAVEL),
-                new ItemStack(Items.COAL, 1, OreDictionary.WILDCARD_VALUE),
+                new ItemStack(Items.COAL),
                 new ItemStack(ModItems.largeGestankenzinnChunkItem),
                 20.0F);
         FusionFurnaceRecipes.addSmelting(
                 new ItemStack(ModItems.gestankenzinnPickaxe, 1,
                 		OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.GRAVEL),
-                new ItemStack(Items.COAL, 1, OreDictionary.WILDCARD_VALUE),
+                new ItemStack(Items.COAL),
                 new ItemStack(ModItems.largeGestankenzinnChunkItem),
                 20.0F);
         
