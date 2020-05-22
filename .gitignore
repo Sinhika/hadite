@@ -1,3 +1,6 @@
+.classpath
+.project
+./.project
 build/
 gradle/
 run/
@@ -10,7 +13,5 @@ libs/
 gradlew
 gradlew.bat
 build.number
-./.classpath
-./.project
 bin/
 .gradle/
