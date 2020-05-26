@@ -29,15 +29,11 @@ public final class ConfigHelper
         
         HaditeConfig.INSTANCE.putFlag("gestankenzinn_making",
                 ConfigHolder.SERVER.serverEnableGestankenzinnMaking.get());
-        HaditeConfig.INSTANCE.putFlag("gestankenzinn_armor", 
-                ConfigHolder.SERVER.serverEnableGestankenzinnArmor.get());
         HaditeConfig.INSTANCE.putFlag("gestankenzinn_tools", 
                 ConfigHolder.SERVER.serverEnableGestankenzinnTools.get());
         
         HaditeConfig.INSTANCE.putFlag("hadite_steel_making", 
                 ConfigHolder.SERVER.serverEnableHaditeSteelMaking.get());
-        HaditeConfig.INSTANCE.putFlag("hadite_steel_armor",
-                ConfigHolder.SERVER.serverEnableHaditeSteelArmor.get());
         HaditeConfig.INSTANCE.putFlag("hadite_steel_tools",
                 ConfigHolder.SERVER.serverEnableHaditeSteelTools.get());
     } // end bakeServer

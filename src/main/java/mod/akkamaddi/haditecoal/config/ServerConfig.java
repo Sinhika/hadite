@@ -7,11 +7,9 @@ public final class ServerConfig
 {
     final ForgeConfigSpec.BooleanValue serverEnableRecycling; // recipe flag
     final ForgeConfigSpec.BooleanValue serverEnableGestankenzinnMaking; // recipe flag
-    final ForgeConfigSpec.BooleanValue serverEnableGestankenzinnArmor; // recipe flag
     final ForgeConfigSpec.BooleanValue serverEnableGestankenzinnTools; // recipe flag
     
     final ForgeConfigSpec.BooleanValue serverEnableHaditeSteelMaking; // recipe flag
-    final ForgeConfigSpec.BooleanValue serverEnableHaditeSteelArmor; // recipe flag
     final ForgeConfigSpec.BooleanValue serverEnableHaditeSteelTools; // recipe flag
     
     final ForgeConfigSpec.IntValue serverHaditeCoalBurnTime;
@@ -63,9 +61,6 @@ public final class ServerConfig
                 builder.comment("Enable making Gestankenzinn alloy in fusion furnace")
                 .translation(HaditeCoal.MODID + "config.EnableGestankenzinnMaking")
                 .define("EnableGestankenzinnMaking", true);
-        serverEnableGestankenzinnArmor = builder.comment("Enable making Gestankenzinn armor")
-                .translation(HaditeCoal.MODID + "config.EnableGestankenzinnArmor")
-                .define("EnableGestankenzinnArmor", true);
         serverEnableGestankenzinnTools = builder.comment("Enable making Gestankenzinn tools")
                 .translation(HaditeCoal.MODID + "config.EnableGestankenzinnTools")
                 .define("EnableGestankenzinnTools", true);
@@ -76,9 +71,6 @@ public final class ServerConfig
                 builder.comment("Enable making Hadite Steel alloy in fusion furnace")
                 .translation(HaditeCoal.MODID + "config.EnableHaditeSteelMaking")
                 .define("EnableHaditeSteelMaking", true);
-        serverEnableHaditeSteelArmor = builder.comment("Enable making Hadite Steel armor")
-                .translation(HaditeCoal.MODID + "config.EnableHaditeSteelArmor")
-                .define("EnableHaditeSteelArmor", true);
         serverEnableHaditeSteelTools = builder.comment("Enable making Hadite Steel tools")
                 .translation(HaditeCoal.MODID + "config.EnableHaditeSteelTools")
                 .define("EnableHaditeSteelTools", true);

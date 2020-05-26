@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+  		"#forge:ingots/hadite_steel",
+  		"#forge:ingots/steel",
+  		"#forge:ingots/gestankenzinn"
+   ]
+}
