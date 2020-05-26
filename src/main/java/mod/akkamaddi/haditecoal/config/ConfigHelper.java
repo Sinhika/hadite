@@ -1,4 +1,4 @@
-package mod.akkamaddi.hadite.config;
+package mod.akkamaddi.haditecoal.config;
 
 import net.minecraft.world.gen.placement.CountRangeConfig;
 import net.minecraftforge.fml.config.ModConfig;

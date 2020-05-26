@@ -23,8 +23,8 @@ def getVersionAppendage() {
 }
 
 version = "${version_minecraft}-${version_mod}." + getVersionAppendage()
-group = 'mod.akkamaddi.hadite'
-archivesBaseName = 'hadite'
+group = 'mod.akkamaddi.haditecoal'
+archivesBaseName = 'haditecoal'
 
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
 
@@ -48,7 +48,7 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             mods {
-                hadite {
+                haditecoal {
                     source sourceSets.main
                 }
             }
@@ -64,7 +64,7 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             mods {
-                hadite {
+                haditecoal {
                     source sourceSets.main
                 }
             }
@@ -79,10 +79,10 @@ minecraft {
             // Recommended logging level for the console
             property 'forge.logging.console.level', 'debug'
 
-            args '--mod', 'hadite', '--all', '--output', file('src/generated/resources/')
+            args '--mod', 'haditecoal', '--all', '--output', file('src/generated/resources/')
 
             mods {
-                hadite {
+                haditecoal {
                     source sourceSets.main
                 }
             }
@@ -143,7 +143,7 @@ artifacts {
 jar {
     manifest {
         attributes([
-            "Specification-Title": "hadite",
+            "Specification-Title": "haditecoal",
             "Specification-Vendor": "Sinhika",
             "Specification-Version": "1", // We are version 1 of ourselves
             "Implementation-Title": project.name,

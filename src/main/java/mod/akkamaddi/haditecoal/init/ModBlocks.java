@@ -1,6 +1,6 @@
-package mod.akkamaddi.hadite.init;
+package mod.akkamaddi.haditecoal.init;
 
-import mod.akkamaddi.hadite.HaditeCoal;
+import mod.akkamaddi.haditecoal.HaditeCoal;
 import net.minecraft.block.Block;
 import net.minecraft.block.OreBlock;
 import net.minecraft.block.material.Material;

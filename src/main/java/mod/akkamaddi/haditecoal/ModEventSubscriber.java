@@ -1,15 +1,15 @@
-package mod.akkamaddi.hadite;
+package mod.akkamaddi.haditecoal;
 
 import javax.annotation.Nonnull;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import mod.akkamaddi.hadite.config.ConfigHelper;
-import mod.akkamaddi.hadite.config.ConfigHolder;
-import mod.akkamaddi.hadite.config.HaditeConfig;
-import mod.akkamaddi.hadite.init.ModBlocks;
-import mod.akkamaddi.hadite.init.ModTabGroups;
+import mod.akkamaddi.haditecoal.config.ConfigHelper;
+import mod.akkamaddi.haditecoal.config.ConfigHolder;
+import mod.akkamaddi.haditecoal.config.HaditeConfig;
+import mod.akkamaddi.haditecoal.init.ModBlocks;
+import mod.akkamaddi.haditecoal.init.ModTabGroups;
 import mod.alexndr.simpleores.api.config.FlagCondition;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -18,7 +18,6 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.crafting.CraftingHelper;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.DeferredWorkQueue;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;

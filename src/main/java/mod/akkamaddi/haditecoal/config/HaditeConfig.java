@@ -1,4 +1,4 @@
-package mod.akkamaddi.hadite.config;
+package mod.akkamaddi.haditecoal.config;
 
 import java.util.HashMap;
 import java.util.Map;

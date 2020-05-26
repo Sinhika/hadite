@@ -1,6 +1,6 @@
-package mod.akkamaddi.hadite.config;
+package mod.akkamaddi.haditecoal.config;
 
-import mod.akkamaddi.hadite.HaditeCoal;
+import mod.akkamaddi.haditecoal.HaditeCoal;
 import net.minecraftforge.common.ForgeConfigSpec;
 
 public final class ClientConfig

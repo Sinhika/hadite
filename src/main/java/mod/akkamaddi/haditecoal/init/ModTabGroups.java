@@ -1,10 +1,10 @@
-package mod.akkamaddi.hadite.init;
+package mod.akkamaddi.haditecoal.init;
 
 import java.util.function.Supplier;
 
 import javax.annotation.Nonnull;
 
-import mod.akkamaddi.hadite.HaditeCoal;
+import mod.akkamaddi.haditecoal.HaditeCoal;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 

@@ -1,11 +1,11 @@
-package mod.akkamaddi.hadite;
+package mod.akkamaddi.haditecoal;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import mod.akkamaddi.hadite.config.ConfigHolder;
-import mod.akkamaddi.hadite.init.ModBlocks;
-import mod.akkamaddi.hadite.init.ModItems;
+import mod.akkamaddi.haditecoal.config.ConfigHolder;
+import mod.akkamaddi.haditecoal.init.ModBlocks;
+import mod.akkamaddi.haditecoal.init.ModItems;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
@@ -15,7 +15,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 @Mod(HaditeCoal.MODID)
 public class HaditeCoal
 {
-    public static final String MODID = "hadite";
+    public static final String MODID = "haditecoal";
     // Directly reference a log4j logger.
     public static final Logger LOGGER = LogManager.getLogger();
     
