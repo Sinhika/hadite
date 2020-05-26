@@ -15,9 +15,7 @@ updateJSONURL="https://raw.githubusercontent.com/Sinhika/hadite/1.15/update.json
 displayURL="http://minecraft.curseforge.com/projects/akkamaddis-hadite-coal"
 credits="Thanks to akkamaddi for creating the original mod and to Sinhika for porting and maintaining it."
 authors="akkamaddi, Sinhika"
-description='''Hadite Coal is a noxious, sulphurous, foul-stenched ore of the Nether. Hadite Coal can be
- used to make two alloys, Hadite Steel and Gestankenzinn, and itself burns like coal, only hotter and
- longer.
+description='''Hadite Coal, a utility ore from the Nether, plus two alloys.
 '''
 
 [[dependencies.haditecoal]]
