@@ -1,0 +1,22 @@
+{
+    "conditions": [
+        {
+            "flag": "gestankenzinn_enabled",
+            "type": "haditecoal:flag"
+        }
+    ],
+    "key": {
+        "S": {
+            "item": "haditecoal:gestankenzinn_ingot"
+        }
+    },
+    "pattern": [
+        "SSS",
+        "SSS",
+        "SSS"
+    ],
+    "result": {
+        "item": "haditecoal:gestankenzinn_block"
+    },
+    "type": "minecraft:crafting_shaped"
+}

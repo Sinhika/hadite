@@ -1,0 +1,25 @@
+{
+    "conditions": [
+        {
+            "flag": "gestankenzinn_enabled",
+            "type": "haditecoal:flag"
+        }
+    ],
+    "key": {
+        "S": {
+            "item": "haditecoal:gestankenzinn_ingot"
+        },
+        "T": {
+            "tag": "forge:rods/wooden"
+        }
+    },
+    "pattern": [
+        " S ",
+        " S ",
+        " T "
+    ],
+    "result": {
+        "item": "haditecoal:gestankenzinn_sword"
+    },
+    "type": "minecraft:crafting_shaped"
+}

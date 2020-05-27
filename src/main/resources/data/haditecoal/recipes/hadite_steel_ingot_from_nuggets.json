@@ -1,0 +1,22 @@
+{
+    "conditions": [
+        {
+            "flag": "hadite_steel_enabled",
+            "type": "haditecoal:flag"
+        }
+    ],
+    "key": {
+        "#": {
+            "item": "haditecoal:hadite_steel_nugget"
+        }
+    },
+    "pattern": [
+        "###",
+        "###",
+        "###"
+    ],
+    "result": {
+        "item": "haditecoal:hadite_steel_ingot"
+    },
+    "type": "minecraft:crafting_shaped"
+}

@@ -1,0 +1,22 @@
+{
+    "conditions": [
+        {
+            "flag": "gestankenzinn_enabled",
+            "type": "haditecoal:flag"
+        }
+    ],
+    "key": {
+        "#": {
+            "item": "haditecoal:gestankenzinn_nugget"
+        }
+    },
+    "pattern": [
+        "###",
+        "# #",
+        "###"
+    ],
+    "result": {
+        "item": "haditecoal:large_gestankenzinn_chunk"
+    },
+    "type": "minecraft:crafting_shaped"
+}

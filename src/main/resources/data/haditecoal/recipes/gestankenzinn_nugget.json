@@ -1,0 +1,18 @@
+{
+    "conditions": [
+        {
+            "flag": "gestankenzinn_enabled",
+            "type": "haditecoal:flag"
+        }
+    ],
+    "ingredients": [
+        {
+            "item": "haditecoal:gestankenzinn_ingot"
+        }
+    ],
+    "result": {
+        "count": 9,
+        "item": "haditecoal:gestankenzinn_nugget"
+    },
+    "type": "minecraft:crafting_shapeless"
+}

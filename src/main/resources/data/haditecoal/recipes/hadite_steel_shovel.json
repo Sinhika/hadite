@@ -1,0 +1,25 @@
+{
+    "conditions": [
+        {
+            "flag": "hadite_steel_enabled",
+            "type": "haditecoal:flag"
+        }
+    ],
+    "key": {
+        "S": {
+            "item": "haditecoal:hadite_steel_ingot"
+        },
+        "T": {
+            "tag": "forge:rods/wooden"
+        }
+    },
+    "pattern": [
+        " S ",
+        " T ",
+        " T "
+    ],
+    "result": {
+        "item": "haditecoal:hadite_steel_shovel"
+    },
+    "type": "minecraft:crafting_shaped"
+}

@@ -1,0 +1,18 @@
+{
+    "conditions": [
+        {
+            "flag": "hadite_steel_enabled",
+            "type": "haditecoal:flag"
+        }
+    ],
+    "ingredients": [
+        {
+            "item": "haditecoal:hadite_steel_block"
+        }
+    ],
+    "result": {
+        "count": 9,
+        "item": "haditecoal:hadite_steel_ingot"
+    },
+    "type": "minecraft:crafting_shapeless"
+}
