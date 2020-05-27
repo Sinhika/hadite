@@ -3,6 +3,7 @@ package mod.akkamaddi.haditecoal.init;
 import mod.akkamaddi.haditecoal.HaditeCoal;
 import mod.akkamaddi.haditecoal.content.HaditeCoalBlock;
 import mod.akkamaddi.haditecoal.content.HaditeOreBlock;
+import mod.alexndr.simpleores.api.content.SimpleMetalBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
@@ -37,6 +38,14 @@ public final class ModBlocks
     public static final RegistryObject<HaditeCoalBlock> hadite_coal_block = BLOCKS.register("hadite_coal_block",
             () -> new HaditeCoalBlock(Block.Properties.create(Material.ROCK, MaterialColor.BLACK_TERRACOTTA)
                     .hardnessAndResistance(4.0F, 6.0F).lightValue(10)
+                    .harvestTool(ToolType.PICKAXE).harvestLevel(0)));
+    public static final RegistryObject<SimpleMetalBlock> hadite_steel_block = BLOCKS.register("hadite_steel_block",
+            () -> new SimpleMetalBlock(Block.Properties.create(Material.IRON)
+                    .hardnessAndResistance(14.0F, 22.0F)
+                    .harvestTool(ToolType.PICKAXE).harvestLevel(0)));
+    public static final RegistryObject<SimpleMetalBlock> gestankenzinn_block = BLOCKS.register("gestankenzinn_block",
+            () -> new SimpleMetalBlock(Block.Properties.create(Material.IRON)
+                    .hardnessAndResistance(12.0F, 20.0F)
                     .harvestTool(ToolType.PICKAXE).harvestLevel(0)));
     
 } // end-class

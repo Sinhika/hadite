@@ -4,7 +4,8 @@
     	"recipes": [
     		"haditecoal:gestankenzinn_axe", "haditecoal:gestankenzinn_hoe", "haditecoal:gestankenzinn_pickaxe",
     		"haditecoal:gestankenzinn_shears", "haditecoal:gestankenzinn_shovel", "haditecoal:gestankenzinn_sword",
-    		"haditecoal:gestankenzinn_block", "haditecoal:gestankenzinn_ingot"
+    		"haditecoal:gestankenzinn_block", "haditecoal:gestankenzinn_ingot", 
+    		"haditecoal:gestankenzinn_ingot_from_nuggets", "haditecoal:large_gestankenzinn_chunk"
     	]
   	},
     "criteria" : {
