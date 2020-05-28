@@ -1,5 +1,11 @@
 {
 	"type" : "fusion:alloying",
+	"conditions" : [
+		{
+			"type" : "haditecoal:flag",
+			"flag" : "recycling_enabled"
+		}
+	],
 	"output" : {
 			"item" : "haditecoal:large_gestankenzinn_chunk"
 		},
