@@ -1,0 +1,25 @@
+{
+	"type" : "fusion:alloying",
+	"conditions" : [
+		{
+			"type" : "haditecoal:flag",
+			"flag" : "gestankenzinn_making_enabled"
+		}
+	],
+	"output" : {
+			"item" : "haditecoal:large_gestankenzinn_chunk"
+		},
+	"inputs" : [
+			{
+				"item" : "haditecoal:hadite_coal"
+			},
+			{
+				"tag" : "forge:ingots/tin"
+			}
+		],
+	"catalyst" : {
+		"tag" : "minecraft:coals"
+	},
+	"experience": 5.0,
+	"cookingtime": 600
+}
