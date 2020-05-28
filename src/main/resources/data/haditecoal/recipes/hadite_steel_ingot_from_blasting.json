@@ -1,0 +1,15 @@
+{
+	"type": "minecraft:blasting",
+    "conditions": [
+        {
+            "flag": "hadite_steel_making_enabled",
+            "type": "haditecoal:flag"
+        }
+    ],
+	"ingredient": {
+		"item": "haditecoal:large_hadite_steel_chunk"
+	},
+	"result": "haditecoal:hadite_steel_ingot",
+	"experience": 0.7,
+	"cookingtime": 100
+}
