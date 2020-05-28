@@ -1,7 +1,7 @@
 {
     "conditions": [
         {
-            "flag": "gestankenzinn_enabled",
+            "flag": "gestankenzinn_tools_enabled",
             "type": "haditecoal:flag"
         }
     ],

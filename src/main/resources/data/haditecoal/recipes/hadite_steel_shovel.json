@@ -1,7 +1,7 @@
 {
     "conditions": [
         {
-            "flag": "hadite_steel_enabled",
+            "flag": "hadite_steel_tools_enabled",
             "type": "haditecoal:flag"
         }
     ],

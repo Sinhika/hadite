@@ -27,14 +27,14 @@ public final class ConfigHelper
         HaditeConfig.INSTANCE.putFlag("recycling_enabled", 
                 ConfigHolder.SERVER.serverEnableRecycling.get());
         
-        HaditeConfig.INSTANCE.putFlag("gestankenzinn_making",
+        HaditeConfig.INSTANCE.putFlag("gestankenzinn_making_enabled",
                 ConfigHolder.SERVER.serverEnableGestankenzinnMaking.get());
-        HaditeConfig.INSTANCE.putFlag("gestankenzinn_tools", 
+        HaditeConfig.INSTANCE.putFlag("gestankenzinn_tools_enabled", 
                 ConfigHolder.SERVER.serverEnableGestankenzinnTools.get());
         
-        HaditeConfig.INSTANCE.putFlag("hadite_steel_making", 
+        HaditeConfig.INSTANCE.putFlag("hadite_steel_making_enabled", 
                 ConfigHolder.SERVER.serverEnableHaditeSteelMaking.get());
-        HaditeConfig.INSTANCE.putFlag("hadite_steel_tools",
+        HaditeConfig.INSTANCE.putFlag("hadite_steel_tools_enabled",
                 ConfigHolder.SERVER.serverEnableHaditeSteelTools.get());
     } // end bakeServer
 } // end-class
