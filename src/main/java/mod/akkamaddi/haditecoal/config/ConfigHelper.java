@@ -36,5 +36,6 @@ public final class ConfigHelper
                 ConfigHolder.SERVER.serverEnableHaditeSteelMaking.get());
         HaditeConfig.INSTANCE.putFlag("hadite_steel_tools_enabled",
                 ConfigHolder.SERVER.serverEnableHaditeSteelTools.get());
+                       
     } // end bakeServer
 } // end-class

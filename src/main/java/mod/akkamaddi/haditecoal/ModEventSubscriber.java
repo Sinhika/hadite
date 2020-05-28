@@ -41,6 +41,7 @@ public final class ModEventSubscriber
 //        DeferredWorkQueue.runLater( () -> {
 //                OreGeneration.setupNetherOreGen();
 //        } );
+
         LOGGER.debug("Common setup done");
     } // end onCommonSetup
 
