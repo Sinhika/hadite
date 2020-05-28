@@ -1,0 +1,22 @@
+{
+	"conditions": [
+		{
+			"condition": "minecraft:alternative",
+			"terms": [
+				{
+					"condition": "minecraft:match_tool",
+					"predicate": {
+						"item": "haditecoal:gestankenzinn_shears"
+					}
+				},
+				{
+					"condition": "minecraft:match_tool",
+					"predicate": {
+						"item": "haditecoal:hadite_steel_shears"
+					}
+				}
+			]
+		}
+	],
+	"function": "haditecoal:mod_shears_harvest"
+}
