@@ -42,7 +42,8 @@ public class FusionContent
         // Hadite Steel
         FusionFurnaceRecipes.addSmelting(
                 new ItemStack(ModItems.haditeSteelSword, 1,
-                        OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.GRAVEL),
+                        OreDictionary.WILDCARD_VALUE), 
+                new ItemStack(Blocks.GRAVEL),
                 new ItemStack(Items.COAL),
                 new ItemStack(ModItems.largeHaditeSteelChunkItem),
                 15.0F);

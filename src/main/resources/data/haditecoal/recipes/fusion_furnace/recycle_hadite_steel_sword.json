@@ -1,0 +1,19 @@
+{
+	"type" : "fusion:alloying",
+	"output" : {
+			"item" : "haditecoal:large_hadite_steel_chunk"
+		},
+	"inputs" : [
+			{
+				"item" : "haditecoal:hadite_steel_sword"
+			},
+			{
+				"item" : "minecraft:gravel"
+			}
+		],
+	"catalyst" : {
+		"tag" : "minecraft:coals"
+	},
+	"experience": 15.0,
+	"cookingtime": 600
+}

@@ -1,0 +1,19 @@
+{
+	"type" : "fusion:alloying",
+	"output" : {
+			"item" : "haditecoal:large_gestankenzinn_chunk"
+		},
+	"inputs" : [
+			{
+				"item" : "haditecoal:gestankenzinn_axe"
+			},
+			{
+				"item" : "minecraft:gravel"
+			}
+		],
+	"catalyst" : {
+		"tag" : "minecraft:coals"
+	},
+	"experience": 20.0,
+	"cookingtime": 600
+}
