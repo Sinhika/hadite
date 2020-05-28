@@ -1,6 +1,6 @@
 {
   "replace": false,
   "values": [
-  		"#forge:ingots/steel"
+  		"#forge:storage_blocks/steel"
    ]
 }
