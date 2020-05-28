@@ -1,0 +1,20 @@
+{
+    "pools": [
+        {
+            "conditions": [
+                {
+                    "condition": "minecraft:survives_explosion"
+                }
+            ],
+            "entries": [
+                {
+                    "name": "haditecoal:hadite_steel_block",
+                    "type": "minecraft:item"
+                }
+            ],
+            "name": "haditecoal:droppool",
+            "rolls": 1
+        }
+    ],
+    "type": "minecraft:block"
+}
