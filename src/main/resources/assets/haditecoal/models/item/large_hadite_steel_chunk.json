@@ -1,0 +1,6 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "haditecoal:item/large_hadite_steel_chunk_item"
+    }
+}
