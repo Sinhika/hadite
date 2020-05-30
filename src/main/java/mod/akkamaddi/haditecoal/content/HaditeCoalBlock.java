@@ -10,8 +10,9 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
+import net.minecraftforge.common.extensions.IForgeBlock;
 
-public class HaditeCoalBlock extends Block
+public class HaditeCoalBlock extends Block implements IForgeBlock
 {
     public HaditeCoalBlock(Properties properties)
     {
@@ -21,6 +22,9 @@ public class HaditeCoalBlock extends Block
     @Override
     public boolean isFireSource(BlockState state, IBlockReader world, BlockPos pos, Direction side)
     {
+        if (side != Direction.UP)
+            return false;
+        
         return true;
     }
 
