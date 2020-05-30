@@ -2,7 +2,7 @@
 	"parent" : "haditecoal:recipes/root",
    	"rewards": {
     	"recipes": [
-    		"haditecoal:hadite_coal_block", "haditecoal:hadite_coal_ingot", "haditecoal:torch"
+    		"haditecoal:hadite_coal_block", "haditecoal:hadite_coal", "haditecoal:torch"
     	]
   	},
     "criteria" : {
@@ -11,7 +11,7 @@
 			"conditions": {
 				"items": [
 					{
-						"item": "haditecoal:hadite_coal_ingot"
+						"item": "haditecoal:hadite_coal"
 					}
 				]
 			}

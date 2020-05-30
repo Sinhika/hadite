@@ -5,7 +5,6 @@ modLoader="javafml" #mandatory
 # A version range to match for said mod loader - for regular FML @Mod it will be the forge version
 loaderVersion="[31,)" #mandatory
 issueTrackerURL="https://github.com/Sinhika/hadite/issues"
-logoFile=
 
 [[mods]]
 modId="haditecoal"
