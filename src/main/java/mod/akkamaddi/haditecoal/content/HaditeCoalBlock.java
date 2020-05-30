@@ -13,6 +13,10 @@ import net.minecraft.world.World;
 
 public class HaditeCoalBlock extends Block
 {
+    public HaditeCoalBlock(Properties properties)
+    {
+        super(properties);
+    }
 
     @Override
     public boolean isFireSource(BlockState state, IBlockReader world, BlockPos pos, Direction side)
@@ -20,11 +24,7 @@ public class HaditeCoalBlock extends Block
         return true;
     }
 
-    public HaditeCoalBlock(Properties properties)
-    {
-        super(properties);
-    }
-
+   
     @Override
     public void animateTick(BlockState stateIn, World worldIn, BlockPos pos, Random rand)
     {

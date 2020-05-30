@@ -8,11 +8,13 @@ import org.apache.logging.log4j.Logger;
 import mod.akkamaddi.haditecoal.config.ConfigHelper;
 import mod.akkamaddi.haditecoal.config.ConfigHolder;
 import mod.akkamaddi.haditecoal.config.HaditeConfig;
+import mod.akkamaddi.haditecoal.content.HaditeCoalBlock;
 import mod.akkamaddi.haditecoal.generation.OreGeneration;
 import mod.akkamaddi.haditecoal.init.ModBlocks;
 import mod.akkamaddi.haditecoal.init.ModTabGroups;
 import mod.alexndr.simpleores.api.config.FlagCondition;
 import mod.alexndr.simpleores.api.loot.SimpleOresLootModifiers;
+import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.crafting.IRecipeSerializer;
@@ -61,7 +63,7 @@ public final class ModEventSubscriber
         ModBlocks.BLOCKS.getEntries().stream()
                 .map(RegistryObject::get)
                 // You can do extra filtering here if you don't want some blocks to have an BlockItem automatically registered for them
-                // .filter(block -> needsItemBlock(block))
+                .filter(block -> needsItemBlock(block))
                 // Register the BlockItem for the block
                 .forEach(block -> {
                     // Make the properties, and make it so that the item will be on our ItemGroup (CreativeTab)
@@ -75,6 +77,14 @@ public final class ModEventSubscriber
                 });
         LOGGER.debug("Registered BlockItems");
     }  // end onRegisterItems()
+
+    private static boolean needsItemBlock(Block block)
+    {
+        if (block instanceof HaditeCoalBlock) {
+            return false;
+        }
+        return true;
+    }
 
     @SubscribeEvent
     public static void onModConfigEvent(final ModConfig.ModConfigEvent event)

@@ -1,6 +1,8 @@
 package mod.akkamaddi.haditecoal.init;
 
 import mod.akkamaddi.haditecoal.HaditeCoal;
+import mod.akkamaddi.haditecoal.content.HaditeCoalBlockItem;
+import mod.akkamaddi.haditecoal.content.HaditeCoalItem;
 import mod.akkamaddi.haditecoal.content.HaditeCoalItemTier;
 import mod.alexndr.fusion.init.ModTabGroups;
 import net.minecraft.item.AxeItem;
@@ -20,9 +22,15 @@ public final class ModItems
             new DeferredRegister<>(ForgeRegistries.ITEMS, HaditeCoal.MODID);
     
     // BASIC ITEMS
+    // hadite coal block item is a special snowflake that needs an item to define burn-time.
+    public static final RegistryObject<HaditeCoalBlockItem> hadite_coal_block = 
+            ITEMS.register("hadite_coal_block",
+                    () -> new HaditeCoalBlockItem(ModBlocks.hadite_coal_block.get(), 
+                                              new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
+    
     // ingots, chunks, and nuggets
-    public static final RegistryObject<Item> hadite_coal = ITEMS.register("hadite_coal", 
-            () -> new Item(new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));    
+    public static final RegistryObject<HaditeCoalItem> hadite_coal = ITEMS.register("hadite_coal", 
+            () -> new HaditeCoalItem(new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));    
     
     public static final RegistryObject<Item> hadite_steel_ingot = ITEMS.register("hadite_steel_ingot", 
             () -> new Item(new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
