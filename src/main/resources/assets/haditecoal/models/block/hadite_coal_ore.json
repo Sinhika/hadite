@@ -1,6 +1,6 @@
 {
 	"parent": "block/cube_all",
 	"textures": {
-		"all": "haditecoal:block/block_hadite_coal_ore"
+		"all": "haditecoal:block/hadite_coal_ore"
 	}
 }
