@@ -8,7 +8,7 @@
     		"haditecoal:gestankenzinn_ingot_from_nuggets", "haditecoal:large_gestankenzinn_chunk",
     		"haditecoal:gestankenzinn_ingot_from_smelting", "haditecoal:gestankenzinn_ingot_from_blasting",
     		"haditecoal:gestankenzinn_nugget", "haditecoal:gestankenzinn_nugget_from_smelting",
-    		"haditecoal:gestankenzinn_nugget_from_blasting" 
+    		"haditecoal:gestankenzinn_nugget_from_blasting",  "haditecoal:gestankenzinn_nugget_from_chunk"
     	]
   	},
     "criteria" : {
