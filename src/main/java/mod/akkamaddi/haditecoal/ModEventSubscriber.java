@@ -8,6 +8,7 @@ import org.apache.logging.log4j.Logger;
 import mod.akkamaddi.haditecoal.config.ConfigHelper;
 import mod.akkamaddi.haditecoal.config.ConfigHolder;
 import mod.akkamaddi.haditecoal.config.HaditeConfig;
+import mod.akkamaddi.haditecoal.generation.OreGeneration;
 import mod.akkamaddi.haditecoal.init.ModBlocks;
 import mod.akkamaddi.haditecoal.init.ModTabGroups;
 import mod.alexndr.simpleores.api.config.FlagCondition;
@@ -18,6 +19,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.crafting.CraftingHelper;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.DeferredWorkQueue;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
@@ -38,9 +40,9 @@ public final class ModEventSubscriber
     @SubscribeEvent
     public static void onCommonSetup(final FMLCommonSetupEvent event)
     {
-//        DeferredWorkQueue.runLater( () -> {
-//                OreGeneration.setupNetherOreGen();
-//        } );
+        DeferredWorkQueue.runLater( () -> {
+                OreGeneration.setupNetherOreGen();
+        } );
 
         LOGGER.debug("Common setup done");
     } // end onCommonSetup
