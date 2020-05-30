@@ -8,7 +8,7 @@
     		"haditecoal:hadite_steel_ingot_from_nuggets", "haditecoal:large_hadite_steel_chunk",
     		"haditecoal:hadite_steel_ingot_from_smelting", "haditecoal:hadite_steel_ingot_from_blasting",
     		"haditecoal:hadite_steel_nugget", "haditecoal:hadite_steel_nugget_from_smelting",
-    		"haditecoal:hadite_steel_nugget_from_blasting" 
+    		"haditecoal:hadite_steel_nugget_from_blasting",  "haditecoal:hadite_steel_nugget_from_chunk"
     	]
   	},
     "criteria" : {
