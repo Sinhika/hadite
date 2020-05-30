@@ -4,8 +4,11 @@
     	"recipes": [
     		"haditecoal:hadite_steel_axe", "haditecoal:hadite_steel_hoe", "haditecoal:hadite_steel_pickaxe",
     		"haditecoal:hadite_steel_shears", "haditecoal:hadite_steel_shovel", "haditecoal:hadite_steel_sword",
-    		"haditecoal:hadite_steel_block", "haditecoal:hadite_steel_ingot", 
-    		"haditecoal:hadite_steel_ingot_from_nuggets", "haditecoal:large_hadite_steel_chunk" 
+    		"haditecoal:hadite_steel_block", "haditecoal:hadite_steel_ingot", "haditecoal:large_hadite_steel_chunk",
+    		"haditecoal:hadite_steel_ingot_from_nuggets", "haditecoal:large_hadite_steel_chunk",
+    		"haditecoal:hadite_steel_ingot_from_smelting", "haditecoal:hadite_steel_ingot_from_blasting",
+    		"haditecoal:hadite_steel_nugget", "haditecoal:hadite_steel_nugget_from_smelting",
+    		"haditecoal:hadite_steel_nugget_from_blasting" 
     	]
   	},
     "criteria" : {
