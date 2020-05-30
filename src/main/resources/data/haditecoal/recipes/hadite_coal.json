@@ -1,0 +1,13 @@
+{
+
+    "ingredients": [
+        {
+            "item": "haditecoal:hadite_coal_block"
+        }
+    ],
+    "result": {
+        "count": 9,
+        "item": "haditecoal:hadite_coal"
+    },
+    "type": "minecraft:crafting_shapeless"
+}
