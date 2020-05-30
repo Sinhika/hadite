@@ -25,12 +25,11 @@ public class OreGeneration
         {
             // Nether Ore generation.
             if (biome.getCategory() != Biome.Category.NETHER) continue;
-            biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES,
-                    Feature.ORE.withConfiguration(new OreFeatureConfig(
-                                                    OreFeatureConfig.FillerBlockType.NETHERRACK,
-                                                    ModBlocks.hadite_coal_ore.get().getDefaultState(),
-                                                    HaditeConfig.hadite_veinsize))
-                    .withPlacement(Placement.COUNT_RANGE.configure(HaditeConfig.hadite_cfg)));
+			biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Biome.createDecoratedFeature(Feature.ORE,
+					new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NETHERRACK,
+							ModBlocks.hadite_coal_ore.get().getDefaultState(), HaditeConfig.hadite_veinsize),
+					Placement.COUNT_RANGE, HaditeConfig.hadite_cfg));
+
         } // end-for biome
     } // end setupNetherOreGen()
     
