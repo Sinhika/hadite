@@ -1,5 +1,5 @@
 {
 	"variants": {
-		"": { "model": "haditecoal:block/hadite_ore_block" }
+		"": { "model": "haditecoal:block/hadite_coal_ore" }
 	}
 }
