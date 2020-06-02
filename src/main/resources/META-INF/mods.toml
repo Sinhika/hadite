@@ -20,7 +20,7 @@ description='''Hadite Coal, a utility ore from the Nether, plus two alloys.
 [[dependencies.haditecoal]]
     modId="forge"
     mandatory=true
-    versionRange="[28.2.0,)"
+    versionRange="[28.2.4,)"
     ordering="NONE"
     side="BOTH"
 
@@ -34,13 +34,13 @@ description='''Hadite Coal, a utility ore from the Nether, plus two alloys.
 [[dependencies.haditecoal]]
     modId="simpleores"
     mandatory=true
-    versionRange="[1.14.4-2.0.9.0,]"
+    versionRange="[1.14.4-2.0.10.0,]"
     ordering="NONE"
     side="BOTH"    
 
 [[dependencies.haditecoal]]
     modId="fusion"
     mandatory=true
-    versionRange="[1.14.4-2.5.4.0,]"
+    versionRange="[1.14.4-2.5.6.0,]"
     ordering="NONE"
     side="BOTH"    
