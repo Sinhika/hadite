@@ -4,11 +4,11 @@ import mod.akkamaddi.haditecoal.HaditeCoal;
 import mod.akkamaddi.haditecoal.content.HaditeCoalBlockItem;
 import mod.akkamaddi.haditecoal.content.HaditeCoalItem;
 import mod.akkamaddi.haditecoal.content.HaditeCoalItemTier;
+import mod.alexndr.simpleores.api.content.SimpleShearsItem;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.HoeItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.PickaxeItem;
-import net.minecraft.item.ShearsItem;
 import net.minecraft.item.ShovelItem;
 import net.minecraft.item.SwordItem;
 import net.minecraftforge.fml.RegistryObject;
@@ -62,8 +62,8 @@ public final class ModItems
     public static final RegistryObject<HoeItem> gestankenzinn_hoe = ITEMS.register("gestankenzinn_hoe",
             () -> new HoeItem(HaditeCoalItemTier.GESTANKENZINN,-2.0F,
                     new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
-    public static final RegistryObject<ShearsItem> gestankenzinn_shears = ITEMS.register("gestankenzinn_shears",
-            () -> new ShearsItem(new Item.Properties().maxDamage(HaditeCoalItemTier.GESTANKENZINN.getMaxUses())
+    public static final RegistryObject<SimpleShearsItem> gestankenzinn_shears = ITEMS.register("gestankenzinn_shears",
+            () -> new SimpleShearsItem(new Item.Properties().maxDamage(HaditeCoalItemTier.GESTANKENZINN.getMaxUses())
                     .group(ModTabGroups.MOD_ITEM_GROUP)));
  
     // hadite steel
@@ -82,8 +82,8 @@ public final class ModItems
     public static final RegistryObject<HoeItem> hadite_steel_hoe = ITEMS.register("hadite_steel_hoe",
             () -> new HoeItem(HaditeCoalItemTier.HADITESTEEL,-2.0F,
                     new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
-    public static final RegistryObject<ShearsItem> hadite_steel_shears = ITEMS.register("hadite_steel_shears",
-            () -> new ShearsItem(new Item.Properties().maxDamage(HaditeCoalItemTier.HADITESTEEL.getMaxUses())
+    public static final RegistryObject<SimpleShearsItem> hadite_steel_shears = ITEMS.register("hadite_steel_shears",
+            () -> new SimpleShearsItem(new Item.Properties().maxDamage(HaditeCoalItemTier.HADITESTEEL.getMaxUses())
                     .group(ModTabGroups.MOD_ITEM_GROUP)));
     
 } // end-class
