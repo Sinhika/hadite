@@ -4,7 +4,11 @@
 		{
 			"type" : "haditecoal:flag",
 			"flag" : "gestankenzinn_making_enabled"
-		}
+		},
+        {
+        	"type" : "forge:mod_loaded",
+        	"modid" : "simpleores"
+        }
 	],
 	"output" : {
 			"item" : "haditecoal:large_gestankenzinn_chunk"
