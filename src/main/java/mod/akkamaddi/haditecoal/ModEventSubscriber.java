@@ -13,14 +13,12 @@ import mod.akkamaddi.haditecoal.generation.OreGeneration;
 import mod.akkamaddi.haditecoal.init.ModBlocks;
 import mod.akkamaddi.haditecoal.init.ModTabGroups;
 import mod.alexndr.simpleores.api.config.FlagCondition;
-import mod.alexndr.simpleores.api.loot.SimpleOresLootModifiers;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.crafting.IRecipeSerializer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.crafting.CraftingHelper;
-import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.DeferredWorkQueue;
@@ -101,19 +99,6 @@ public final class ModEventSubscriber
             ConfigHelper.bakeServer(config);
         }
     } // onModConfigEvent
-
-    /**
-     * Register<GlobalLootModifierSerializer<?>> event handler.
-     * @param event
-     */
-    @SubscribeEvent
-    public static void onRegisterModifierSerializers(
-            @Nonnull final RegistryEvent.Register<GlobalLootModifierSerializer<?>> event)
-    {
-        event.getRegistry().register(
-                new SimpleOresLootModifiers.ShearsLootModifier.Serializer().setRegistryName(
-                        new ResourceLocation(HaditeCoal.MODID, "mod_shears_harvest")) );
-    } // end registerModifierSerializers
 
     @SubscribeEvent
     public static void onRegisterRecipeSerializers(

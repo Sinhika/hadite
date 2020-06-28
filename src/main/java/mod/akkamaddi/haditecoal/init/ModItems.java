@@ -18,7 +18,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 public final class ModItems
 {
     public static final DeferredRegister<Item> ITEMS = 
-            new DeferredRegister<>(ForgeRegistries.ITEMS, HaditeCoal.MODID);
+            DeferredRegister.create(ForgeRegistries.ITEMS, HaditeCoal.MODID);
     
     // BASIC ITEMS
     // hadite coal block item is a special snowflake that needs an item to define burn-time.

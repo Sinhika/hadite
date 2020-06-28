@@ -26,7 +26,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 public final class ModBlocks
 {
     public static final DeferredRegister<Block> BLOCKS = 
-            new DeferredRegister<>(ForgeRegistries.BLOCKS, HaditeCoal.MODID);
+            DeferredRegister.create(ForgeRegistries.BLOCKS, HaditeCoal.MODID);
     
     // Ore block
     public static final RegistryObject<HaditeOreBlock> hadite_coal_ore = BLOCKS.register("hadite_coal_ore",
