@@ -1,6 +1,0 @@
-{
-    "parent": "item/generated",
-    "textures": {
-        "layer0": "haditecoal:items/large_gestankenzinn_chunk_item"
-    }
-}
