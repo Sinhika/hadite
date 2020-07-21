@@ -6,10 +6,12 @@ Binary and documentation hosted on CurseForge at https://minecraft.curseforge.co
 
 TODO List
 ---------
-- add hadite coal to nether fortress chest loot tables.
+- <s>add hadite coal to nether fortress chest loot tables.</s>
 
 License
 -------
+akkamaddi originally released his source code to "anyone who wants to use it, as long as you credit me". My own extensive, derivative work is licensed under the LGPL, which includes an attribution
+requirement.
 
 This mod is free software: you can redistribute it and/or modify it under the
 terms of the GNU Lesser General Public License as published by the Free
