@@ -4,8 +4,14 @@ Source code for the Minecraft Forge mod "Hadite Coal", originally by akkamaddi, 
 
 Binary and documentation hosted on CurseForge at https://minecraft.curseforge.com/projects/akkamaddis-hadite-coal
 
+TODO List
+---------
+- <s>add hadite coal to nether fortress chest loot tables.</s>
+
 License
 -------
+akkamaddi originally released his source code to "anyone who wants to use it, as long as you credit me". My own extensive, derivative work is licensed under the LGPL, which includes an attribution
+requirement.
 
 This mod is free software: you can redistribute it and/or modify it under the
 terms of the GNU Lesser General Public License as published by the Free
