@@ -30,12 +30,12 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8/"/>
-	<classpathentry kind="lib" path="/home/cyhiggin/.gradle/caches/forge_gradle/deobf_dependencies/mod/alexndr/simpleores/SimpleOres2/1.15.2-2.1.8.0_mapped_snapshot_20200628-1.15.1/SimpleOres2-1.15.2-2.1.8.0_mapped_snapshot_20200628-1.15.1.jar">
+	<classpathentry kind="lib" path="/home/cyhiggin/.gradle/caches/forge_gradle/deobf_dependencies/mod/alexndr/simpleores/SimpleOres2/1.15.2-2.1.8.1_mapped_snapshot_20200628-1.15.1/SimpleOres2-1.15.2-2.1.8.1_mapped_snapshot_20200628-1.15.1.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/home/cyhiggin/.gradle/caches/forge_gradle/deobf_dependencies/mod/alexndr/fusion/Fusion/1.15.2-2.5.9.0_mapped_snapshot_20200628-1.15.1/Fusion-1.15.2-2.5.9.0_mapped_snapshot_20200628-1.15.1.jar">
+	<classpathentry kind="lib" path="/home/cyhiggin/.gradle/caches/forge_gradle/deobf_dependencies/mod/alexndr/fusion/Fusion/1.15.2-2.5.11.0_mapped_snapshot_20200628-1.15.1/Fusion-1.15.2-2.5.11.0_mapped_snapshot_20200628-1.15.1.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
