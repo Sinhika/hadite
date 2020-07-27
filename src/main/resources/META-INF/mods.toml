@@ -3,14 +3,14 @@
 modLoader="javafml" #mandatory
 
 # A version range to match for said mod loader - for regular FML @Mod it will be the forge version
-loaderVersion="[31,)" #mandatory
+loaderVersion="[32,)" #mandatory
 issueTrackerURL="https://github.com/Sinhika/hadite/issues"
 
 [[mods]]
 modId="haditecoal"
 version="${version}"
 displayName="akkamaddi's Hadite Coal"
-updateJSONURL="https://raw.githubusercontent.com/Sinhika/hadite/1.15/update.json"
+updateJSONURL="https://raw.githubusercontent.com/Sinhika/hadite/1.16/update.json"
 displayURL="http://minecraft.curseforge.com/projects/akkamaddis-hadite-coal"
 credits="Thanks to akkamaddi for creating the original mod and to Sinhika for porting and maintaining it."
 authors="akkamaddi, Sinhika"
@@ -20,27 +20,27 @@ description='''Hadite Coal, a utility ore from the Nether, plus two alloys.
 [[dependencies.haditecoal]]
     modId="forge"
     mandatory=true
-    versionRange="[31.2.26,)"
+    versionRange="[32.0.55,)"
     ordering="NONE"
     side="BOTH"
 
 [[dependencies.haditecoal]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.15.2]"
+    versionRange="[1.16.1,]"
     ordering="NONE"
     side="BOTH"
 
 [[dependencies.haditecoal]]
     modId="simpleores"
     mandatory=true
-    versionRange="[1.15.2-2.1.8.0,]"
+    versionRange="[1.16.1,]"
     ordering="NONE"
     side="BOTH"    
 
 [[dependencies.haditecoal]]
     modId="fusion"
     mandatory=true
-    versionRange="[1.15.2-2.5.11,]"
+    versionRange="[1.16.1,]"
     ordering="NONE"
     side="BOTH"    
