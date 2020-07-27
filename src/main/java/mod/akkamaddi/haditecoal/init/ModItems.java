@@ -60,7 +60,7 @@ public final class ModItems
             () -> new ShovelItem(HaditeCoalItemTier.GESTANKENZINN, 1.5F, -3.0F,
                     new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<HoeItem> gestankenzinn_hoe = ITEMS.register("gestankenzinn_hoe",
-            () -> new HoeItem(HaditeCoalItemTier.GESTANKENZINN,-2.0F,
+            () -> new HoeItem(HaditeCoalItemTier.GESTANKENZINN,-1, -2.0F,
                     new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<SimpleShearsItem> gestankenzinn_shears = ITEMS.register("gestankenzinn_shears",
             () -> new SimpleShearsItem(new Item.Properties().maxDamage(HaditeCoalItemTier.GESTANKENZINN.getMaxUses())
@@ -80,7 +80,7 @@ public final class ModItems
             () -> new ShovelItem(HaditeCoalItemTier.HADITESTEEL, 1.5F, -3.0F,
                     new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<HoeItem> hadite_steel_hoe = ITEMS.register("hadite_steel_hoe",
-            () -> new HoeItem(HaditeCoalItemTier.HADITESTEEL,-2.0F,
+            () -> new HoeItem(HaditeCoalItemTier.HADITESTEEL,-1, -2.0F,
                     new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<SimpleShearsItem> hadite_steel_shears = ITEMS.register("hadite_steel_shears",
             () -> new SimpleShearsItem(new Item.Properties().maxDamage(HaditeCoalItemTier.HADITESTEEL.getMaxUses())

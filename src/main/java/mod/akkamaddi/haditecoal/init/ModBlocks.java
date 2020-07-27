@@ -1,10 +1,12 @@
 package mod.akkamaddi.haditecoal.init;
 
+import java.util.function.ToIntFunction;
+
 import mod.akkamaddi.haditecoal.HaditeCoal;
 import mod.akkamaddi.haditecoal.content.HaditeCoalBlock;
 import mod.akkamaddi.haditecoal.content.HaditeOreBlock;
-import mod.alexndr.simpleores.api.content.SimpleMetalBlock;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraftforge.common.ToolType;
@@ -31,21 +33,25 @@ public final class ModBlocks
     // Ore block
     public static final RegistryObject<HaditeOreBlock> hadite_coal_ore = BLOCKS.register("hadite_coal_ore",
             () -> new HaditeOreBlock(Block.Properties.create(Material.ROCK)
-                    .hardnessAndResistance( 4.0F, 6.0F).lightValue(9)
+                    .hardnessAndResistance( 4.0F, 6.0F).setLightLevel(it_glows(9))
                     .harvestTool(ToolType.PICKAXE).harvestLevel(1)));
     
     // Storage blocks
     public static final RegistryObject<HaditeCoalBlock> hadite_coal_block = BLOCKS.register("hadite_coal_block",
             () -> new HaditeCoalBlock(Block.Properties.create(Material.ROCK, MaterialColor.BLACK_TERRACOTTA)
-                    .hardnessAndResistance(4.0F, 6.0F).lightValue(10)
+                    .hardnessAndResistance(4.0F, 6.0F).setLightLevel(it_glows(10))
                     .harvestTool(ToolType.PICKAXE).harvestLevel(0)));
-    public static final RegistryObject<SimpleMetalBlock> hadite_steel_block = BLOCKS.register("hadite_steel_block",
-            () -> new SimpleMetalBlock(Block.Properties.create(Material.IRON)
+    public static final RegistryObject<Block> hadite_steel_block = BLOCKS.register("hadite_steel_block",
+            () -> new Block(Block.Properties.create(Material.IRON)
                     .hardnessAndResistance(14.0F, 22.0F)
                     .harvestTool(ToolType.PICKAXE).harvestLevel(0)));
-    public static final RegistryObject<SimpleMetalBlock> gestankenzinn_block = BLOCKS.register("gestankenzinn_block",
-            () -> new SimpleMetalBlock(Block.Properties.create(Material.IRON)
+    public static final RegistryObject<Block> gestankenzinn_block = BLOCKS.register("gestankenzinn_block",
+            () -> new Block(Block.Properties.create(Material.IRON)
                     .hardnessAndResistance(12.0F, 20.0F)
                     .harvestTool(ToolType.PICKAXE).harvestLevel(0)));
     
+    private static ToIntFunction<BlockState> it_glows(int foo)
+    {
+        return (bar) -> { return foo; };
+    }    
 } // end-class
