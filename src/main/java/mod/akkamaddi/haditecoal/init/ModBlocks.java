@@ -34,20 +34,20 @@ public final class ModBlocks
     public static final RegistryObject<HaditeOreBlock> hadite_coal_ore = BLOCKS.register("hadite_coal_ore",
             () -> new HaditeOreBlock(Block.Properties.create(Material.ROCK)
                     .hardnessAndResistance( 4.0F, 6.0F).setLightLevel(it_glows(9))
-                    .harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+                    .harvestTool(ToolType.PICKAXE).setRequiresTool().harvestLevel(1)));
     
     // Storage blocks
     public static final RegistryObject<HaditeCoalBlock> hadite_coal_block = BLOCKS.register("hadite_coal_block",
             () -> new HaditeCoalBlock(Block.Properties.create(Material.ROCK, MaterialColor.BLACK_TERRACOTTA)
                     .hardnessAndResistance(4.0F, 6.0F).setLightLevel(it_glows(10))
-                    .harvestTool(ToolType.PICKAXE).harvestLevel(0)));
+                    .harvestTool(ToolType.PICKAXE).setRequiresTool().harvestLevel(0)));
     public static final RegistryObject<Block> hadite_steel_block = BLOCKS.register("hadite_steel_block",
             () -> new Block(Block.Properties.create(Material.IRON)
-                    .hardnessAndResistance(14.0F, 22.0F)
+                    .hardnessAndResistance(14.0F, 22.0F).setRequiresTool()
                     .harvestTool(ToolType.PICKAXE).harvestLevel(0)));
     public static final RegistryObject<Block> gestankenzinn_block = BLOCKS.register("gestankenzinn_block",
             () -> new Block(Block.Properties.create(Material.IRON)
-                    .hardnessAndResistance(12.0F, 20.0F)
+                    .hardnessAndResistance(12.0F, 20.0F).setRequiresTool()
                     .harvestTool(ToolType.PICKAXE).harvestLevel(0)));
     
     private static ToIntFunction<BlockState> it_glows(int foo)
