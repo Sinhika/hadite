@@ -3,7 +3,7 @@ package mod.akkamaddi.haditecoal;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import mod.alexndr.simpleores.generation.OreGeneration;
+import mod.akkamaddi.haditecoal.generation.OreGeneration;
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
