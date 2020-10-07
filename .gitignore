@@ -15,3 +15,4 @@ gradlew.bat
 build.number
 bin/
 .gradle/
+src/generated/resources/.cache/
