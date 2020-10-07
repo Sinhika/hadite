@@ -1,6 +1,7 @@
 package mod.akkamaddi.haditecoal.config;
 
-import net.minecraft.world.gen.placement.CountRangeConfig;
+import mod.alexndr.simplecorelib.config.ModOreConfig;
+import net.minecraft.world.gen.placement.TopSolidRangeConfig;
 import net.minecraftforge.fml.config.ModConfig;
 
 public final class ConfigHelper
@@ -14,11 +15,12 @@ public final class ConfigHelper
     public static void bakeServer(final ModConfig config) 
     {
         // general stuff
-        HaditeConfig.hadite_veinsize = ConfigHolder.SERVER.serverHaditeCoalVeinSize.get();
-        HaditeConfig.hadite_cfg = 
-                new CountRangeConfig(ConfigHolder.SERVER.serverHaditeCoalVeinCount.get(),
+        HaditeConfig.hadite_cfg = new ModOreConfig(
+                new TopSolidRangeConfig(
                         ConfigHolder.SERVER.serverHaditeCoalBottomHeight.get(),
-                        0, ConfigHolder.SERVER.serverHaditeCoalMaxHeight.get());
+                        0, ConfigHolder.SERVER.serverHaditeCoalMaxHeight.get()),
+                ConfigHolder.SERVER.serverHaditeCoalVeinSize.get(),
+                ConfigHolder.SERVER.serverHaditeCoalVeinCount.get());
 
         HaditeConfig.haditeCoalBurnTime = ConfigHolder.SERVER.serverHaditeCoalBurnTime.get();
         HaditeConfig.isHaditeCoalBlockFireSource = ConfigHolder.SERVER.serverHaditeCoalBlockFireSource.get();

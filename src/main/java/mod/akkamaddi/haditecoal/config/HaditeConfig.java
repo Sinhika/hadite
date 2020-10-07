@@ -3,8 +3,8 @@ package mod.akkamaddi.haditecoal.config;
 import java.util.HashMap;
 import java.util.Map;
 
-import mod.alexndr.simpleores.api.config.ISimpleConfig;
-import net.minecraft.world.gen.placement.CountRangeConfig;
+import mod.alexndr.simplecorelib.config.ISimpleConfig;
+import mod.alexndr.simplecorelib.config.ModOreConfig;
 
 public class HaditeConfig implements ISimpleConfig
 {
@@ -17,8 +17,7 @@ public class HaditeConfig implements ISimpleConfig
     public static int haditeCoalBurnTime = 13000;
     
     // Vein/Chunk Count, MinHeight, MaxHeightBase, MaxHeight
-    public static CountRangeConfig hadite_cfg;
-    public static int hadite_veinsize = 17;
+    public static ModOreConfig hadite_cfg;
     
     // client-side
     public static boolean makeOreFlame = true;
