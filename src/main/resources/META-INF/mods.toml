@@ -3,7 +3,7 @@
 modLoader="javafml" #mandatory
 
 # A version range to match for said mod loader - for regular FML @Mod it will be the forge version
-loaderVersion="[34,)" #mandatory
+loaderVersion="[35,)" #mandatory
 issueTrackerURL="https://github.com/Sinhika/hadite/issues"
 license="LGPL 3"
 
@@ -21,34 +21,34 @@ description='''Hadite Coal, a utility ore from the Nether, plus two alloys.
 [[dependencies.haditecoal]]
     modId="forge"
     mandatory=true
-    versionRange="[34.1.0,)"
+    versionRange="[35.0.0,)"
     ordering="NONE"
     side="BOTH"
 
 [[dependencies.haditecoal]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.16.3,]"
+    versionRange="[1.16.4,)"
     ordering="NONE"
     side="BOTH"
 
 [[dependencies.haditecoal]]
     modId="simplecorelib"
     mandatory=true
-    versionRange="[1.16.3-2.0.0.5,]"
+    versionRange="[1.16.4-2.0.2.0,)"
     ordering="NONE"
     side="BOTH"    
 
 [[dependencies.haditecoal]]
     modId="simpleores"
     mandatory=false
-    versionRange="[1.16.3,]"
+    versionRange="[1.16.4,]"
     ordering="BEFORE"
     side="BOTH"    
 
 [[dependencies.haditecoal]]
     modId="fusion"
     mandatory=true
-    versionRange="1.16.3,]"
+    versionRange="1.16.4,]"
     ordering="NONE"
     side="BOTH"    
