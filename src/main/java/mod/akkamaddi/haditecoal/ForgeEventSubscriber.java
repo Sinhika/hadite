@@ -22,8 +22,6 @@ public final class ForgeEventSubscriber
     @SubscribeEvent(priority=EventPriority.HIGH)
     public static void onBiomeLoading(BiomeLoadingEvent evt)
     {
-        if (!OreGeneration.checkAndInitBiome(evt)) return;
-        
         if (evt.getCategory() == Biome.Category.NETHER) 
         {
             OreGeneration.generateNetherOres(evt);

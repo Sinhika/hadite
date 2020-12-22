@@ -1,11 +1,12 @@
 package mod.akkamaddi.haditecoal.generation;
 
+import mod.akkamaddi.haditecoal.HaditeCoal;
 import mod.akkamaddi.haditecoal.config.HaditeConfig;
 import mod.akkamaddi.haditecoal.init.ModBlocks;
 import mod.alexndr.simplecorelib.world.OreGenUtils;
-import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.GenerationStage.Decoration;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
+import net.minecraft.world.gen.feature.Feature;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
 
 /**
@@ -15,34 +16,18 @@ import net.minecraftforge.event.world.BiomeLoadingEvent;
  */
 public class OreGeneration
 {
-    protected static ConfiguredFeature<?, ?> ORE_HADITE_COAL;
+    public static ConfiguredFeature<?, ?> ORE_HADITE_COAL;
 
-    /**
-     * Do we care about this biome? Yes, if nether, no otherwise. Also
-     * init relevant Features, if they are null.
-     */
-    public static boolean checkAndInitBiome(BiomeLoadingEvent evt)
-    {
-        if (evt.getCategory() == Biome.Category.NETHER)
-        {
-            initNetherFeatures();
-            return true;
-        }
-        return false;
-    } // end checkBiome
-
-    /**
+     /**
      * initialize nether Features.
      * 
      * @param evt
      */
-    protected static void initNetherFeatures()
+    public static void initNetherFeatures()
     {
-        if (ORE_HADITE_COAL != null) return;
-        
-        ORE_HADITE_COAL = 
-                OreGenUtils.buildNetherOreFeature(ModBlocks.hadite_coal_ore.get().getDefaultState(),
-                HaditeConfig.hadite_cfg);
+        ORE_HADITE_COAL = OreGenUtils.buildNetherOreFeature(Feature.ORE,
+                ModBlocks.hadite_coal_ore.get().getDefaultState(), HaditeConfig.hadite_cfg);
+        OreGenUtils.registerFeature(HaditeCoal.MODID, "hadite_coal_vein", ORE_HADITE_COAL);
     } // end-initNetherFeatures()
 
     /** 
