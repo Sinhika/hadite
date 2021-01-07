@@ -16,7 +16,7 @@
 		},
 	"inputs" : [
 			{
-				"item" : "aesthetics:onyx_furnace"
+				"item" : "simple_machines:onyx_furnace"
 			},
 			{
 				"item" : "minecraft:netherrack"
