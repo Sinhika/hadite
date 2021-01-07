@@ -52,3 +52,11 @@ description='''Hadite Coal, a utility ore from the Nether, plus two alloys.
     versionRange="1.16.4,]"
     ordering="NONE"
     side="BOTH"    
+
+[[dependencies.haditecoal]]
+    modId="aesthetics"
+    mandatory=false
+    versionRange="1.16.4,]"
+    ordering="BEFORE"
+    side="BOTH"    
+    
