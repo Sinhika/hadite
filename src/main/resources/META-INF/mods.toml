@@ -11,7 +11,7 @@ license="LGPL 3"
 modId="haditecoal"
 version="${version}"
 displayName="akkamaddi's Hadite Coal"
-updateJSONURL="https://raw.githubusercontent.com/Sinhika/hadite/1.16/update.json"
+updateJSONURL="https://raw.githubusercontent.com/Sinhika/hadite/1.16.4/update.json"
 displayURL="http://minecraft.curseforge.com/projects/akkamaddis-hadite-coal"
 credits="Thanks to akkamaddi for creating the original mod and to Sinhika for porting and maintaining it."
 authors="akkamaddi, Sinhika"
@@ -55,6 +55,13 @@ description='''Hadite Coal, a utility ore from the Nether, plus two alloys.
 
 [[dependencies.haditecoal]]
     modId="aesthetics"
+    mandatory=false
+    versionRange="1.16.4,]"
+    ordering="BEFORE"
+    side="BOTH"    
+
+[[dependencies.haditecoal]]
+    modId="machines"
     mandatory=false
     versionRange="1.16.4,]"
     ordering="BEFORE"
