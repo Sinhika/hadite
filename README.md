@@ -6,7 +6,8 @@ Binary and documentation hosted on CurseForge at https://minecraft.curseforge.co
 
 TODO List
 ---------
-- <s>add hadite coal to nether fortress chest loot tables.</s>
+- add hadite coal to nether fortress chest loot tables.
+- add random chance for injected loot (ingots, tools, armor).
 - add metal dust textures.
 - add metal dust items.
 - add Silent's Mechanisms crushing and alloy_smelter recipes.
