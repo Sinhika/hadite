@@ -9,6 +9,8 @@ import net.minecraft.particles.ParticleTypes;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
+import net.minecraft.block.AbstractBlock.Properties;
+
 public class HaditeOreBlock extends OreBlock
 {
 
@@ -20,7 +22,7 @@ public class HaditeOreBlock extends OreBlock
     @Override
     public void animateTick(BlockState stateIn, World worldIn, BlockPos pos, Random rand)
     {
-        if (worldIn.isRemote && HaditeConfig.makeOreFlame)
+        if (worldIn.isClientSide && HaditeConfig.makeOreFlame)
         {
             super.animateTick(stateIn, worldIn, pos, rand);
 

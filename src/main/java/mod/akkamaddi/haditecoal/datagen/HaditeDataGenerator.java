@@ -69,7 +69,7 @@ public class HaditeDataGenerator
         }
 
         @Override
-        protected void registerRecipes(Consumer<IFinishedRecipe> consumer)
+        protected void buildShapelessRecipes(Consumer<IFinishedRecipe> consumer)
         {
             registerGestankenzinnRecipes(consumer);
         }
@@ -84,11 +84,11 @@ public class HaditeDataGenerator
             List<Ingredient> primary_inputs = new ArrayList<Ingredient>(2);
             Ingredient[] catalysts = new Ingredient[3];
 
-            primary_inputs.add(Ingredient.fromItems(ModItems.hadite_coal.get()));
-            primary_inputs.add(Ingredient.fromTag(ModTags.Items.INGOTS_TIN));
+            primary_inputs.add(Ingredient.of(ModItems.hadite_coal.get()));
+            primary_inputs.add(Ingredient.of(ModTags.Items.INGOTS_TIN));
             catalysts[0] = null;
             catalysts[1] = null;
-            catalysts[2] = Ingredient.fromTag(ItemTags.COALS);
+            catalysts[2] = Ingredient.of(ItemTags.COALS);
 
             fusionbuilder.buildBasicAlloyRecipes(consumer, primary_inputs, catalysts, null,
                     null, ModItems.large_gestankenzinn_chunk.get(), 5.0F, 600,

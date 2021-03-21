@@ -12,6 +12,8 @@ import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraftforge.common.extensions.IForgeBlock;
 
+import net.minecraft.block.AbstractBlock.Properties;
+
 public class HaditeCoalBlock extends Block implements IForgeBlock
 {
     public HaditeCoalBlock(Properties properties)
@@ -31,7 +33,7 @@ public class HaditeCoalBlock extends Block implements IForgeBlock
     @Override
     public void animateTick(BlockState stateIn, World worldIn, BlockPos pos, Random rand)
     {
-        if (worldIn.isRemote && HaditeConfig.makeBlockFlame)
+        if (worldIn.isClientSide && HaditeConfig.makeBlockFlame)
         {
             super.animateTick(stateIn, worldIn, pos, rand);
 

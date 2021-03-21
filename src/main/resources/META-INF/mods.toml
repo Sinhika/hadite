@@ -9,7 +9,7 @@ license="LGPL 3"
 
 [[mods]]
 modId="haditecoal"
-version="${version}"
+version="${file.jarVersion}"
 displayName="akkamaddi's Hadite Coal"
 updateJSONURL="https://raw.githubusercontent.com/Sinhika/hadite/1.16/update.json"
 displayURL="http://minecraft.curseforge.com/projects/akkamaddis-hadite-coal"
@@ -21,7 +21,7 @@ description='''Hadite Coal, a utility ore from the Nether, plus two alloys.
 [[dependencies.haditecoal]]
     modId="forge"
     mandatory=true
-    versionRange="[36.0.0,)"
+    versionRange="[36.1.0,)"
     ordering="NONE"
     side="BOTH"
 
@@ -35,35 +35,35 @@ description='''Hadite Coal, a utility ore from the Nether, plus two alloys.
 [[dependencies.haditecoal]]
     modId="simplecorelib"
     mandatory=true
-    versionRange="[1.16.5-2.0.5.0, 1.16.5-2.0.6.0)"
+    versionRange="[1.16.5-2.0.7.0, 1.16.5-2.0.8.0)"
     ordering="NONE"
     side="BOTH"    
 
 [[dependencies.haditecoal]]
     modId="simpleores"
     mandatory=false
-    versionRange="[1.16.5-2.4.4.0,1.16.5-2.4.5.0)"
+    versionRange="[1.16.5-2.4.6.0,1.16.5-2.4.7.0)"
     ordering="BEFORE"
     side="BOTH"    
 
 [[dependencies.haditecoal]]
     modId="fusion"
     mandatory=true
-    versionRange="1.16.5,]"
+    versionRange="[1.16.5-2.7.3.0, 1.16.5-2.7.4.0)"
     ordering="NONE"
     side="BOTH"    
 
 [[dependencies.haditecoal]]
     modId="aesthetics"
     mandatory=false
-    versionRange="1.16.5,]"
+    versionRange="[1.16.5-1.10.3.0, 1.16.5-1.10.4.0)"
     ordering="BEFORE"
     side="BOTH"    
 
 [[dependencies.haditecoal]]
-    modId="machines"
+    modId="simple_machines"
     mandatory=false
-    versionRange="1.16.5,]"
+    versionRange="[1.16.5-1.7.4.0,1.16.5-1.7.5.0)"
     ordering="BEFORE"
     side="BOTH"    
 

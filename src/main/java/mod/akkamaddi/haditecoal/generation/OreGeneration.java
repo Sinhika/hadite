@@ -26,7 +26,7 @@ public class OreGeneration
     public static void initNetherFeatures()
     {
         ORE_HADITE_COAL = OreGenUtils.buildNetherOreFeature(Feature.ORE,
-                ModBlocks.hadite_coal_ore.get().getDefaultState(), HaditeConfig.hadite_cfg);
+                ModBlocks.hadite_coal_ore.get().defaultBlockState(), HaditeConfig.hadite_cfg);
         OreGenUtils.registerFeature(HaditeCoal.MODID, "hadite_coal_vein", ORE_HADITE_COAL);
     } // end-initNetherFeatures()
 
@@ -35,7 +35,7 @@ public class OreGeneration
      */
     public static void generateNetherOres(BiomeLoadingEvent evt)
     {
-        evt.getGeneration().withFeature(Decoration.UNDERGROUND_DECORATION, OreGeneration.ORE_HADITE_COAL);
+        evt.getGeneration().addFeature(Decoration.UNDERGROUND_DECORATION, OreGeneration.ORE_HADITE_COAL);
     } // end generateNetherOres()
     
 } // end-class
