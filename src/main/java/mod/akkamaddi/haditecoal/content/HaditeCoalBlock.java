@@ -12,8 +12,6 @@ import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraftforge.common.extensions.IForgeBlock;
 
-import net.minecraft.block.AbstractBlock.Properties;
-
 public class HaditeCoalBlock extends Block implements IForgeBlock
 {
     public HaditeCoalBlock(Properties properties)
