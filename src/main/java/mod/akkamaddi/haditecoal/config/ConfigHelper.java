@@ -15,6 +15,7 @@ public final class ConfigHelper
     public static void bakeServer(final ModConfig config) 
     {
         // general stuff
+        HaditeConfig.addChestLoot = ConfigHolder.SERVER.serverAddChestLoot.get();
         HaditeConfig.hadite_cfg = new ModOreConfig(
                 new TopSolidRangeConfig(
                         ConfigHolder.SERVER.serverHaditeCoalBottomHeight.get(),

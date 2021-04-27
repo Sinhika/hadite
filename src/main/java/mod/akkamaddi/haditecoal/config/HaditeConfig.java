@@ -15,6 +15,7 @@ public class HaditeConfig implements ISimpleConfig
     // general
     public static boolean isHaditeCoalBlockFireSource = true;
     public static int haditeCoalBurnTime = 13000;
+    public static boolean addChestLoot = true;
     
     // Vein/Chunk Count, MinHeight, MaxHeightBase, MaxHeight
     public static ModOreConfig hadite_cfg;

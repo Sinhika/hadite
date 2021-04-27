@@ -5,6 +5,9 @@ import net.minecraftforge.common.ForgeConfigSpec;
 
 public final class ServerConfig
 {
+    // general
+    final ForgeConfigSpec.BooleanValue serverAddChestLoot;
+    
     final ForgeConfigSpec.BooleanValue serverEnableRecycling; // recipe flag
     final ForgeConfigSpec.BooleanValue serverEnableGestankenzinnMaking; // recipe flag
     final ForgeConfigSpec.BooleanValue serverEnableGestankenzinnTools; // recipe flag
@@ -25,6 +28,9 @@ public final class ServerConfig
     ServerConfig(final ForgeConfigSpec.Builder builder)
     {
         builder.push("General");
+        serverAddChestLoot = builder.comment("Allow Hadite Coal loot to be added to chests?")
+                .translation(HaditeCoal.MODID + ".config.addChestLoot")
+                .define("AddChestLoot", true);
         serverEnableRecycling = 
                 builder.comment("Enable fusion furnace recycling of hadite and onyx items")
                 .translation(HaditeCoal.MODID + "config.EnableRecycling")
