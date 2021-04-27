@@ -7,6 +7,8 @@ import java.util.function.Supplier;
 
 import com.mojang.datafixers.util.Pair;
 
+import mod.akkamaddi.haditecoal.init.ModBlocks;
+import mod.akkamaddi.haditecoal.init.ModItems;
 import mod.alexndr.simplecorelib.datagen.BlockLootTableProvider;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.loot.LootParameterSet;
@@ -25,7 +27,10 @@ public class HaditeLootTableProvider extends BlockLootTableProvider
     protected List<Pair<Supplier<Consumer<BiConsumer<ResourceLocation, Builder>>>, LootParameterSet>> getTables()
     {
         tables.clear();
-        // TODO
+        standardDropTable(ModBlocks.gestankenzinn_block.get());
+        standardDropTable(ModBlocks.hadite_coal_block.get());
+        standardDropTable(ModBlocks.hadite_steel_block.get());
+        specialDropTable(ModBlocks.hadite_coal_ore.get(), ModItems.hadite_coal.get());
         return tables;
     }
 
