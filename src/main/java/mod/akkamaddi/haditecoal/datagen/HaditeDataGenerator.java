@@ -31,6 +31,7 @@ public class HaditeDataGenerator
             gen.addProvider(new Recipes(gen));
             gen.addProvider(new FusionRecipes(gen));
             gen.addProvider(new HaditeLootTableProvider(gen));
+            gen.addProvider(new HaditeLootInjectorProvider(gen));
         }
     } // end gatherData()
 
