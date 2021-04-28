@@ -9,6 +9,8 @@ public class HaditeInjectionLookup extends InjectionTableLookup
     public HaditeInjectionLookup()
     {
         super();
+        this.put("ruined_portal", "ruined_portal");
+        this.AddNetherAliases();
     }
 
 } // end class
