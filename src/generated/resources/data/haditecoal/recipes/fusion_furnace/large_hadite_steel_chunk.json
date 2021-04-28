@@ -4,7 +4,7 @@
     {
       "conditions": [
         {
-          "flag": "gestankenzinn_making_enabled",
+          "flag": "hadite_steel_making_enabled",
           "type": "haditecoal:flag"
         }
       ],
@@ -15,17 +15,17 @@
             "item": "haditecoal:hadite_coal"
           },
           {
-            "tag": "forge:ingots/tin"
+            "item": "minecraft:iron_ingot"
           }
         ],
         "catalyst": {
-          "tag": "minecraft:coals"
+          "item": "minecraft:gunpowder"
         },
         "output": {
-          "item": "haditecoal:large_gestankenzinn_chunk"
+          "item": "haditecoal:large_hadite_steel_chunk"
         },
         "cookingtime": 600,
-        "experience": 5.0
+        "experience": 6.0
       }
     }
   ]

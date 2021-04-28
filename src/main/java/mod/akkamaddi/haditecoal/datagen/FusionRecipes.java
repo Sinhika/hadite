@@ -63,7 +63,7 @@ public class FusionRecipes extends AbstractFusionRecipeProvider
         catalysts[2] = Ingredient.of(ItemTags.COALS);
 
         fusionbuilder.buildBasicAlloyRecipes(consumer, primary_inputs, catalysts, null,
-                null, ModItems.large_gestankenzinn_chunk.get(), 5.0F, 600,
+                null, ModItems.large_gestankenzinn_chunk.get(), 1.25F, 600,
                 flag("gestankenzinn_making_enabled"));
         
         // Gestankenzinn recycling recipes
@@ -74,15 +74,37 @@ public class FusionRecipes extends AbstractFusionRecipeProvider
                 null, Ingredient.of(Items.GRAVEL), Ingredient.of(ItemTags.COALS), 
                 ModItems.large_gestankenzinn_chunk.get(), 20.0F, 600, flag("recycling_enabled"),
                 "recycle_gestankenzinn_items");
-        
     } // end registerGestankenzinnRecipes
 
+    
     /**
      * Hadite Steel alloy recipes and recycling recipes.
      * @param consumer
      */
     protected void registerHaditeSteelRecipes(Consumer<IFinishedRecipe> consumer)
     {
+        // hadite steel alloy recipes
+        List<Ingredient> primary_inputs = new ArrayList<Ingredient>(2);
+        Ingredient[] catalysts = new Ingredient[3];
+        
+        primary_inputs.add(Ingredient.of(ModItems.hadite_coal.get()));
+        primary_inputs.add(Ingredient.of(Items.IRON_INGOT));
+        catalysts[0] = null;
+        catalysts[1] = null;
+        catalysts[2] = Ingredient.of(Items.GUNPOWDER);
+        fusionbuilder.buildBasicAlloyRecipes(consumer, primary_inputs, catalysts, null,
+                null, ModItems.large_hadite_steel_chunk.get(), 1.5F, 600,
+                flag("hadite_steel_making_enabled"));
+       
+        // hadite steel recycling recipes
+        fusionbuilder.buildFusionRecyclingRecipes(consumer, 
+                Ingredient.of(ModItems.hadite_steel_axe.get(), ModItems.hadite_steel_hoe.get(),
+                        ModItems.hadite_steel_pickaxe.get(), ModItems.hadite_steel_shears.get(),
+                        ModItems.hadite_steel_shovel.get(), ModItems.hadite_steel_sword.get()),
+                null, Ingredient.of(Items.GRAVEL), Ingredient.of(ItemTags.COALS), 
+                ModItems.large_hadite_steel_chunk.get(), 15.0F, 600, flag("recycling_enabled"),
+                "recycle_hadite_steel_items");
+        
     } // end registerHaditeSteelRecipes()
     
     
