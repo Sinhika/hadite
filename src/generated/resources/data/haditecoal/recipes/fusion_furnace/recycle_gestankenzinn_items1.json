@@ -1,0 +1,49 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "flag": "recycling_enabled",
+          "type": "haditecoal:flag"
+        }
+      ],
+      "recipe": {
+        "type": "fusion:alloying",
+        "inputs": [
+          [
+            {
+              "item": "haditecoal:gestankenzinn_axe"
+            },
+            {
+              "item": "haditecoal:gestankenzinn_hoe"
+            },
+            {
+              "item": "haditecoal:gestankenzinn_pickaxe"
+            },
+            {
+              "item": "haditecoal:gestankenzinn_shears"
+            },
+            {
+              "item": "haditecoal:gestankenzinn_shovel"
+            },
+            {
+              "item": "haditecoal:gestankenzinn_sword"
+            }
+          ],
+          {
+            "item": "minecraft:gravel"
+          }
+        ],
+        "catalyst": {
+          "tag": "minecraft:coals"
+        },
+        "output": {
+          "item": "haditecoal:large_gestankenzinn_chunk"
+        },
+        "cookingtime": 600,
+        "experience": 20.0
+      }
+    }
+  ]
+}

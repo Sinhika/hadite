@@ -13,6 +13,7 @@ import mod.alexndr.fusion.api.recipe.AbstractFusionRecipeProvider;
 import mod.alexndr.simplecorelib.datagen.ISimpleConditionBuilder;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.IFinishedRecipe;
+import net.minecraft.item.Items;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.tags.ItemTags;
 import net.minecraftforge.common.crafting.conditions.ICondition;
@@ -42,10 +43,11 @@ public class FusionRecipes extends AbstractFusionRecipeProvider
     protected void buildShapelessRecipes(Consumer<IFinishedRecipe> consumer)
     {
         registerGestankenzinnRecipes(consumer);
+        registerHaditeSteelRecipes(consumer);
     }
     
     /**
-     * Gestankenzinn alloy recipes and bronze recycling recipes.
+     * Gestankenzinn alloy recipes and recycling recipes.
      * @param consumer
      */
     protected void registerGestankenzinnRecipes(Consumer<IFinishedRecipe> consumer)
@@ -63,7 +65,26 @@ public class FusionRecipes extends AbstractFusionRecipeProvider
         fusionbuilder.buildBasicAlloyRecipes(consumer, primary_inputs, catalysts, null,
                 null, ModItems.large_gestankenzinn_chunk.get(), 5.0F, 600,
                 flag("gestankenzinn_making_enabled"));
+        
+        // Gestankenzinn recycling recipes
+        fusionbuilder.buildFusionRecyclingRecipes(consumer, 
+                Ingredient.of(ModItems.gestankenzinn_axe.get(), ModItems.gestankenzinn_hoe.get(),
+                        ModItems.gestankenzinn_pickaxe.get(), ModItems.gestankenzinn_shears.get(),
+                        ModItems.gestankenzinn_shovel.get(), ModItems.gestankenzinn_sword.get()),
+                null, Ingredient.of(Items.GRAVEL), Ingredient.of(ItemTags.COALS), 
+                ModItems.large_gestankenzinn_chunk.get(), 20.0F, 600, flag("recycling_enabled"),
+                "recycle_gestankenzinn_items");
+        
     } // end registerGestankenzinnRecipes
+
+    /**
+     * Hadite Steel alloy recipes and recycling recipes.
+     * @param consumer
+     */
+    protected void registerHaditeSteelRecipes(Consumer<IFinishedRecipe> consumer)
+    {
+    } // end registerHaditeSteelRecipes()
+    
     
     /**
      * Builds an ICondition representing FlagCondition...
