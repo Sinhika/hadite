@@ -44,6 +44,7 @@ public class FusionRecipes extends AbstractFusionRecipeProvider
     {
         registerGestankenzinnRecipes(consumer);
         registerHaditeSteelRecipes(consumer);
+        registerImprovedOnyxRecyclingRecipes(consumer);
     }
     
     /**
@@ -106,6 +107,52 @@ public class FusionRecipes extends AbstractFusionRecipeProvider
                 "recycle_hadite_steel_items");
         
     } // end registerHaditeSteelRecipes()
+    
+    /**
+     * Improved onyx recycling with hadite coal.
+     * @param consumer
+     */
+    protected void registerImprovedOnyxRecyclingRecipes(Consumer<IFinishedRecipe> consumer)
+    {
+        fusionbuilder.buildFusionRecyclingRecipes(consumer, 
+                Ingredient.of(mod.alexndr.simpleores.init.ModItems.onyx_axe.get(),
+                        mod.alexndr.simpleores.init.ModItems.onyx_boots.get(),
+                        mod.alexndr.simpleores.init.ModItems.onyx_bow.get(),
+                        mod.alexndr.simpleores.init.ModItems.onyx_helmet.get(),
+                        mod.alexndr.simpleores.init.ModItems.onyx_hoe.get(),
+                        mod.alexndr.simpleores.init.ModItems.onyx_pickaxe.get(),
+                        mod.alexndr.simpleores.init.ModItems.onyx_rod.get(),
+                        mod.alexndr.simpleores.init.ModItems.onyx_shears.get(),
+                        mod.alexndr.simpleores.init.ModItems.onyx_shovel.get(),
+                        mod.alexndr.simpleores.init.ModItems.onyx_sword.get()),
+                Ingredient.of(mod.alexndr.aesthetics.init.ModBlocks.onyx_door.get().asItem(),
+                        mod.alexndr.machines.init.ModBlocks.onyx_furnace.get().asItem(),
+                        mod.alexndr.machines.init.ModBlocks.onyx_blast_furnace.get().asItem(),
+                        mod.alexndr.machines.init.ModBlocks.onyx_smoker.get().asItem(),
+                        mod.alexndr.simpleores.init.ModItems.onyx_chestplate.get(),
+                        mod.alexndr.simpleores.init.ModItems.onyx_leggings.get()),
+                Ingredient.of(Items.NETHERRACK), Ingredient.of(ModItems.hadite_coal.get()),
+                mod.alexndr.simpleores.init.ModItems.onyx_gem.get(), 20.0F, 600, 
+                and(flag("recycling_enabled"),modLoaded("simpleores")),
+                "better_onyx_recycling");
+        
+        fusionbuilder.buildFusionRecyclingRecipes(consumer, null,
+                Ingredient.of(mod.alexndr.aesthetics.init.ModBlocks.onyx_door.get().asItem()),
+                Ingredient.of(Items.NETHERRACK), Ingredient.of(ModItems.hadite_coal.get()),
+                mod.alexndr.simpleores.init.ModItems.onyx_gem.get(), 20.0F, 600, 
+                and(flag("recycling_enabled"),modLoaded("aesthetics"),modLoaded("simpleores")),
+                "aesthetics_onyx_recycling");
+        
+        fusionbuilder.buildFusionRecyclingRecipes(consumer, null, 
+                Ingredient.of(mod.alexndr.machines.init.ModBlocks.onyx_furnace.get().asItem(),
+                        mod.alexndr.machines.init.ModBlocks.onyx_blast_furnace.get().asItem(),
+                        mod.alexndr.machines.init.ModBlocks.onyx_smoker.get().asItem()),
+                Ingredient.of(Items.NETHERRACK), Ingredient.of(ModItems.hadite_coal.get()),
+                mod.alexndr.simpleores.init.ModItems.onyx_gem.get(), 20.0F, 600, 
+                and(flag("recycling_enabled"),modLoaded("simple_machines"),modLoaded("simpleores")),
+                "onyx_machine_recycling");
+                        
+    } // end registerImprovedOnyxRecyclingRecipes()
     
     
     /**
