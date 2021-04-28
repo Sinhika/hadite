@@ -70,14 +70,14 @@ description='''Hadite Coal, a utility ore from the Nether, plus two alloys.
 [[dependencies.haditecoal]]
         modId="silents_mechanisms"
         mandatory=false
-        versionRange="[1.16.3-0.8.9,)"
+        versionRange="[0.8.9,)"
         ordering="BEFORE"
         side="BOTH"
         
 [[dependencies.haditecoal]]
         modId="silentgear"
         mandatory=false
-        versionRange="[1.16.3-2.5.2,)"
+        versionRange="[2.5.2,)"
         ordering="BEFORE"
         side="BOTH"
         
