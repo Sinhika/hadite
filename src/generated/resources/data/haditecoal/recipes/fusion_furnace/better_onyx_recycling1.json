@@ -1,0 +1,70 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "values": [
+            {
+              "flag": "recycling_enabled",
+              "type": "haditecoal:flag"
+            },
+            {
+              "modid": "simpleores",
+              "type": "forge:mod_loaded"
+            }
+          ],
+          "type": "forge:and"
+        }
+      ],
+      "recipe": {
+        "type": "fusion:alloying",
+        "inputs": [
+          [
+            {
+              "item": "simpleores:onyx_axe"
+            },
+            {
+              "item": "simpleores:onyx_boots"
+            },
+            {
+              "item": "simpleores:onyx_bow"
+            },
+            {
+              "item": "simpleores:onyx_helmet"
+            },
+            {
+              "item": "simpleores:onyx_hoe"
+            },
+            {
+              "item": "simpleores:onyx_pickaxe"
+            },
+            {
+              "item": "simpleores:onyx_rod"
+            },
+            {
+              "item": "simpleores:onyx_shears"
+            },
+            {
+              "item": "simpleores:onyx_shovel"
+            },
+            {
+              "item": "simpleores:onyx_sword"
+            }
+          ],
+          {
+            "item": "minecraft:netherrack"
+          }
+        ],
+        "catalyst": {
+          "item": "haditecoal:hadite_coal"
+        },
+        "output": {
+          "item": "simpleores:onyx_gem"
+        },
+        "cookingtime": 600,
+        "experience": 20.0
+      }
+    }
+  ]
+}

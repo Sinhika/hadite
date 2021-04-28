@@ -1,0 +1,46 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "values": [
+            {
+              "flag": "recycling_enabled",
+              "type": "haditecoal:flag"
+            },
+            {
+              "modid": "aesthetics",
+              "type": "forge:mod_loaded"
+            },
+            {
+              "modid": "simpleores",
+              "type": "forge:mod_loaded"
+            }
+          ],
+          "type": "forge:and"
+        }
+      ],
+      "recipe": {
+        "type": "fusion:alloying",
+        "inputs": [
+          {
+            "item": "aesthetics:onyx_door"
+          },
+          {
+            "item": "minecraft:netherrack"
+          }
+        ],
+        "catalyst": {
+          "item": "haditecoal:hadite_coal"
+        },
+        "output": {
+          "item": "simpleores:onyx_gem",
+          "count": 2
+        },
+        "cookingtime": 600,
+        "experience": 40.0
+      }
+    }
+  ]
+}

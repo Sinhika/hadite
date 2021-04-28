@@ -1,0 +1,47 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "values": [
+            {
+              "flag": "recycling_enabled",
+              "type": "haditecoal:flag"
+            },
+            {
+              "modid": "simpleores",
+              "type": "forge:mod_loaded"
+            }
+          ],
+          "type": "forge:and"
+        }
+      ],
+      "recipe": {
+        "type": "fusion:alloying",
+        "inputs": [
+          [
+            {
+              "item": "simpleores:onyx_chestplate"
+            },
+            {
+              "item": "simpleores:onyx_leggings"
+            }
+          ],
+          {
+            "item": "minecraft:netherrack"
+          }
+        ],
+        "catalyst": {
+          "item": "haditecoal:hadite_coal"
+        },
+        "output": {
+          "item": "simpleores:onyx_gem",
+          "count": 2
+        },
+        "cookingtime": 600,
+        "experience": 40.0
+      }
+    }
+  ]
+}

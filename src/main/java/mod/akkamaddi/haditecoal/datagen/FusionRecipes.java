@@ -13,6 +13,7 @@ import mod.alexndr.fusion.api.recipe.AbstractFusionRecipeProvider;
 import mod.alexndr.simplecorelib.datagen.ISimpleConditionBuilder;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.IFinishedRecipe;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.tags.ItemTags;
@@ -45,6 +46,12 @@ public class FusionRecipes extends AbstractFusionRecipeProvider
         registerGestankenzinnRecipes(consumer);
         registerHaditeSteelRecipes(consumer);
         registerImprovedOnyxRecyclingRecipes(consumer);
+        
+        // and one misc recipe for gunpowder:
+        consumer.accept(new AbstractFusionRecipeProvider.FinishedRecipe(
+                fusionbuilder.make_resource("fusion_furnace/gunpowder"),
+                new ItemStack(Items.GUNPOWDER), 600, 6.0F, Ingredient.of(ItemTags.COALS),
+                Ingredient.of(ModItems.hadite_coal.get()), Ingredient.of(Items.FLINT)));  
     }
     
     /**
@@ -125,11 +132,7 @@ public class FusionRecipes extends AbstractFusionRecipeProvider
                         mod.alexndr.simpleores.init.ModItems.onyx_shears.get(),
                         mod.alexndr.simpleores.init.ModItems.onyx_shovel.get(),
                         mod.alexndr.simpleores.init.ModItems.onyx_sword.get()),
-                Ingredient.of(mod.alexndr.aesthetics.init.ModBlocks.onyx_door.get().asItem(),
-                        mod.alexndr.machines.init.ModBlocks.onyx_furnace.get().asItem(),
-                        mod.alexndr.machines.init.ModBlocks.onyx_blast_furnace.get().asItem(),
-                        mod.alexndr.machines.init.ModBlocks.onyx_smoker.get().asItem(),
-                        mod.alexndr.simpleores.init.ModItems.onyx_chestplate.get(),
+                Ingredient.of(mod.alexndr.simpleores.init.ModItems.onyx_chestplate.get(),
                         mod.alexndr.simpleores.init.ModItems.onyx_leggings.get()),
                 Ingredient.of(Items.NETHERRACK), Ingredient.of(ModItems.hadite_coal.get()),
                 mod.alexndr.simpleores.init.ModItems.onyx_gem.get(), 20.0F, 600, 
