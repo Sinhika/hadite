@@ -11,6 +11,10 @@ import mod.alexndr.simplecorelib.datagen.RecipeSetBuilder;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.IFinishedRecipe;
 import net.minecraft.data.RecipeProvider;
+import net.minecraft.data.ShapedRecipeBuilder;
+import net.minecraft.item.Items;
+import net.minecraft.item.crafting.Ingredient;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.conditions.ICondition;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 
@@ -60,6 +64,14 @@ public class Recipes extends RecipeProvider implements IConditionBuilder, ISimpl
 
     protected void registerMiscRecipes(Consumer<IFinishedRecipe> consumer)
     {
+        ShapedRecipeBuilder.shaped(Items.TORCH, 64)
+            .define('Y', Ingredient.of(Tags.Items.RODS_WOODEN))
+            .define('#', ModItems.hadite_coal.get())
+            .pattern("YYY")
+            .pattern("Y#Y")
+            .pattern("YYY")
+            .unlockedBy("has_item", has(ModItems.hadite_coal.get()))
+            .save(consumer, setbuilder.make_resource("torch"));
     } // end registerMiscRecipes()
 
     protected void registerFurnaceRecipes(Consumer<IFinishedRecipe> consumer)
