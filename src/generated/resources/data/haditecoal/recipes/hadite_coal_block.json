@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SSS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "haditecoal:hadite_coal"
+    }
+  },
+  "result": {
+    "item": "haditecoal:hadite_coal_block"
+  }
+}

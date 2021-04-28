@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "haditecoal:gestankenzinn_block"
+    }
+  ],
+  "result": {
+    "item": "haditecoal:gestankenzinn_ingot",
+    "count": 9
+  }
+}

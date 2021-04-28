@@ -4,6 +4,8 @@ import java.util.function.Consumer;
 
 import mod.akkamaddi.haditecoal.HaditeCoal;
 import mod.akkamaddi.haditecoal.config.HaditeConfig;
+import mod.akkamaddi.haditecoal.init.ModBlocks;
+import mod.akkamaddi.haditecoal.init.ModItems;
 import mod.alexndr.simplecorelib.datagen.ISimpleConditionBuilder;
 import mod.alexndr.simplecorelib.datagen.RecipeSetBuilder;
 import net.minecraft.data.DataGenerator;
@@ -46,6 +48,14 @@ public class Recipes extends RecipeProvider implements IConditionBuilder, ISimpl
 
     protected void registerStorageRecipes(Consumer<IFinishedRecipe> consumer)
     {
+        setbuilder.buildSimpleStorageRecipes(consumer, ModItems.gestankenzinn_ingot.get(),
+                ModBlocks.gestankenzinn_block.get().asItem(), ModItems.gestankenzinn_nugget.get(),
+                has(ModItems.gestankenzinn_ingot.get()));
+        setbuilder.buildSimpleStorageRecipes(consumer, ModItems.hadite_steel_ingot.get(),
+                ModBlocks.hadite_steel_block.get().asItem(), ModItems.hadite_steel_nugget.get(),
+                has(ModItems.hadite_steel_ingot.get()));
+        setbuilder.buildSimpleStorageRecipes(consumer, ModItems.hadite_coal.get(),
+                ModBlocks.hadite_coal_block.get().asItem(), null, has(ModItems.hadite_coal.get()));
     } // end registerStorageRecipes()
 
     protected void registerMiscRecipes(Consumer<IFinishedRecipe> consumer)
