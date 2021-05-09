@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "haditecoal:gestankenzinn_nugget_from_blasting"
+    ]
+  },
+  "criteria": {
+    "gestankenzinn_nugget_from_blasting": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "haditecoal:gestankenzinn_axe"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "haditecoal:gestankenzinn_nugget_from_blasting"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "gestankenzinn_nugget_from_blasting",
+      "has_the_recipe"
+    ]
+  ]
+}

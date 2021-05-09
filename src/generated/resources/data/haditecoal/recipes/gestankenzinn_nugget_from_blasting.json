@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": [
+    {
+      "item": "haditecoal:gestankenzinn_axe"
+    },
+    {
+      "item": "haditecoal:gestankenzinn_hoe"
+    },
+    {
+      "item": "haditecoal:gestankenzinn_pickaxe"
+    },
+    {
+      "item": "haditecoal:gestankenzinn_shears"
+    },
+    {
+      "item": "haditecoal:gestankenzinn_shovel"
+    },
+    {
+      "item": "haditecoal:gestankenzinn_sword"
+    }
+  ],
+  "result": "haditecoal:gestankenzinn_nugget",
+  "experience": 0.2,
+  "cookingtime": 100
+}

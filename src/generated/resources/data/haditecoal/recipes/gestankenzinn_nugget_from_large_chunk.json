@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "haditecoal:large_gestankenzinn_chunk"
+    }
+  ],
+  "result": {
+    "item": "haditecoal:gestankenzinn_nugget",
+    "count": 8
+  }
+}

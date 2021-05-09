@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "haditecoal:large_hadite_steel_chunk"
+    }
+  ],
+  "result": {
+    "item": "haditecoal:hadite_steel_nugget",
+    "count": 8
+  }
+}
