@@ -6,6 +6,7 @@ import mod.akkamaddi.haditecoal.HaditeCoal;
 import mod.akkamaddi.haditecoal.config.HaditeConfig;
 import mod.akkamaddi.haditecoal.init.ModBlocks;
 import mod.akkamaddi.haditecoal.init.ModItems;
+import mod.alexndr.simplecorelib.datagen.AbstractRecipeSetBuilder;
 import mod.alexndr.simplecorelib.datagen.ISimpleConditionBuilder;
 import mod.alexndr.simplecorelib.datagen.RecipeSetBuilder;
 import net.minecraft.data.DataGenerator;
@@ -41,8 +42,25 @@ public class Recipes extends RecipeProvider implements IConditionBuilder, ISimpl
         registerMiscRecipes(consumer);
         registerToolRecipes(consumer);
         registerFurnaceRecipes(consumer);
+        registerVanillaRecyclingRecipes(consumer);
     } // end registerRecipes()
 
+    protected void registerVanillaRecyclingRecipes(Consumer<IFinishedRecipe> consumer)
+    {
+        setbuilder.buildVanillaRecyclingRecipes(consumer, Ingredient.of(ModItems.gestankenzinn_axe.get(), 
+                ModItems.gestankenzinn_hoe.get(), ModItems.gestankenzinn_pickaxe.get(), ModItems.gestankenzinn_shears.get(),
+                ModItems.gestankenzinn_shovel.get(), ModItems.gestankenzinn_sword.get()), 
+                ModItems.gestankenzinn_nugget.get(), has(ModItems.gestankenzinn_axe.get()), 
+                0.2F, 200);   
+        setbuilder.buildVanillaRecyclingRecipes(consumer, Ingredient.of(ModItems.hadite_steel_axe.get(), 
+                ModItems.hadite_steel_hoe.get(), ModItems.hadite_steel_pickaxe.get(), ModItems.hadite_steel_shears.get(),
+                ModItems.hadite_steel_shovel.get(), ModItems.hadite_steel_sword.get()), 
+                ModItems.hadite_steel_nugget.get(), has(ModItems.hadite_steel_axe.get()), 
+                0.2F, 200);   
+        
+    } // end registerVanillaRecyclingRecipes()
+    
+    
     protected void registerToolRecipes(Consumer<IFinishedRecipe> consumer)
     {
         setbuilder.buildSimpleToolSet(consumer, Ingredient.of(ModItems.gestankenzinn_ingot.get()), "gestankenzinn", 
@@ -61,6 +79,10 @@ public class Recipes extends RecipeProvider implements IConditionBuilder, ISimpl
                 has(ModItems.hadite_steel_ingot.get()));
         setbuilder.buildSimpleStorageRecipes(consumer, ModItems.hadite_coal.get(),
                 ModBlocks.hadite_coal_block.get().asItem(), null, has(ModItems.hadite_coal.get()));
+        setbuilder.buildChunkConversionRecipes(consumer, ModItems.gestankenzinn_nugget.get(), null, 
+                ModItems.large_gestankenzinn_chunk.get(), has(ModItems.gestankenzinn_nugget.get()));
+        setbuilder.buildChunkConversionRecipes(consumer, ModItems.hadite_steel_nugget.get(), null, 
+                ModItems.large_hadite_steel_chunk.get(), has(ModItems.hadite_steel_nugget.get()));
     } // end registerStorageRecipes()
 
     protected void registerMiscRecipes(Consumer<IFinishedRecipe> consumer)
@@ -77,6 +99,13 @@ public class Recipes extends RecipeProvider implements IConditionBuilder, ISimpl
 
     protected void registerFurnaceRecipes(Consumer<IFinishedRecipe> consumer)
     {
+        setbuilder.buildOre2IngotRecipes(consumer, Ingredient.of(ModItems.large_gestankenzinn_chunk.get()), 
+                ModItems.gestankenzinn_ingot.get(), has(ModItems.large_gestankenzinn_chunk.get()), 
+                0.7F, 200);
+        setbuilder.buildOre2IngotRecipes(consumer, Ingredient.of(ModItems.large_hadite_steel_chunk.get()), 
+                ModItems.hadite_steel_ingot.get(), has(ModItems.large_hadite_steel_chunk.get()), 
+                0.7F, 200);
+       
     } // end registerFurnaceRecipes()
 
     @Override
