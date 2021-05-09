@@ -40,15 +40,16 @@ public class Recipes extends RecipeProvider implements IConditionBuilder, ISimpl
         registerStorageRecipes(consumer);
         registerMiscRecipes(consumer);
         registerToolRecipes(consumer);
-        registerArmorRecipes(consumer);
         registerFurnaceRecipes(consumer);
     } // end registerRecipes()
 
     protected void registerToolRecipes(Consumer<IFinishedRecipe> consumer)
-    {} // end registerToolRecipes()
-
-    protected void registerArmorRecipes(Consumer<IFinishedRecipe> consumer)
-    {} // end registerArmorRecipes()
+    {
+        setbuilder.buildSimpleToolSet(consumer, Ingredient.of(ModItems.gestankenzinn_ingot.get()), "gestankenzinn", 
+                has(ModItems.gestankenzinn_ingot.get()), flag("gestankenzinn_tools_enabled"), true);
+        setbuilder.buildSimpleToolSet(consumer, Ingredient.of(ModItems.hadite_steel_ingot.get()), "hadite_steel", 
+                has(ModItems.hadite_steel_ingot.get()), flag("hadite_steel_tools_enabled"), true);
+    } // end registerToolRecipes()
 
     protected void registerStorageRecipes(Consumer<IFinishedRecipe> consumer)
     {

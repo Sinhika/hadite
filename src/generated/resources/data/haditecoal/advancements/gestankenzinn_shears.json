@@ -1,0 +1,37 @@
+{
+  "advancements": [
+    {
+      "conditions": [
+        {
+          "flag": "gestankenzinn_tools_enabled",
+          "type": "haditecoal:flag"
+        }
+      ],
+      "advancement": {
+        "parent": "minecraft:recipes/root",
+        "rewards": {
+          "recipes": [
+            "haditecoal:gestankenzinn_shears"
+          ]
+        },
+        "criteria": {
+          "has_item": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": [
+                {
+                  "item": "haditecoal:gestankenzinn_ingot"
+                }
+              ]
+            }
+          }
+        },
+        "requirements": [
+          [
+            "has_item"
+          ]
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "advancements": [
+    {
+      "conditions": [
+        {
+          "flag": "hadite_steel_tools_enabled",
+          "type": "haditecoal:flag"
+        }
+      ],
+      "advancement": {
+        "parent": "minecraft:recipes/root",
+        "rewards": {
+          "recipes": [
+            "haditecoal:hadite_steel_shovel"
+          ]
+        },
+        "criteria": {
+          "has_item": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": [
+                {
+                  "item": "haditecoal:hadite_steel_ingot"
+                }
+              ]
+            }
+          }
+        },
+        "requirements": [
+          [
+            "has_item"
+          ]
+        ]
+      }
+    }
+  ]
+}

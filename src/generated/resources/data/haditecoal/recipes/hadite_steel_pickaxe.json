@@ -1,0 +1,32 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "flag": "hadite_steel_tools_enabled",
+          "type": "haditecoal:flag"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "SSS",
+          " T ",
+          " T "
+        ],
+        "key": {
+          "S": {
+            "item": "haditecoal:hadite_steel_ingot"
+          },
+          "T": {
+            "tag": "forge:rods/wooden"
+          }
+        },
+        "result": {
+          "item": "haditecoal:hadite_steel_pickaxe"
+        }
+      }
+    }
+  ]
+}
