@@ -138,9 +138,9 @@ dependencies {
     minecraft "net.minecraftforge:forge:${version_forge}"
     compile fg.deobf("mod.alexndr.simplecorelib:SimpleCoreLib:${simplecorelib_version}")
     compile fg.deobf("mod.alexndr.fusion:Fusion:${fusion_version}")
-    runtimeOnly fg.deobf("mod.alexndr.machines:Machines:${simple_machines_version}")
-    runtimeOnly fg.deobf("mod.alexndr.aesthetics:Aesthetics:${aesthetics_version}")
-    runtimeOnly fg.deobf("mod.alexndr.simpleores:SimpleOres2:${simpleores_version}")
+    compile fg.deobf("mod.alexndr.machines:Machines:${simple_machines_version}")
+    compile fg.deobf("mod.alexndr.aesthetics:Aesthetics:${aesthetics_version}")
+    compile fg.deobf("mod.alexndr.simpleores:SimpleOres2:${simpleores_version}")
 }
 
 // Example for how to get properties into the manifest for reading by the runtime..
