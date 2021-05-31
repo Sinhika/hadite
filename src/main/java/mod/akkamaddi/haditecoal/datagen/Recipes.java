@@ -6,7 +6,6 @@ import mod.akkamaddi.haditecoal.HaditeCoal;
 import mod.akkamaddi.haditecoal.config.HaditeConfig;
 import mod.akkamaddi.haditecoal.init.ModBlocks;
 import mod.akkamaddi.haditecoal.init.ModItems;
-import mod.alexndr.simplecorelib.datagen.AbstractRecipeSetBuilder;
 import mod.alexndr.simplecorelib.datagen.ISimpleConditionBuilder;
 import mod.alexndr.simplecorelib.datagen.RecipeSetBuilder;
 import net.minecraft.data.DataGenerator;
