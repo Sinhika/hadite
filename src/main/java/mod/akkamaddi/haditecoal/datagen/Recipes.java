@@ -9,11 +9,11 @@ import mod.akkamaddi.haditecoal.init.ModItems;
 import mod.alexndr.simplecorelib.datagen.ISimpleConditionBuilder;
 import mod.alexndr.simplecorelib.datagen.RecipeSetBuilder;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.data.IFinishedRecipe;
-import net.minecraft.data.RecipeProvider;
-import net.minecraft.data.ShapedRecipeBuilder;
-import net.minecraft.item.Items;
-import net.minecraft.item.crafting.Ingredient;
+import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.data.recipes.RecipeProvider;
+import net.minecraft.data.recipes.ShapedRecipeBuilder;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.conditions.ICondition;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
@@ -35,7 +35,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder, ISimpl
     }
 
     @Override
-    protected void buildShapelessRecipes(Consumer<IFinishedRecipe> consumer)
+    protected void buildShapelessRecipes(Consumer<FinishedRecipe> consumer)
     {
         registerStorageRecipes(consumer);
         registerMiscRecipes(consumer);
@@ -44,7 +44,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder, ISimpl
         registerVanillaRecyclingRecipes(consumer);
     } // end registerRecipes()
 
-    protected void registerVanillaRecyclingRecipes(Consumer<IFinishedRecipe> consumer)
+    protected void registerVanillaRecyclingRecipes(Consumer<FinishedRecipe> consumer)
     {
         setbuilder.buildVanillaRecyclingRecipes(consumer, Ingredient.of(ModItems.gestankenzinn_axe.get(), 
                 ModItems.gestankenzinn_hoe.get(), ModItems.gestankenzinn_pickaxe.get(), ModItems.gestankenzinn_shears.get(),
@@ -60,7 +60,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder, ISimpl
     } // end registerVanillaRecyclingRecipes()
     
     
-    protected void registerToolRecipes(Consumer<IFinishedRecipe> consumer)
+    protected void registerToolRecipes(Consumer<FinishedRecipe> consumer)
     {
         setbuilder.buildSimpleToolSet(consumer, Ingredient.of(ModItems.gestankenzinn_ingot.get()), "gestankenzinn", 
                 has(ModItems.gestankenzinn_ingot.get()), flag("gestankenzinn_tools_enabled"), true);
@@ -68,7 +68,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder, ISimpl
                 has(ModItems.hadite_steel_ingot.get()), flag("hadite_steel_tools_enabled"), true);
     } // end registerToolRecipes()
 
-    protected void registerStorageRecipes(Consumer<IFinishedRecipe> consumer)
+    protected void registerStorageRecipes(Consumer<FinishedRecipe> consumer)
     {
         setbuilder.buildSimpleStorageRecipes(consumer, ModItems.gestankenzinn_ingot.get(),
                 ModBlocks.gestankenzinn_block.get().asItem(), ModItems.gestankenzinn_nugget.get(),
@@ -84,7 +84,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder, ISimpl
                 ModItems.large_hadite_steel_chunk.get(), has(ModItems.hadite_steel_nugget.get()));
     } // end registerStorageRecipes()
 
-    protected void registerMiscRecipes(Consumer<IFinishedRecipe> consumer)
+    protected void registerMiscRecipes(Consumer<FinishedRecipe> consumer)
     {
         ShapedRecipeBuilder.shaped(Items.TORCH, 64)
             .define('Y', Ingredient.of(Tags.Items.RODS_WOODEN))
@@ -96,7 +96,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder, ISimpl
             .save(consumer, setbuilder.make_resource("torch"));
     } // end registerMiscRecipes()
 
-    protected void registerFurnaceRecipes(Consumer<IFinishedRecipe> consumer)
+    protected void registerFurnaceRecipes(Consumer<FinishedRecipe> consumer)
     {
         setbuilder.buildOre2IngotRecipes(consumer, Ingredient.of(ModItems.large_gestankenzinn_chunk.get()), 
                 ModItems.gestankenzinn_ingot.get(), has(ModItems.large_gestankenzinn_chunk.get()), 

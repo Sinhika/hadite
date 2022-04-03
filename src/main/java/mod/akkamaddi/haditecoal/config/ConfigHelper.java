@@ -1,7 +1,7 @@
 package mod.akkamaddi.haditecoal.config;
 
 import mod.alexndr.simplecorelib.config.ModOreConfig;
-import net.minecraft.world.gen.placement.TopSolidRangeConfig;
+import net.minecraft.world.level.levelgen.feature.configurations.RangeDecoratorConfiguration;
 import net.minecraftforge.fml.config.ModConfig;
 
 public final class ConfigHelper
@@ -17,7 +17,7 @@ public final class ConfigHelper
         // general stuff
         HaditeConfig.addChestLoot = ConfigHolder.SERVER.serverAddChestLoot.get();
         HaditeConfig.hadite_cfg = new ModOreConfig(
-                new TopSolidRangeConfig(
+                new RangeDecoratorConfiguration(
                         ConfigHolder.SERVER.serverHaditeCoalBottomHeight.get(),
                         0, ConfigHolder.SERVER.serverHaditeCoalMaxHeight.get()),
                 ConfigHolder.SERVER.serverHaditeCoalVeinSize.get(),

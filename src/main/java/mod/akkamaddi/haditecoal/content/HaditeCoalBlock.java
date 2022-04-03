@@ -3,14 +3,16 @@ package mod.akkamaddi.haditecoal.content;
 import java.util.Random;
 
 import mod.akkamaddi.haditecoal.config.HaditeConfig;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.particles.ParticleTypes;
-import net.minecraft.util.Direction;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.IWorldReader;
-import net.minecraft.world.World;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.Direction;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.Level;
 import net.minecraftforge.common.extensions.IForgeBlock;
+
+import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 
 public class HaditeCoalBlock extends Block implements IForgeBlock
 {
@@ -21,7 +23,7 @@ public class HaditeCoalBlock extends Block implements IForgeBlock
 
     
     @Override
-    public boolean isFireSource(BlockState state, IWorldReader world, BlockPos pos, Direction side)
+    public boolean isFireSource(BlockState state, LevelReader world, BlockPos pos, Direction side)
     {
         if (side != Direction.UP)
             return false;
@@ -29,7 +31,7 @@ public class HaditeCoalBlock extends Block implements IForgeBlock
     }
 
     @Override
-    public void animateTick(BlockState stateIn, World worldIn, BlockPos pos, Random rand)
+    public void animateTick(BlockState stateIn, Level worldIn, BlockPos pos, Random rand)
     {
         if (worldIn.isClientSide && HaditeConfig.makeBlockFlame)
         {

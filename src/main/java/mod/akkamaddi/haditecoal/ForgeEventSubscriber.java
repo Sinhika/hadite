@@ -7,7 +7,7 @@ import mod.akkamaddi.haditecoal.config.HaditeConfig;
 import mod.akkamaddi.haditecoal.generation.OreGeneration;
 import mod.akkamaddi.haditecoal.loot.HaditeInjectionLookup;
 import mod.alexndr.simplecorelib.helpers.LootUtils;
-import net.minecraft.world.biome.Biome;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
@@ -41,7 +41,7 @@ public final class ForgeEventSubscriber
     @SubscribeEvent(priority=EventPriority.HIGH)
     public static void onBiomeLoading(BiomeLoadingEvent evt)
     {
-        if (evt.getCategory() == Biome.Category.NETHER) 
+        if (evt.getCategory() == Biome.BiomeCategory.NETHER) 
         {
             OreGeneration.generateNetherOres(evt);
         }

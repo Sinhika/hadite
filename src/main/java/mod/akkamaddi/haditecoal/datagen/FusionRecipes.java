@@ -12,10 +12,10 @@ import mod.alexndr.fusion.api.datagen.FusionRecipeSetBuilder;
 import mod.alexndr.fusion.api.recipe.AbstractFusionRecipeProvider;
 import mod.alexndr.simplecorelib.datagen.ISimpleConditionBuilder;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.data.IFinishedRecipe;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.item.crafting.Ingredient;
+import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.tags.ItemTags;
 import net.minecraftforge.common.crafting.conditions.ICondition;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
@@ -41,7 +41,7 @@ public class FusionRecipes extends AbstractFusionRecipeProvider
     }
 
     @Override
-    protected void buildShapelessRecipes(Consumer<IFinishedRecipe> consumer)
+    protected void buildShapelessRecipes(Consumer<FinishedRecipe> consumer)
     {
         registerGestankenzinnRecipes(consumer);
         registerHaditeSteelRecipes(consumer);
@@ -58,7 +58,7 @@ public class FusionRecipes extends AbstractFusionRecipeProvider
      * Gestankenzinn alloy recipes and recycling recipes.
      * @param consumer
      */
-    protected void registerGestankenzinnRecipes(Consumer<IFinishedRecipe> consumer)
+    protected void registerGestankenzinnRecipes(Consumer<FinishedRecipe> consumer)
     {
         // Gestankenzinn alloy recipes
         List<Ingredient> primary_inputs = new ArrayList<Ingredient>(2);
@@ -89,7 +89,7 @@ public class FusionRecipes extends AbstractFusionRecipeProvider
      * Hadite Steel alloy recipes and recycling recipes.
      * @param consumer
      */
-    protected void registerHaditeSteelRecipes(Consumer<IFinishedRecipe> consumer)
+    protected void registerHaditeSteelRecipes(Consumer<FinishedRecipe> consumer)
     {
         // hadite steel alloy recipes
         List<Ingredient> primary_inputs = new ArrayList<Ingredient>(2);
@@ -119,7 +119,7 @@ public class FusionRecipes extends AbstractFusionRecipeProvider
      * Improved onyx recycling with hadite coal.
      * @param consumer
      */
-    protected void registerImprovedOnyxRecyclingRecipes(Consumer<IFinishedRecipe> consumer)
+    protected void registerImprovedOnyxRecyclingRecipes(Consumer<FinishedRecipe> consumer)
     {
         fusionbuilder.buildFusionRecyclingRecipes(consumer, 
                 Ingredient.of(mod.alexndr.simpleores.init.ModItems.onyx_axe.get(),

@@ -3,11 +3,13 @@ package mod.akkamaddi.haditecoal.content;
 import java.util.Random;
 
 import mod.akkamaddi.haditecoal.config.HaditeConfig;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.OreBlock;
-import net.minecraft.particles.ParticleTypes;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.OreBlock;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.level.Level;
+
+import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 
 public class HaditeOreBlock extends OreBlock
 {
@@ -18,7 +20,7 @@ public class HaditeOreBlock extends OreBlock
     }
 
     @Override
-    public void animateTick(BlockState stateIn, World worldIn, BlockPos pos, Random rand)
+    public void animateTick(BlockState stateIn, Level worldIn, BlockPos pos, Random rand)
     {
         if (worldIn.isClientSide && HaditeConfig.makeOreFlame)
         {

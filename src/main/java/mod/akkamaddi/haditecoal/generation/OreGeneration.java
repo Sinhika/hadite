@@ -4,9 +4,9 @@ import mod.akkamaddi.haditecoal.HaditeCoal;
 import mod.akkamaddi.haditecoal.config.HaditeConfig;
 import mod.akkamaddi.haditecoal.init.ModBlocks;
 import mod.alexndr.simplecorelib.world.OreGenUtils;
-import net.minecraft.world.gen.GenerationStage.Decoration;
-import net.minecraft.world.gen.feature.ConfiguredFeature;
-import net.minecraft.world.gen.feature.Feature;
+import net.minecraft.world.level.levelgen.GenerationStep.Decoration;
+import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
+import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
 
 /**

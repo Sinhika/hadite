@@ -1,9 +1,11 @@
 package mod.akkamaddi.haditecoal.content;
 
 import mod.akkamaddi.haditecoal.config.HaditeConfig;
-import net.minecraft.block.Block;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.ItemStack;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.ItemStack;
+
+import net.minecraft.world.item.Item.Properties;
 
 public class HaditeCoalBlockItem extends BlockItem
 {
