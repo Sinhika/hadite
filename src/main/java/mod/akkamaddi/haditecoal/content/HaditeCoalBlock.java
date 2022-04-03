@@ -3,16 +3,14 @@ package mod.akkamaddi.haditecoal.content;
 import java.util.Random;
 
 import mod.akkamaddi.haditecoal.config.HaditeConfig;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.core.Direction;
-import net.minecraft.core.BlockPos;
-import net.minecraft.world.level.LevelReader;
-import net.minecraft.world.level.Level;
 import net.minecraftforge.common.extensions.IForgeBlock;
-
-import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 
 public class HaditeCoalBlock extends Block implements IForgeBlock
 {

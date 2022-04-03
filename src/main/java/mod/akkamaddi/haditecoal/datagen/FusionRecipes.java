@@ -13,10 +13,10 @@ import mod.alexndr.fusion.api.recipe.AbstractFusionRecipeProvider;
 import mod.alexndr.simplecorelib.datagen.ISimpleConditionBuilder;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.tags.ItemTags;
 import net.minecraftforge.common.crafting.conditions.ICondition;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 
@@ -41,14 +41,14 @@ public class FusionRecipes extends AbstractFusionRecipeProvider
     }
 
     @Override
-    protected void buildShapelessRecipes(Consumer<FinishedRecipe> consumer)
+    protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer)
     {
         registerGestankenzinnRecipes(consumer);
         registerHaditeSteelRecipes(consumer);
         registerImprovedOnyxRecyclingRecipes(consumer);
         
         // and one misc recipe for gunpowder:
-        consumer.accept(new AbstractFusionRecipeProvider.FinishedRecipe(
+        consumer.accept(new AbstractFusionRecipeProvider.FinishedFusionRecipe(
                 fusionbuilder.make_resource("fusion_furnace/gunpowder"),
                 new ItemStack(Items.GUNPOWDER), 600, 6.0F, Ingredient.of(ItemTags.COALS),
                 Ingredient.of(ModItems.hadite_coal.get()), Ingredient.of(Items.FLINT)));  
@@ -140,7 +140,7 @@ public class FusionRecipes extends AbstractFusionRecipeProvider
                 "better_onyx_recycling");
         
         fusionbuilder.buildFusionRecyclingRecipes(consumer, null,
-                Ingredient.of(mod.alexndr.aesthetics.init.ModBlocks.onyx_door.get().asItem()),
+                Ingredient.of(mod.alexndr.simpleores.init.ModBlocks.onyx_door.get().asItem()),
                 Ingredient.of(Items.NETHERRACK), Ingredient.of(ModItems.hadite_coal.get()),
                 mod.alexndr.simpleores.init.ModItems.onyx_gem.get(), 20.0F, 600, 
                 and(flag("recycling_enabled"),modLoaded("aesthetics"),modLoaded("simpleores")),

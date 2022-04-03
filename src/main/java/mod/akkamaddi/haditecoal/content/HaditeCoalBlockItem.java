@@ -1,11 +1,12 @@
 package mod.akkamaddi.haditecoal.content;
 
+import javax.annotation.Nullable;
+
 import mod.akkamaddi.haditecoal.config.HaditeConfig;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
-
-import net.minecraft.world.item.Item.Properties;
+import net.minecraft.world.item.crafting.RecipeType;
+import net.minecraft.world.level.block.Block;
 
 public class HaditeCoalBlockItem extends BlockItem
 {
@@ -16,12 +17,13 @@ public class HaditeCoalBlockItem extends BlockItem
     }
 
     @Override
-    public int getBurnTime(ItemStack itemStack)
+    public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType)
     {
-        if (itemStack.getItem() instanceof HaditeCoalBlockItem) {
+        if (itemStack.getItem() instanceof HaditeCoalBlockItem) 
+        {
             return HaditeConfig.haditeCoalBurnTime * 10;
         }
-        return super.getBurnTime(itemStack);
+        return super.getBurnTime(itemStack, recipeType);
     }
 
     

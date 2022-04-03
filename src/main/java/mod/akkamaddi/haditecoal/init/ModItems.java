@@ -3,17 +3,17 @@ package mod.akkamaddi.haditecoal.init;
 import mod.akkamaddi.haditecoal.HaditeCoal;
 import mod.akkamaddi.haditecoal.content.HaditeCoalBlockItem;
 import mod.akkamaddi.haditecoal.content.HaditeCoalItem;
-import mod.akkamaddi.haditecoal.content.HaditeCoalItemTier;
-import mod.alexndr.simplecorelib.content.SimpleShearsItem;
+import mod.akkamaddi.haditecoal.content.HaditeCoalItemTiers;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.HoeItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.PickaxeItem;
+import net.minecraft.world.item.ShearsItem;
 import net.minecraft.world.item.ShovelItem;
 import net.minecraft.world.item.SwordItem;
-import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 
 public final class ModItems
 {
@@ -48,42 +48,42 @@ public final class ModItems
     // TOOLS
     // gestankenzinn
     public static final RegistryObject<SwordItem> gestankenzinn_sword = ITEMS.register("gestankenzinn_sword",
-            () -> new SwordItem(HaditeCoalItemTier.GESTANKENZINN, 3, -2.4F,
+            () -> new SwordItem(HaditeCoalItemTiers.GESTANKENZINN, 3, -2.4F,
                                 new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<PickaxeItem> gestankenzinn_pickaxe = ITEMS.register("gestankenzinn_pickaxe",
-            () -> new PickaxeItem(HaditeCoalItemTier.GESTANKENZINN, 1, -2.8F,
+            () -> new PickaxeItem(HaditeCoalItemTiers.GESTANKENZINN, 1, -2.8F,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<AxeItem> gestankenzinn_axe = ITEMS.register("gestankenzinn_axe",
-            () -> new AxeItem(HaditeCoalItemTier.GESTANKENZINN, 7.0F, -3.1F,
+            () -> new AxeItem(HaditeCoalItemTiers.GESTANKENZINN, 7.0F, -3.1F,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<ShovelItem> gestankenzinn_shovel = ITEMS.register("gestankenzinn_shovel",
-            () -> new ShovelItem(HaditeCoalItemTier.GESTANKENZINN, 1.5F, -3.0F,
+            () -> new ShovelItem(HaditeCoalItemTiers.GESTANKENZINN, 1.5F, -3.0F,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<HoeItem> gestankenzinn_hoe = ITEMS.register("gestankenzinn_hoe",
-            () -> new HoeItem(HaditeCoalItemTier.GESTANKENZINN,-1, -2.0F,
+            () -> new HoeItem(HaditeCoalItemTiers.GESTANKENZINN,-1, -2.0F,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
-    public static final RegistryObject<SimpleShearsItem> gestankenzinn_shears = ITEMS.register("gestankenzinn_shears",
-            () -> new SimpleShearsItem(new Item.Properties().durability(HaditeCoalItemTier.GESTANKENZINN.getUses())
+    public static final RegistryObject<ShearsItem> gestankenzinn_shears = ITEMS.register("gestankenzinn_shears",
+            () -> new ShearsItem(new Item.Properties().durability(HaditeCoalItemTiers.GESTANKENZINN.getUses())
                     .tab(ModTabGroups.MOD_ITEM_GROUP)));
  
     // hadite steel
     public static final RegistryObject<SwordItem> hadite_steel_sword = ITEMS.register("hadite_steel_sword",
-            () -> new SwordItem(HaditeCoalItemTier.HADITESTEEL, 3, -2.4F,
+            () -> new SwordItem(HaditeCoalItemTiers.HADITESTEEL, 3, -2.4F,
                                 new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<PickaxeItem> hadite_steel_pickaxe = ITEMS.register("hadite_steel_pickaxe",
-            () -> new PickaxeItem(HaditeCoalItemTier.HADITESTEEL, 1, -2.8F,
+            () -> new PickaxeItem(HaditeCoalItemTiers.HADITESTEEL, 1, -2.8F,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<AxeItem> hadite_steel_axe = ITEMS.register("hadite_steel_axe",
-            () -> new AxeItem(HaditeCoalItemTier.HADITESTEEL, 7.0F, -3.1F,
+            () -> new AxeItem(HaditeCoalItemTiers.HADITESTEEL, 7.0F, -3.1F,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<ShovelItem> hadite_steel_shovel = ITEMS.register("hadite_steel_shovel",
-            () -> new ShovelItem(HaditeCoalItemTier.HADITESTEEL, 1.5F, -3.0F,
+            () -> new ShovelItem(HaditeCoalItemTiers.HADITESTEEL, 1.5F, -3.0F,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
     public static final RegistryObject<HoeItem> hadite_steel_hoe = ITEMS.register("hadite_steel_hoe",
-            () -> new HoeItem(HaditeCoalItemTier.HADITESTEEL,-1, -2.0F,
+            () -> new HoeItem(HaditeCoalItemTiers.HADITESTEEL,-1, -2.0F,
                     new Item.Properties().tab(ModTabGroups.MOD_ITEM_GROUP)));
-    public static final RegistryObject<SimpleShearsItem> hadite_steel_shears = ITEMS.register("hadite_steel_shears",
-            () -> new SimpleShearsItem(new Item.Properties().durability(HaditeCoalItemTier.HADITESTEEL.getUses())
+    public static final RegistryObject<ShearsItem> hadite_steel_shears = ITEMS.register("hadite_steel_shears",
+            () -> new ShearsItem(new Item.Properties().durability(HaditeCoalItemTiers.HADITESTEEL.getUses())
                     .tab(ModTabGroups.MOD_ITEM_GROUP)));
     
 } // end-class
