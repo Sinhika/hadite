@@ -55,7 +55,7 @@ public final class ServerConfig
         serverHaditeCoalBottomHeight = builder
                 .comment("HaditeCoal ore minimum height")
                 .translation(HaditeCoal.MODID + ".config.serverHaditeCoalBottomHeight")
-                .defineInRange("HaditeCoalBottomHeight", 0, 1, 127);
+                .defineInRange("HaditeCoalBottomHeight", 1, 1, 127);
         serverHaditeCoalMaxHeight = builder
                 .comment("HaditeCoal ore maximum height")
                 .translation(HaditeCoal.MODID + ".config.serverHaditeCoalMaxHeight")

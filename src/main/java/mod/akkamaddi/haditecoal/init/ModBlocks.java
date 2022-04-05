@@ -1,12 +1,10 @@
 package mod.akkamaddi.haditecoal.init;
 
-import java.util.function.ToIntFunction;
-
 import mod.akkamaddi.haditecoal.HaditeCoal;
 import mod.akkamaddi.haditecoal.content.HaditeCoalBlock;
 import mod.akkamaddi.haditecoal.content.HaditeOreBlock;
+import mod.alexndr.simplecorelib.helpers.LightUtils;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.registries.DeferredRegister;
@@ -32,13 +30,13 @@ public final class ModBlocks
     // Ore block
     public static final RegistryObject<HaditeOreBlock> hadite_coal_ore = BLOCKS.register("hadite_coal_ore",
             () -> new HaditeOreBlock(Block.Properties.of(Material.STONE)
-                    .strength( 4.0F, 6.0F).lightLevel(it_glows(9)).requiresCorrectToolForDrops()));
+                    .strength( 4.0F, 6.0F).lightLevel(LightUtils.setFixedLight(9)).requiresCorrectToolForDrops()));
                     // .harvestTool(ToolType.PICKAXE).harvestLevel(1)));
     
     // Storage blocks
     public static final RegistryObject<HaditeCoalBlock> hadite_coal_block = BLOCKS.register("hadite_coal_block",
             () -> new HaditeCoalBlock(Block.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_BLACK)
-                    .strength(4.0F, 6.0F).lightLevel(it_glows(10)).requiresCorrectToolForDrops()));
+                    .strength(4.0F, 6.0F).lightLevel(LightUtils.setFixedLight(10)).requiresCorrectToolForDrops()));
                     // .harvestTool(ToolType.PICKAXE)harvestLevel(0)));
     public static final RegistryObject<Block> hadite_steel_block = BLOCKS.register("hadite_steel_block",
             () -> new Block(Block.Properties.of(Material.METAL)
@@ -49,8 +47,5 @@ public final class ModBlocks
                     .strength(12.0F, 20.0F).requiresCorrectToolForDrops()));
                     // .harvestTool(ToolType.PICKAXE).harvestLevel(0)));
     
-    private static ToIntFunction<BlockState> it_glows(int foo)
-    {
-        return (bar) -> { return foo; };
-    }    
+ 
 } // end-class

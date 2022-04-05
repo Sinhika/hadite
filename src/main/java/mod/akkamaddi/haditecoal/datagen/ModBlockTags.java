@@ -26,8 +26,17 @@ public class ModBlockTags extends MiningBlockTags
         super.addTags();
         registerStorageBlockTags();
         registerBeaconBlockTags();
+        registerMiscBlockTags();
     }
 
+    
+    private void registerMiscBlockTags()
+    {
+        this.tag(BlockTags.INFINIBURN_OVERWORLD)
+            .add(ModBlocks.hadite_coal_block.get());
+    }
+    
+    
     /**
      * Identify metal blocks as beacon block bases.
      */
