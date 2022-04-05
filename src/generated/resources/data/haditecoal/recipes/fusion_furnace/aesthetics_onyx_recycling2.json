@@ -25,7 +25,7 @@
         "type": "fusion:alloying",
         "inputs": [
           {
-            "item": "aesthetics:onyx_door"
+            "item": "simpleores:onyx_door"
           },
           {
             "item": "minecraft:netherrack"

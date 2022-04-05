@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "haditecoal:hadite_coal_ore",
+    "haditecoal:hadite_coal_block",
+    "haditecoal:hadite_steel_block",
+    "haditecoal:gestankenzinn_block"
+  ]
+}

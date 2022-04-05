@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "#forge:storage_blocks/gestankenzinn",
+    "#forge:storage_blocks/hadite_steel",
+    "#forge:storage_blocks/hadite_coal"
+  ]
+}

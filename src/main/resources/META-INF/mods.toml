@@ -3,7 +3,7 @@
 modLoader="javafml" #mandatory
 
 # A version range to match for said mod loader - for regular FML @Mod it will be the forge version
-loaderVersion="[36,)" #mandatory
+loaderVersion="[39,)" #mandatory
 issueTrackerURL="https://github.com/Sinhika/hadite/issues"
 license="LGPL 3"
 
@@ -11,7 +11,7 @@ license="LGPL 3"
 modId="haditecoal"
 version="${file.jarVersion}"
 displayName="akkamaddi's Hadite Coal"
-updateJSONURL="https://raw.githubusercontent.com/Sinhika/hadite/1.16/update.json"
+updateJSONURL="https://raw.githubusercontent.com/Sinhika/hadite/1.18/update.json"
 displayURL="http://minecraft.curseforge.com/projects/akkamaddis-hadite-coal"
 credits="Thanks to akkamaddi for creating the original mod and to Sinhika for porting and maintaining it."
 authors="akkamaddi, Sinhika"
@@ -21,64 +21,43 @@ description='''Hadite Coal, a utility ore from the Nether, plus two alloys.
 [[dependencies.haditecoal]]
     modId="forge"
     mandatory=true
-    versionRange="[36.1.0,)"
+    versionRange="[39.1,)"
     ordering="NONE"
     side="BOTH"
 
 [[dependencies.haditecoal]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.16.5,)"
+    versionRange="[1.18.1,1.18.2)"
     ordering="NONE"
     side="BOTH"
 
 [[dependencies.haditecoal]]
     modId="simplecorelib"
     mandatory=true
-    versionRange="[1.16.5-2.0.8.0, 1.16.5-2.0.9.0)"
+    versionRange="[1.18.1-4.0.1.0, 1.18.1-4.1.0.0)"
     ordering="NONE"
     side="BOTH"    
 
 [[dependencies.haditecoal]]
     modId="simpleores"
     mandatory=false
-    versionRange="[1.16.5-2.4.7.0,1.16.5-2.4.8.0)"
+    versionRange="[1.18.1-4.0.0.3, 1.18.1-4.1.0.0)"
     ordering="BEFORE"
     side="BOTH"    
 
 [[dependencies.haditecoal]]
     modId="fusion"
     mandatory=true
-    versionRange="[1.16.5-2.7.4.0, 1.16.5-2.7.5.0)"
+    versionRange="[1.18.1-4.0.1.0, 1.18.1-4.1.0.0)"
     ordering="NONE"
-    side="BOTH"    
-
-[[dependencies.haditecoal]]
-    modId="aesthetics"
-    mandatory=false
-    versionRange="[1.16.5-1.10.4.0, 1.16.5-1.10.5.0)"
-    ordering="BEFORE"
     side="BOTH"    
 
 [[dependencies.haditecoal]]
     modId="simple_machines"
     mandatory=false
-    versionRange="[1.16.5-1.7.5.0,1.16.5-1.7.6.0)"
+    versionRange="[1.18.1-3.0.0.0,1.18.1-3.1.0.0)"
     ordering="BEFORE"
     side="BOTH"    
-
-[[dependencies.haditecoal]]
-        modId="silents_mechanisms"
-        mandatory=false
-        versionRange="[0.8.9,)"
-        ordering="BEFORE"
-        side="BOTH"
-        
-[[dependencies.haditecoal]]
-        modId="silentgear"
-        mandatory=false
-        versionRange="[2.5.2,)"
-        ordering="BEFORE"
-        side="BOTH"
         
     

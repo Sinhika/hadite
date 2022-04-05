@@ -11,7 +11,9 @@
       "conditions": {
         "items": [
           {
-            "item": "haditecoal:large_hadite_steel_chunk"
+            "items": [
+              "haditecoal:large_hadite_steel_chunk"
+            ]
           }
         ]
       }

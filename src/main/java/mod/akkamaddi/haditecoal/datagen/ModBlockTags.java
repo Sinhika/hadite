@@ -46,15 +46,12 @@ public class ModBlockTags extends MiningBlockTags
         this.tag(TagUtils.forgeBlockTag("storage_blocks"))
             .addTag(TagUtils.forgeBlockTag("storage_blocks/gestankenzinn"))
             .addTag(TagUtils.forgeBlockTag("storage_blocks/hadite_steel"))
-            .addTag(TagUtils.forgeBlockTag("storage_blocks/steel"))
             .addTag(TagUtils.forgeBlockTag("storage_blocks/hadite_coal"));
         
         this.tag(TagUtils.forgeBlockTag("storage_blocks/gestankenzinn"))
             .add(ModBlocks.gestankenzinn_block.get());
         
         this.tag(TagUtils.forgeBlockTag("storage_blocks/hadite_steel"))
-            .add(ModBlocks.hadite_steel_block.get());
-        this.tag(TagUtils.forgeBlockTag("storage_blocks/steel"))
             .add(ModBlocks.hadite_steel_block.get());
         
         this.tag(TagUtils.forgeBlockTag("storage_blocks/hadite_coal"))

@@ -1,6 +1,6 @@
 {
   "replace": false,
   "values": [
-    "haditecoal:hadite_steel_ingot"
+    "#forge:ores/hadite_coal"
   ]
 }

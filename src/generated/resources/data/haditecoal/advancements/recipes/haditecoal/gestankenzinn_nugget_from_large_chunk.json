@@ -11,7 +11,9 @@
       "conditions": {
         "items": [
           {
-            "item": "haditecoal:gestankenzinn_nugget"
+            "items": [
+              "haditecoal:gestankenzinn_nugget"
+            ]
           }
         ]
       }

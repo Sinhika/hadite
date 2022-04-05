@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "haditecoal:gestankenzinn_block",
     "haditecoal:hadite_steel_block"
   ]
 }
