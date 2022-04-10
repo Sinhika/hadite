@@ -2,7 +2,6 @@
 .project
 ./.project
 build/
-gradle/
 run/
 libs/
 .settings/
@@ -10,8 +9,6 @@ libs/
 *.jar
 *.class
 *.launch
-gradlew
-gradlew.bat
 build.number
 bin/
 .gradle/
