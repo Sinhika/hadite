@@ -9,10 +9,9 @@ import mod.akkamaddi.haditecoal.config.ConfigHelper;
 import mod.akkamaddi.haditecoal.config.ConfigHolder;
 import mod.akkamaddi.haditecoal.config.HaditeConfig;
 import mod.akkamaddi.haditecoal.content.HaditeCoalBlock;
-import mod.akkamaddi.haditecoal.generation.OreGeneration;
 import mod.akkamaddi.haditecoal.init.ModBlocks;
 import mod.akkamaddi.haditecoal.init.ModTabGroups;
-import mod.alexndr.simplecorelib.config.FlagCondition;
+import mod.alexndr.simplecorelib.api.config.FlagCondition;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -41,10 +40,6 @@ public final class ModEventSubscriber
     @SubscribeEvent
     public static void onCommonSetup(final FMLCommonSetupEvent event)
     {
-        event.enqueueWork(() -> {
-            OreGeneration.initNetherFeatures();
-        });
-        LOGGER.debug("Common setup done");
     } // end onCommonSetup
 
     /**

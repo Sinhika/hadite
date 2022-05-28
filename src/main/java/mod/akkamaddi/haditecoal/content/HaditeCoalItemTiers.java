@@ -6,7 +6,7 @@ import mod.akkamaddi.haditecoal.HaditeCoal;
 import mod.akkamaddi.haditecoal.init.ModItems;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.tags.Tag;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.Tiers;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -16,10 +16,10 @@ import net.minecraftforge.common.TierSortingRegistry;
 
 public final class HaditeCoalItemTiers
 {
-    public static final Tag.Named<Block> HADITESTEEL_TAG = 
-            BlockTags.createOptional(new ResourceLocation(HaditeCoal.MODID, "needs_haditesteel_tool"));
-    public static final Tag.Named<Block> GESTANKENZINN_TAG = 
-            BlockTags.createOptional(new ResourceLocation(HaditeCoal.MODID, "needs_gestankenzinn_tool"));
+    public static final TagKey<Block> HADITESTEEL_TAG = 
+            BlockTags.create(new ResourceLocation(HaditeCoal.MODID, "needs_haditesteel_tool"));
+    public static final TagKey<Block> GESTANKENZINN_TAG = 
+            BlockTags.create(new ResourceLocation(HaditeCoal.MODID, "needs_gestankenzinn_tool"));
 
     public static final Tier HADITESTEEL = TierSortingRegistry.registerTier(
             new ForgeTier(Tiers.DIAMOND.getLevel(), 520, 6.5F, 2.0F, 13, HADITESTEEL_TAG, 

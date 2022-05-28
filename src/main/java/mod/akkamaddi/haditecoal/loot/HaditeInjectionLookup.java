@@ -1,6 +1,6 @@
 package mod.akkamaddi.haditecoal.loot;
 
-import mod.alexndr.simplecorelib.helpers.InjectionTableLookup;
+import mod.alexndr.simplecorelib.api.helpers.InjectionTableLookup;
 
 @SuppressWarnings("serial")
 public class HaditeInjectionLookup extends InjectionTableLookup

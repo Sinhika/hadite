@@ -1,7 +1,5 @@
 package mod.akkamaddi.haditecoal.config;
 
-import mod.alexndr.simplecorelib.config.ModOreConfig;
-import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraftforge.fml.config.ModConfig;
 
 public final class ConfigHelper
@@ -16,11 +14,6 @@ public final class ConfigHelper
     {
         // general stuff
         HaditeConfig.addChestLoot = ConfigHolder.SERVER.serverAddChestLoot.get();
-        HaditeConfig.hadite_cfg = new ModOreConfig(ModOreConfig.FULL_RANGE, 
-                ConfigHolder.SERVER.serverHaditeCoalVeinSize.get(), ConfigHolder.SERVER.serverHaditeCoalVeinCount.get(), true,
-                VerticalAnchor.absolute(ConfigHolder.SERVER.serverHaditeCoalBottomHeight.get()),
-                VerticalAnchor.absolute(ConfigHolder.SERVER.serverHaditeCoalMaxHeight.get()));
-                        
         HaditeConfig.haditeCoalBurnTime = ConfigHolder.SERVER.serverHaditeCoalBurnTime.get();
         HaditeConfig.isHaditeCoalBlockFireSource = ConfigHolder.SERVER.serverHaditeCoalBlockFireSource.get();
         

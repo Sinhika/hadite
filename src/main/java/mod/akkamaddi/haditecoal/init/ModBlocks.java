@@ -3,7 +3,7 @@ package mod.akkamaddi.haditecoal.init;
 import mod.akkamaddi.haditecoal.HaditeCoal;
 import mod.akkamaddi.haditecoal.content.HaditeCoalBlock;
 import mod.akkamaddi.haditecoal.content.HaditeOreBlock;
-import mod.alexndr.simplecorelib.helpers.LightUtils;
+import mod.alexndr.simplecorelib.api.helpers.LightUtils;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;

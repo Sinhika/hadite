@@ -10,7 +10,7 @@ import mod.akkamaddi.haditecoal.init.ModItems;
 import mod.akkamaddi.haditecoal.init.ModTags;
 import mod.alexndr.fusion.api.datagen.FusionRecipeSetBuilder;
 import mod.alexndr.fusion.api.recipe.AbstractFusionRecipeProvider;
-import mod.alexndr.simplecorelib.datagen.ISimpleConditionBuilder;
+import mod.alexndr.simplecorelib.api.datagen.ISimpleConditionBuilder;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.tags.ItemTags;
@@ -162,6 +162,7 @@ public class FusionRecipes extends AbstractFusionRecipeProvider
      * Builds an ICondition representing FlagCondition...
      *
      */
+    @Override
     public ICondition flag(String name)
     {
         return impl_flag(HaditeCoal.MODID, HaditeConfig.INSTANCE, name);
