@@ -47,12 +47,12 @@ public class Recipes extends RecipeProvider implements IConditionBuilder, ISimpl
     protected void registerVanillaRecyclingRecipes(Consumer<FinishedRecipe> consumer)
     {
         setbuilder.buildVanillaRecyclingRecipes(consumer, Ingredient.of(ModItems.gestankenzinn_axe.get(), 
-                ModItems.gestankenzinn_hoe.get(), ModItems.gestankenzinn_pickaxe.get(), ModItems.gestankenzinn_shears.get(),
+                ModItems.gestankenzinn_pickaxe.get(), ModItems.gestankenzinn_shears.get(),
                 ModItems.gestankenzinn_shovel.get(), ModItems.gestankenzinn_sword.get()), 
                 ModItems.gestankenzinn_nugget.get(), has(ModItems.gestankenzinn_axe.get()), 
                 0.2F, 200);   
         setbuilder.buildVanillaRecyclingRecipes(consumer, Ingredient.of(ModItems.hadite_steel_axe.get(), 
-                ModItems.hadite_steel_hoe.get(), ModItems.hadite_steel_pickaxe.get(), ModItems.hadite_steel_shears.get(),
+                ModItems.hadite_steel_pickaxe.get(), ModItems.hadite_steel_shears.get(),
                 ModItems.hadite_steel_shovel.get(), ModItems.hadite_steel_sword.get()), 
                 ModItems.hadite_steel_nugget.get(), has(ModItems.hadite_steel_axe.get()), 
                 0.2F, 200);   

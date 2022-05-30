@@ -76,7 +76,7 @@ public class FusionRecipes extends AbstractFusionRecipeProvider
         
         // Gestankenzinn recycling recipes
         fusionbuilder.buildFusionRecyclingRecipes(consumer, 
-                Ingredient.of(ModItems.gestankenzinn_axe.get(), ModItems.gestankenzinn_hoe.get(),
+                Ingredient.of(ModItems.gestankenzinn_axe.get(), 
                         ModItems.gestankenzinn_pickaxe.get(), ModItems.gestankenzinn_shears.get(),
                         ModItems.gestankenzinn_shovel.get(), ModItems.gestankenzinn_sword.get()),
                 null, Ingredient.of(Items.GRAVEL), Ingredient.of(ItemTags.COALS), 
@@ -106,7 +106,7 @@ public class FusionRecipes extends AbstractFusionRecipeProvider
        
         // hadite steel recycling recipes
         fusionbuilder.buildFusionRecyclingRecipes(consumer, 
-                Ingredient.of(ModItems.hadite_steel_axe.get(), ModItems.hadite_steel_hoe.get(),
+                Ingredient.of(ModItems.hadite_steel_axe.get(), 
                         ModItems.hadite_steel_pickaxe.get(), ModItems.hadite_steel_shears.get(),
                         ModItems.hadite_steel_shovel.get(), ModItems.hadite_steel_sword.get()),
                 null, Ingredient.of(Items.GRAVEL), Ingredient.of(ItemTags.COALS), 
