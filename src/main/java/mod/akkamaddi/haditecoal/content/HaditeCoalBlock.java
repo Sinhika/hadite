@@ -12,6 +12,8 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.extensions.IForgeBlock;
 
+import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
+
 public class HaditeCoalBlock extends Block implements IForgeBlock
 {
     public HaditeCoalBlock(Properties properties)
