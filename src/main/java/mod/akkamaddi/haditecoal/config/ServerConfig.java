@@ -19,11 +19,11 @@ public final class ServerConfig
     final ForgeConfigSpec.BooleanValue serverHaditeCoalBlockFireSource;
     
     // ore generation
-    final ForgeConfigSpec.IntValue serverHaditeCoalVeinSize;
-    final ForgeConfigSpec.IntValue serverHaditeCoalVeinCount;
-    final ForgeConfigSpec.IntValue serverHaditeCoalBottomHeight;
-    final ForgeConfigSpec.IntValue serverHaditeCoalMaxHeight;
-
+//    final ForgeConfigSpec.IntValue serverHaditeCoalVeinSize;
+//    final ForgeConfigSpec.IntValue serverHaditeCoalVeinCount;
+//    final ForgeConfigSpec.IntValue serverHaditeCoalBottomHeight;
+//    final ForgeConfigSpec.IntValue serverHaditeCoalMaxHeight;
+//
     
     ServerConfig(final ForgeConfigSpec.Builder builder)
     {
@@ -45,22 +45,22 @@ public final class ServerConfig
                 .define("HaditeCoalBlockFireSource", true);
         builder.pop();
         
-        builder.push("Ore Generation");
-        serverHaditeCoalVeinSize = builder.comment("Hadite Coal ore vein size")
-                .translation(HaditeCoal.MODID + "config.HaditeCoalVeinSize")
-                .defineInRange("HaditeCoalVeinSize",  17, 0, Integer.MAX_VALUE);
-        serverHaditeCoalVeinCount = builder.comment("Hadite Coal ore vein count per chunk")
-                .translation(HaditeCoal.MODID + "config.HaditeCoalVeinCount")
-                .defineInRange("HaditeCoalVeinCount",  9, 0, Integer.MAX_VALUE);
-        serverHaditeCoalBottomHeight = builder
-                .comment("HaditeCoal ore minimum height")
-                .translation(HaditeCoal.MODID + ".config.serverHaditeCoalBottomHeight")
-                .defineInRange("HaditeCoalBottomHeight", 1, 1, 127);
-        serverHaditeCoalMaxHeight = builder
-                .comment("HaditeCoal ore maximum height")
-                .translation(HaditeCoal.MODID + ".config.serverHaditeCoalMaxHeight")
-                .defineInRange("HaditeCoalMaxHeight", 128, 1, 128);
-        builder.pop();
+//        builder.push("Ore Generation");
+//        serverHaditeCoalVeinSize = builder.comment("Hadite Coal ore vein size")
+//                .translation(HaditeCoal.MODID + "config.HaditeCoalVeinSize")
+//                .defineInRange("HaditeCoalVeinSize",  17, 0, Integer.MAX_VALUE);
+//        serverHaditeCoalVeinCount = builder.comment("Hadite Coal ore vein count per chunk")
+//                .translation(HaditeCoal.MODID + "config.HaditeCoalVeinCount")
+//                .defineInRange("HaditeCoalVeinCount",  9, 0, Integer.MAX_VALUE);
+//        serverHaditeCoalBottomHeight = builder
+//                .comment("HaditeCoal ore minimum height")
+//                .translation(HaditeCoal.MODID + ".config.serverHaditeCoalBottomHeight")
+//                .defineInRange("HaditeCoalBottomHeight", 1, 1, 127);
+//        serverHaditeCoalMaxHeight = builder
+//                .comment("HaditeCoal ore maximum height")
+//                .translation(HaditeCoal.MODID + ".config.serverHaditeCoalMaxHeight")
+//                .defineInRange("HaditeCoalMaxHeight", 128, 1, 128);
+//        builder.pop();
         
         builder.push("Gestankenzinn");
         serverEnableGestankenzinnMaking = 

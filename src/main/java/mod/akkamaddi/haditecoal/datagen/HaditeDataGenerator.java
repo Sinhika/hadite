@@ -26,15 +26,12 @@ public class HaditeDataGenerator
     public static void gatherData(GatherDataEvent event)
     {
         DataGenerator gen = event.getGenerator();
-        if (event.includeServer())
-        {
-            gen.addProvider(new ModBlockTags(gen, event.getExistingFileHelper()));
-            gen.addProvider(new ModItemTags(gen, event.getExistingFileHelper()));
-            gen.addProvider(new Recipes(gen));
-            gen.addProvider(new FusionRecipes(gen));
-            gen.addProvider(new HaditeLootTableProvider(gen));
-            gen.addProvider(new HaditeLootInjectorProvider(gen));
-        }
+        gen.addProvider(event.includeServer(), new ModBlockTags(gen, event.getExistingFileHelper()));
+        gen.addProvider(event.includeServer(), new ModItemTags(gen, event.getExistingFileHelper()));
+        gen.addProvider(event.includeServer(), new Recipes(gen));
+        gen.addProvider(event.includeServer(), new FusionRecipes(gen));
+        gen.addProvider(event.includeServer(), new HaditeLootTableProvider(gen));
+        gen.addProvider(event.includeServer(), new HaditeLootInjectorProvider(gen));
     } // end gatherData()
 
 
