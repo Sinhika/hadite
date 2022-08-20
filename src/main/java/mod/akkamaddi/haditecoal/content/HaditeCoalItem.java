@@ -8,8 +8,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraftforge.common.extensions.IForgeItem;
 
-import net.minecraft.world.item.Item.Properties;
-
 public class HaditeCoalItem extends Item implements IForgeItem
 {
 

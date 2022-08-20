@@ -1,6 +1,8 @@
 {
   "pack": {
-    "pack_format": 8,
-    "description": "Resources for Hadite Coal"
-  }
+    "description": "Resources for Hadite Coal",
+       "pack_format": 9,
+        "forge:resource_pack_format": 9,
+       "forge:data_pack_format": 10  
+    }
 }

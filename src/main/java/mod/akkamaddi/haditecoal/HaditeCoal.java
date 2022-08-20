@@ -5,7 +5,6 @@ import org.apache.logging.log4j.Logger;
 
 import mod.akkamaddi.haditecoal.config.ConfigHolder;
 import mod.akkamaddi.haditecoal.init.ModBlocks;
-import mod.akkamaddi.haditecoal.init.ModFeatures;
 import mod.akkamaddi.haditecoal.init.ModItems;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -29,8 +28,6 @@ public class HaditeCoal
         
         ModBlocks.BLOCKS.register(modEventBus);
         ModItems.ITEMS.register(modEventBus);
-//        ModFeatures.CONFIGURED_FEATURES.register(modEventBus);
-//        ModFeatures.PLACED_FEATURES.register(modEventBus);
         
         // Register Configs
         modLoadingContext.registerConfig(ModConfig.Type.COMMON, ConfigHolder.SERVER_SPEC);
