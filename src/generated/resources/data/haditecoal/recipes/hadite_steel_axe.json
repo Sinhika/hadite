@@ -4,17 +4,12 @@
     {
       "conditions": [
         {
-          "flag": "hadite_steel_tools_enabled",
-          "type": "haditecoal:flag"
+          "type": "haditecoal:flag",
+          "flag": "hadite_steel_tools_enabled"
         }
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
-        "pattern": [
-          "SS ",
-          "ST ",
-          " T "
-        ],
         "key": {
           "S": {
             "item": "haditecoal:hadite_steel_ingot"
@@ -23,6 +18,11 @@
             "tag": "forge:rods/wooden"
           }
         },
+        "pattern": [
+          "SS ",
+          "ST ",
+          " T "
+        ],
         "result": {
           "item": "haditecoal:hadite_steel_axe"
         }

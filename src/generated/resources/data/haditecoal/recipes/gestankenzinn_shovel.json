@@ -4,17 +4,12 @@
     {
       "conditions": [
         {
-          "flag": "gestankenzinn_tools_enabled",
-          "type": "haditecoal:flag"
+          "type": "haditecoal:flag",
+          "flag": "gestankenzinn_tools_enabled"
         }
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
-        "pattern": [
-          " S ",
-          " T ",
-          " T "
-        ],
         "key": {
           "S": {
             "item": "haditecoal:gestankenzinn_ingot"
@@ -23,6 +18,11 @@
             "tag": "forge:rods/wooden"
           }
         },
+        "pattern": [
+          " S ",
+          " T ",
+          " T "
+        ],
         "result": {
           "item": "haditecoal:gestankenzinn_shovel"
         }

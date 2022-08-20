@@ -4,12 +4,17 @@
     {
       "conditions": [
         {
-          "flag": "hadite_steel_making_enabled",
-          "type": "haditecoal:flag"
+          "type": "haditecoal:flag",
+          "flag": "hadite_steel_making_enabled"
         }
       ],
       "recipe": {
         "type": "fusion:alloying",
+        "catalyst": {
+          "item": "minecraft:gunpowder"
+        },
+        "cookingtime": 600,
+        "experience": 6.0,
         "inputs": [
           {
             "item": "haditecoal:hadite_coal"
@@ -18,14 +23,9 @@
             "item": "minecraft:iron_ingot"
           }
         ],
-        "catalyst": {
-          "item": "minecraft:gunpowder"
-        },
         "output": {
           "item": "haditecoal:large_hadite_steel_chunk"
-        },
-        "cookingtime": 600,
-        "experience": 6.0
+        }
       }
     }
   ]

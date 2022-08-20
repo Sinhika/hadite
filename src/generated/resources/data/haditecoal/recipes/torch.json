@@ -1,20 +1,20 @@
 {
   "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "haditecoal:hadite_coal"
+    },
+    "Y": {
+      "tag": "forge:rods/wooden"
+    }
+  },
   "pattern": [
     "YYY",
     "Y#Y",
     "YYY"
   ],
-  "key": {
-    "Y": {
-      "tag": "forge:rods/wooden"
-    },
-    "#": {
-      "item": "haditecoal:hadite_coal"
-    }
-  },
   "result": {
-    "item": "minecraft:torch",
-    "count": 64
+    "count": 64,
+    "item": "minecraft:torch"
   }
 }

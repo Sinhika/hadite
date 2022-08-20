@@ -4,21 +4,21 @@
     {
       "conditions": [
         {
-          "flag": "gestankenzinn_tools_enabled",
-          "type": "haditecoal:flag"
+          "type": "haditecoal:flag",
+          "flag": "gestankenzinn_tools_enabled"
         }
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
-        "pattern": [
-          " S",
-          "S "
-        ],
         "key": {
           "S": {
             "item": "haditecoal:gestankenzinn_ingot"
           }
         },
+        "pattern": [
+          " S",
+          "S "
+        ],
         "result": {
           "item": "haditecoal:gestankenzinn_shears"
         }

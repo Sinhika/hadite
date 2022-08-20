@@ -1,5 +1,10 @@
 {
   "type": "fusion:alloying",
+  "catalyst": {
+    "tag": "minecraft:coals"
+  },
+  "cookingtime": 600,
+  "experience": 6.0,
   "inputs": [
     {
       "item": "haditecoal:hadite_coal"
@@ -8,12 +13,7 @@
       "item": "minecraft:flint"
     }
   ],
-  "catalyst": {
-    "tag": "minecraft:coals"
-  },
   "output": {
     "item": "minecraft:gunpowder"
-  },
-  "cookingtime": 600,
-  "experience": 6.0
+  }
 }

@@ -4,25 +4,30 @@
     {
       "conditions": [
         {
+          "type": "forge:and",
           "values": [
             {
-              "flag": "recycling_enabled",
-              "type": "haditecoal:flag"
+              "type": "haditecoal:flag",
+              "flag": "recycling_enabled"
             },
             {
-              "modid": "simple_machines",
-              "type": "forge:mod_loaded"
+              "type": "forge:mod_loaded",
+              "modid": "simple_machines"
             },
             {
-              "modid": "simpleores",
-              "type": "forge:mod_loaded"
+              "type": "forge:mod_loaded",
+              "modid": "simpleores"
             }
-          ],
-          "type": "forge:and"
+          ]
         }
       ],
       "recipe": {
         "type": "fusion:alloying",
+        "catalyst": {
+          "item": "haditecoal:hadite_coal"
+        },
+        "cookingtime": 600,
+        "experience": 40.0,
         "inputs": [
           [
             {
@@ -39,15 +44,10 @@
             "item": "minecraft:netherrack"
           }
         ],
-        "catalyst": {
-          "item": "haditecoal:hadite_coal"
-        },
         "output": {
-          "item": "simpleores:onyx_gem",
-          "count": 2
-        },
-        "cookingtime": 600,
-        "experience": 40.0
+          "count": 2,
+          "item": "simpleores:onyx_gem"
+        }
       }
     }
   ]

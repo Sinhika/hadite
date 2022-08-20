@@ -1,5 +1,7 @@
 {
   "type": "minecraft:blasting",
+  "cookingtime": 100,
+  "experience": 0.2,
   "ingredient": [
     {
       "item": "haditecoal:hadite_steel_axe"
@@ -17,7 +19,5 @@
       "item": "haditecoal:hadite_steel_sword"
     }
   ],
-  "result": "haditecoal:hadite_steel_nugget",
-  "experience": 0.2,
-  "cookingtime": 100
+  "result": "haditecoal:hadite_steel_nugget"
 }
