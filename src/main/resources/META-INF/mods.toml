@@ -3,60 +3,67 @@
 modLoader="javafml" #mandatory
 
 # A version range to match for said mod loader - for regular FML @Mod it will be the forge version
-loaderVersion="[43,)" #mandatory
+loaderVersion="${loader_version_range}" #mandatory
 issueTrackerURL="https://github.com/Sinhika/hadite/issues"
-license="LGPL 3"
+license="${mod_license}"
 
 [[mods]]
-modId="haditecoal"
-version="${file.jarVersion}"
-displayName="akkamaddi's Hadite Coal"
+modId="${mod_id}"
+version="${version}"
+displayName="${mod_name}"
 updateJSONURL="https://raw.githubusercontent.com/Sinhika/hadite/1.19/update.json"
 displayURL="http://minecraft.curseforge.com/projects/akkamaddis-hadite-coal"
 credits="Thanks to akkamaddi for creating the original mod and to Sinhika for porting and maintaining it."
-authors="akkamaddi, Sinhika"
+authors="${mod_authors}"
 description='''Hadite Coal, a utility ore from the Nether, plus two alloys.
 '''
 
-[[dependencies.haditecoal]]
+[[dependencies.${mod_id}]]
     modId="forge"
     mandatory=true
-    versionRange="[43.1.0,)"
+    versionRange="${forge_version_range}"
     ordering="NONE"
     side="BOTH"
 
-[[dependencies.haditecoal]]
+[[dependencies.${mod_id}]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.19.2,1.19.3)"
+    versionRange="${minecraft_version_range}"
     ordering="NONE"
     side="BOTH"
 
-[[dependencies.haditecoal]]
+[[dependencies.${mod_id}]]
     modId="simplecorelib"
     mandatory=true
-    versionRange="[1.19.2-5.1.0.1,1.19.2-5.2.0.0)"
+    versionRange="${simplecore_range}"
     ordering="NONE"
     side="BOTH"    
 
-[[dependencies.haditecoal]]
+[[dependencies.${mod_id}]]
+    modId="fusion"
+    mandatory=true
+    versionRange="${fusion_range}"
+    ordering="NONE"
+    side="BOTH"    
+
+[[dependencies.${mod_id}]]
     modId="simpleores"
     mandatory=false
-    versionRange="[1.19.2-5.1.0.0, 1.19.2-5.2.0.0)"
+    versionRange="${simpleores_range}"
     ordering="BEFORE"
     side="BOTH"    
 
-[[dependencies.haditecoal]]
-    modId="fusion"
-    mandatory=true
-    versionRange="[1.19.2-5.1.0.0, 1.19.2-5.2.0.0)"
-    ordering="NONE"
-    side="BOTH"    
-
-[[dependencies.haditecoal]]
+[[dependencies.${mod_id}]]
     modId="simple_machines"
     mandatory=false
-    versionRange="[1.19.2-4.1.0.1,1.19.2-4.2.0.0)"
+    versionRange="${simple_machines_range}"
     ordering="BEFORE"
     side="BOTH"    
         
+[[dependencies.${mod_id}]]
+    modId="bucketlib"
+    mandatory=false
+    versionRange="${buckletlib_range}"
+    ordering="BEFORE"
+    side="BOTH"
+    
