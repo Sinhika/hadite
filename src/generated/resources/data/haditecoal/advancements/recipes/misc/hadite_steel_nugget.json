@@ -6,7 +6,7 @@
         "items": [
           {
             "items": [
-              "haditecoal:hadite_coal"
+              "haditecoal:hadite_steel_ingot"
             ]
           }
         ]
@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "haditecoal:hadite_coal_block"
+        "recipe": "haditecoal:hadite_steel_nugget"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,8 @@
   ],
   "rewards": {
     "recipes": [
-      "haditecoal:hadite_coal_block"
+      "haditecoal:hadite_steel_nugget"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

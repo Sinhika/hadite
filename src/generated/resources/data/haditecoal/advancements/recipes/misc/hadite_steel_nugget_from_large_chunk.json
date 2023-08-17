@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "gestankenzinn_nugget_from_blasting": {
+    "has_item": {
       "conditions": {
         "items": [
           {
             "items": [
-              "haditecoal:gestankenzinn_axe"
+              "haditecoal:hadite_steel_nugget"
             ]
           }
         ]
@@ -15,20 +15,21 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "haditecoal:gestankenzinn_nugget_from_blasting"
+        "recipe": "haditecoal:hadite_steel_nugget_from_large_chunk"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "gestankenzinn_nugget_from_blasting",
+      "has_item",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "haditecoal:gestankenzinn_nugget_from_blasting"
+      "haditecoal:hadite_steel_nugget_from_large_chunk"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

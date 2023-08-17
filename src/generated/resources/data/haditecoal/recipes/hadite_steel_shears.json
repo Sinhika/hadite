@@ -10,6 +10,7 @@
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
+        "category": "equipment",
         "key": {
           "S": {
             "item": "haditecoal:hadite_steel_ingot"
@@ -21,7 +22,8 @@
         ],
         "result": {
           "item": "haditecoal:hadite_steel_shears"
-        }
+        },
+        "show_notification": true
       }
     }
   ]

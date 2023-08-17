@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "gestankenzinn_nugget_from_smelting": {
+    "has_item": {
       "conditions": {
         "items": [
           {
             "items": [
-              "haditecoal:gestankenzinn_axe"
+              "haditecoal:gestankenzinn_ingot"
             ]
           }
         ]
@@ -15,20 +15,21 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "haditecoal:gestankenzinn_nugget_from_smelting"
+        "recipe": "haditecoal:gestankenzinn_ingot_from_nuggets"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "gestankenzinn_nugget_from_smelting",
+      "has_item",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "haditecoal:gestankenzinn_nugget_from_smelting"
+      "haditecoal:gestankenzinn_ingot_from_nuggets"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

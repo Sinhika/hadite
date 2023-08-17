@@ -6,7 +6,7 @@
         "items": [
           {
             "items": [
-              "haditecoal:gestankenzinn_ingot"
+              "haditecoal:hadite_coal"
             ]
           }
         ]
@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "haditecoal:gestankenzinn_nugget"
+        "recipe": "haditecoal:hadite_coal"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,8 @@
   ],
   "rewards": {
     "recipes": [
-      "haditecoal:gestankenzinn_nugget"
+      "haditecoal:hadite_coal"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }
