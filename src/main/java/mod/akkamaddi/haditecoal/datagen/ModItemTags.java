@@ -1,32 +1,58 @@
 package mod.akkamaddi.haditecoal.datagen;
 
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 
 import mod.akkamaddi.haditecoal.HaditeCoal;
 import mod.akkamaddi.haditecoal.init.ModBlocks;
 import mod.akkamaddi.haditecoal.init.ModItems;
 import mod.alexndr.simplecorelib.api.datagen.MiningItemTags;
 import mod.alexndr.simplecorelib.api.helpers.TagUtils;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.data.PackOutput;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 public class ModItemTags extends MiningItemTags
 {
 
-    public ModItemTags(DataGenerator gen, ExistingFileHelper existingFileHelper)
+    public ModItemTags(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider,
+			CompletableFuture<TagLookup<Block>> blockTagProvider, ExistingFileHelper existingFileHelper)
     {
-        super(gen, new ModBlockTags(gen, existingFileHelper), HaditeCoal.MODID, existingFileHelper);
+        super(output, lookupProvider, blockTagProvider, HaditeCoal.MODID, existingFileHelper);
     }
 
     @Override
-    protected void addTags()
+    protected void addTags(HolderLookup.Provider lookupProvider)
     {
-        super.addTags();
+        super.addTags(lookupProvider);
         registerNuggetTags();
         registerIngotTags();
         registerStorageBlockTags();
+        registerToolTags();
         registerMiscTags();
     }
+    
+    private void registerToolTags()
+    {
+    	this.tag(TagUtils.modTag("minecraft", "axes"))
+    		.add(ModItems.hadite_steel_axe.get())
+    		.add(ModItems.gestankenzinn_axe.get());
+    	
+    	this.tag(TagUtils.modTag("minecraft", "swords"))
+			.add(ModItems.hadite_steel_sword.get())
+			.add(ModItems.gestankenzinn_sword.get());
+
+    	this.tag(TagUtils.modTag("minecraft", "pickaxes"))
+			.add(ModItems.hadite_steel_pickaxe.get())
+			.add(ModItems.gestankenzinn_pickaxe.get());
+
+    	this.tag(TagUtils.modTag("minecraft", "shovels"))
+			.add(ModItems.hadite_steel_shovel.get())
+			.add(ModItems.gestankenzinn_shovel.get());
+
+    } // end registerTools()
+
 
     private void registerMiscTags()
     {

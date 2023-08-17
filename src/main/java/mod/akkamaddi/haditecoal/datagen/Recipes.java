@@ -8,8 +8,9 @@ import mod.akkamaddi.haditecoal.init.ModBlocks;
 import mod.akkamaddi.haditecoal.init.ModItems;
 import mod.alexndr.simplecorelib.api.datagen.ISimpleConditionBuilder;
 import mod.alexndr.simplecorelib.api.datagen.RecipeSetBuilder;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.world.item.Items;
@@ -28,14 +29,14 @@ public class Recipes extends RecipeProvider implements IConditionBuilder, ISimpl
 {
     private RecipeSetBuilder setbuilder;
 
-    public Recipes(DataGenerator generatorIn)
+    public Recipes(PackOutput pOutput)
     {
-        super(generatorIn);
+        super(pOutput);
         setbuilder = new RecipeSetBuilder(HaditeCoal.MODID);
     }
 
     @Override
-    protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer)
+    protected void buildRecipes(Consumer<FinishedRecipe> consumer)
     {
         registerStorageRecipes(consumer);
         registerMiscRecipes(consumer);
@@ -86,7 +87,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder, ISimpl
 
     protected void registerMiscRecipes(Consumer<FinishedRecipe> consumer)
     {
-        ShapedRecipeBuilder.shaped(Items.TORCH, 64)
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, Items.TORCH, 64)
             .define('Y', Ingredient.of(Tags.Items.RODS_WOODEN))
             .define('#', ModItems.hadite_coal.get())
             .pattern("YYY")

@@ -5,8 +5,8 @@ import mod.akkamaddi.haditecoal.content.HaditeCoalBlock;
 import mod.akkamaddi.haditecoal.content.HaditeOreBlock;
 import mod.alexndr.simplecorelib.api.helpers.LightUtils;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.material.Material;
-import net.minecraft.world.level.material.MaterialColor;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -29,21 +29,21 @@ public final class ModBlocks
     
     // Ore block
     public static final RegistryObject<HaditeOreBlock> hadite_coal_ore = BLOCKS.register("hadite_coal_ore",
-            () -> new HaditeOreBlock(Block.Properties.of(Material.STONE)
+            () -> new HaditeOreBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE)
                     .strength( 4.0F, 6.0F).lightLevel(LightUtils.setFixedLight(9)).requiresCorrectToolForDrops()));
                     // .harvestTool(ToolType.PICKAXE).harvestLevel(1)));
     
     // Storage blocks
     public static final RegistryObject<HaditeCoalBlock> hadite_coal_block = BLOCKS.register("hadite_coal_block",
-            () -> new HaditeCoalBlock(Block.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_BLACK)
+            () -> new HaditeCoalBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_BLACK)
                     .strength(4.0F, 6.0F).lightLevel(LightUtils.setFixedLight(10)).requiresCorrectToolForDrops()));
                     // .harvestTool(ToolType.PICKAXE)harvestLevel(0)));
     public static final RegistryObject<Block> hadite_steel_block = BLOCKS.register("hadite_steel_block",
-            () -> new Block(Block.Properties.of(Material.METAL)
+            () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.METAL)
                     .strength(14.0F, 22.0F).requiresCorrectToolForDrops()));
                     // .harvestTool(ToolType.PICKAXE).harvestLevel(0)));
     public static final RegistryObject<Block> gestankenzinn_block = BLOCKS.register("gestankenzinn_block",
-            () -> new Block(Block.Properties.of(Material.METAL)
+            () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.METAL)
                     .strength(12.0F, 20.0F).requiresCorrectToolForDrops()));
                     // .harvestTool(ToolType.PICKAXE).harvestLevel(0)));
     

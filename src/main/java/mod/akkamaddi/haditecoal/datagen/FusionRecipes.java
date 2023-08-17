@@ -8,10 +8,10 @@ import mod.akkamaddi.haditecoal.HaditeCoal;
 import mod.akkamaddi.haditecoal.config.HaditeConfig;
 import mod.akkamaddi.haditecoal.init.ModItems;
 import mod.akkamaddi.haditecoal.init.ModTags;
+import mod.alexndr.fusion.api.datagen.AbstractFusionRecipeProvider;
 import mod.alexndr.fusion.api.datagen.FusionRecipeSetBuilder;
-import mod.alexndr.fusion.api.recipe.AbstractFusionRecipeProvider;
 import mod.alexndr.simplecorelib.api.datagen.ISimpleConditionBuilder;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.ItemStack;
@@ -26,22 +26,16 @@ import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 public class FusionRecipes extends AbstractFusionRecipeProvider
         implements IConditionBuilder, ISimpleConditionBuilder
 {
-    @Override
-    public String getName()
-    {
-        return "Hadite Coal fusion alloy recipes";
-    }
-
     private FusionRecipeSetBuilder fusionbuilder;
 
-    public FusionRecipes(DataGenerator generatorIn)
+    public FusionRecipes(PackOutput pOutput)
     {
-        super(generatorIn);
+        super(pOutput);
         fusionbuilder = new FusionRecipeSetBuilder(HaditeCoal.MODID);
     }
 
     @Override
-    protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer)
+    protected void buildRecipes(Consumer<FinishedRecipe> consumer)
     {
         registerGestankenzinnRecipes(consumer);
         registerHaditeSteelRecipes(consumer);
