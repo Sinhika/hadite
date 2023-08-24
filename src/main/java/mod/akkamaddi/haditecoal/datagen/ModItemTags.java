@@ -29,38 +29,11 @@ public class ModItemTags extends MiningItemTags
         registerNuggetTags();
         registerIngotTags();
         registerStorageBlockTags();
-        registerToolTags();
-        registerMiscTags();
+        registerToolTags(ModItems.ITEMS);
     }
     
-    private void registerToolTags()
-    {
-    	this.tag(TagUtils.modTag("minecraft", "axes"))
-    		.add(ModItems.hadite_steel_axe.get())
-    		.add(ModItems.gestankenzinn_axe.get());
-    	
-    	this.tag(TagUtils.modTag("minecraft", "swords"))
-			.add(ModItems.hadite_steel_sword.get())
-			.add(ModItems.gestankenzinn_sword.get());
 
-    	this.tag(TagUtils.modTag("minecraft", "pickaxes"))
-			.add(ModItems.hadite_steel_pickaxe.get())
-			.add(ModItems.gestankenzinn_pickaxe.get());
-
-    	this.tag(TagUtils.modTag("minecraft", "shovels"))
-			.add(ModItems.hadite_steel_shovel.get())
-			.add(ModItems.gestankenzinn_shovel.get());
-
-    } // end registerTools()
-
-
-    private void registerMiscTags()
-    {
-        this.tag(TagUtils.forgeTag("shears"))
-            .add(ModItems.gestankenzinn_shears.get())
-            .add(ModItems.hadite_steel_shears.get());
-    }
-    
+   
     /**
      * Create standard forge tags for storage blocks.
      */
